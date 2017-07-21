@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="edu.scdx.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="edu.scdx.entity.User" >
+    <!--  <id column="id" property="id" jdbcType="INTEGER" /> -->
+    <result column="Uname" property="Uname" jdbcType="VARCHAR" />
+    <result column="pw" property="pw" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="getAll" resultMap="BaseResultMap">
+  	select id,name,age from user
+  </select>
+  
+  <select id="getUserById" parameterType="int" resultMap="BaseResultMap">
+  	select id,name,age from user where id = #{id}
+  </select>
+  <insert id="insertUser" parameterType="edu.scdx.entity.User">
+  	insert into user(Uname,pw) values(#{Uname},#{pw})
+  </insert>
+</mapper>
