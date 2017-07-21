@@ -76,7 +76,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="/E-shop/index.jsp" class="navbar-brand">
-                <img src="http://www.yiishop.com.cn/web/themes/img/logo.jpg" style="width:129px; height: 29px;" alt="Metronic Shop UI">
+                <img src="/E-shop/static/img/logo.png" style="width:129px; height: 29px;" alt="Metronic Shop UI">
             </a>
         </div>
         <div class="cart-block">
@@ -329,25 +329,25 @@
 </div>    <script>
         var web_url = 'http://www.yiishop.com.cn';
     </script>
-    <script src="http://www.yiishop.com.cn/web/themes/plugins/jquery-1.10.2.min.js"></script>
-<script src="http://www.yiishop.com.cn/web/themes/plugins/jquery-migrate-1.2.1.min.js"></script>
-<script src="http://www.yiishop.com.cn/web/themes/plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="http://www.yiishop.com.cn/web/themes/plugins/back-to-top.js"></script>
-<script src="http://www.yiishop.com.cn/web/themes/plugins/jQuery-slimScroll/jquery.slimscroll.min.js"></script>
-<script src="http://www.yiishop.com.cn/web/themes/plugins/fancybox/source/jquery.fancybox.pack.js"></script>
-<script src="http://www.yiishop.com.cn/web/themes/plugins/bxslider/jquery.bxslider.min.js"></script>
-<script src="http://www.yiishop.com.cn/web/themes/plugins/zoom/jquery.zoom.min.js"></script>
-<script src="http://www.yiishop.com.cn/web/themes/plugins/bootstrap-touchspin/bootstrap.touchspin.js"></script>
-<script src="http://www.yiishop.com.cn/web/themes/plugins/layerslider/jQuery/jquery-easing-1.3.js"></script>
-<script src="http://www.yiishop.com.cn/web/themes/plugins/layerslider/jQuery/jquery-transit-modified.js"></script>
-<script src="http://www.yiishop.com.cn/web/themes/plugins/layerslider/js/layerslider.transitions.js"></script>
-<script src="http://www.yiishop.com.cn/web/themes/plugins/layerslider/js/layerslider.kreaturamedia.jquery.js"></script>
-<script src="http://www.yiishop.com.cn/web/themes/web/plugins/layer/layer.js"></script>
-<script src="http://www.yiishop.com.cn/web/themes/scripts/app.js"></script>
-<script src="http://www.yiishop.com.cn/web/themes/scripts/index.js"></script>
-<script src="http://www.yiishop.com.cn/web/themes/scripts/init.js"></script>
-<script src="http://www.yiishop.com.cn/web/themes/web/js/public.js"></script>
-<script src="http://www.yiishop.com.cn/web/themes/web/js/member.js"></script></body>
+<script src="/E-shop/static/js/plugins/jquery-1.10.2.min.js"></script>
+<script src="/E-shop/static/js/plugins/jquery-migrate-1.2.1.min.js"></script>
+<script src="/E-shop/static/js/plugins/bootstrap.min.js"></script>
+<script src="/E-shop/static/js/plugins/back-to-top.js"></script>
+<script src="/E-shop/static/js/plugins/jquery.slimscroll.min.js"></script>
+<script src="/E-shop/static/js/plugins/jquery.fancybox.pack.js"></script>
+<script src="/E-shop/static/js/plugins/jquery.bxslider.min.js"></script>
+<script src="/E-shop/static/js/plugins/jquery.zoom.min.js"></script>
+<script src="/E-shop/static/js/plugins/bootstrap.touchspin.js"></script>
+<script src="/E-shop/static/js/plugins/jquery-easing-1.3.js"></script>
+<script src="/E-shop/static/js/plugins/jquery-transit-modified.js"></script>
+<script src="/E-shop/static/js/plugins/layerslider.transitions.js"></script>
+<script src="/E-shop/static/js/plugins/layerslider.kreaturamedia.jquery.js"></script>
+<script src="/E-shop/static/js/plugins/layer.js"></script> 
+<script src="/E-shop/static/js/app.js"></script>
+<script src="/E-shop/static/js/index.js"></script>
+<script src="/E-shop/static/js/init.js"></script>
+<script src="/E-shop/static/js/public.js"></script>
+</body>
 <script>
     var _hmt = _hmt || [];
     (function() {
