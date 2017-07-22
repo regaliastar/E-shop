@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE>
-
+<%@ page import="edu.scdx.entity.User" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <!-- Head BEGIN -->
 <head>
@@ -56,13 +57,26 @@
 				</div>
 				<!-- END TOP BAR LEFT PART -->
 				<!-- BEGIN TOP BAR MENU -->
-				<div class="col-md-6 col-sm-6 additional-nav">
-					<ul class="list-unstyled list-inline pull-right">
+				
+				<c:choose>
+				<c:when test="${user != null}">
+				<ul class="list-unstyled list-inline pull-right">
 						<li><a href="javascript:;" onclick="sign();">签到</a></li>
-						<li><a href="${pageContext.request.contextPath }/login.do">登录</a></li>
-						<li><a href="${pageContext.request.contextPath }/register.do">注册</a></li>
+						<li><a href="#">"${user.uname }"</a></li>
+						<li><a href="${pageContext.request.contextPath }/logout.do">注销</a></li>
 					</ul>
-				</div>
+				
+				</c:when>
+				<c:otherwise>
+					<div class="col-md-6 col-sm-6 additional-nav">
+						<ul class="list-unstyled list-inline pull-right">
+							<li><a href="${pageContext.request.contextPath }/login.do">登录</a></li>
+							<li><a href="${pageContext.request.contextPath }/register.do">注册</a></li>
+						</ul>
+					</div>
+				</c:otherwise>
+				</c:choose>
+				
 				<!-- END TOP BAR MENU -->
 			</div>
 		</div>

@@ -13,6 +13,11 @@
   <select id="getUserById" parameterType="int" resultMap="BaseResultMap">
   	select id,name,age from user where id = #{id}
   </select>
+  
+  <select id="getUserByName" parameterType="String" resultMap="BaseResultMap">
+  	select * from user where uname = #{uname}
+  </select>
+  
   <insert id="insertUser" parameterType="edu.scdx.entity.User">
   	insert into user(Uname,pw) values(#{Uname},#{pw})
   </insert>

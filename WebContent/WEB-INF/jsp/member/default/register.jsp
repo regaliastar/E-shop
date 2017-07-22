@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+	pageEncoding="UTF-8"%>
+<%@ page import="edu.scdx.entity.User" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <!-- Head BEGIN -->
@@ -35,38 +37,51 @@
 
 <!-- Body BEGIN -->
 <body>
-        <div class="pre-header">
-    <div class="container">
-        <div class="row">
-            <!-- BEGIN TOP BAR LEFT PART -->
-            <div class="col-md-6 col-sm-6 additional-shop-info">
-                <ul class="list-unstyled list-inline">
-                    <li><i class="fa fa-phone"></i><span>137-9542-3417</span></li>
-                    <!-- BEGIN LANGS -->
-                    <li class="langs-block">
-                        <a href="javascript:void(0);" class="current">关注Yiishop微信 <i class="fa fa-angle-down"></i></a>
-                        <div class="langs-block-others-wrapper">
-                            <div class="langs-block-others">
-                                <img src="http://www.yiishop.com.cn/web/themes/img/wx.jpg">
-                            </div>
-                        </div>
-                    </li>
-                    <!-- END LANGS -->
-                </ul>
-            </div>
-            <!-- END TOP BAR LEFT PART -->
-            <!-- BEGIN TOP BAR MENU -->
-            <div class="col-md-6 col-sm-6 additional-nav">
-                <ul class="list-unstyled list-inline pull-right">
-                                        <li><a href="javascript:;" onclick="sign();">签到</a></li>
-                    <li><a href="${pageContext.request.contextPath }/login.do">登录</a></li>
-                    <li><a href="${pageContext.request.contextPath }/register.do">注册</a></li>
-                                    </ul>
-            </div>
-            <!-- END TOP BAR MENU -->
-        </div>
-    </div>
-</div>    <div role="navigation" class="navbar header no-margin">
+     <div class="pre-header">
+		<div class="container">
+			<div class="row">
+				<!-- BEGIN TOP BAR LEFT PART -->
+				<div class="col-md-6 col-sm-6 additional-shop-info">
+					<ul class="list-unstyled list-inline">
+						<li><i class="fa fa-phone"></i><span>137-9542-3417</span></li>
+						<!-- BEGIN LANGS -->
+						<li class="langs-block"><a href="javascript:void(0);"
+							class="current">关注Yiishop微信 <i class="fa fa-angle-down"></i></a>
+							<div class="langs-block-others-wrapper">
+								<div class="langs-block-others">
+									<img src="http://www.yiishop.com.cn/web/themes/img/wx.jpg">
+								</div>
+							</div></li>
+						<!-- END LANGS -->
+					</ul>
+				</div>
+				<!-- END TOP BAR LEFT PART -->
+				<!-- BEGIN TOP BAR MENU -->
+				
+				<c:choose>
+				<c:when test="${user != null}">
+				<ul class="list-unstyled list-inline pull-right">
+						<li><a href="javascript:;" onclick="sign();">签到</a></li>
+						<li><a href="#">"${user.uname }"</a></li>
+						<li><a href="${pageContext.request.contextPath }/logout.do">注销</a></li>
+					</ul>
+				
+				</c:when>
+				<c:otherwise>
+					<div class="col-md-6 col-sm-6 additional-nav">
+						<ul class="list-unstyled list-inline pull-right">
+							<li><a href="${pageContext.request.contextPath }/login.do">登录</a></li>
+							<li><a href="${pageContext.request.contextPath }/register.do">注册</a></li>
+						</ul>
+					</div>
+				</c:otherwise>
+				</c:choose>
+				
+				<!-- END TOP BAR MENU -->
+			</div>
+		</div>
+	</div>
+        <div role="navigation" class="navbar header no-margin">
     <div class="container">
         <div class="navbar-header">
             <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">

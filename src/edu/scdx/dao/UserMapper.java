@@ -12,4 +12,5 @@ public interface UserMapper {
 	public List<User> getAll();
 	public User getUserById(@Param("id")Integer id);
 	public void insertUser(User user);
+	public User getUserByName(String uname);
 }

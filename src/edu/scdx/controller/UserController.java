@@ -32,47 +32,40 @@ public class UserController {
         return "list";
     }
     
-    /**
-     * 鑾峰彇json 鐨勭涓�绉嶆柟寮�
-     * 杩斿洖json 鏍煎紡
-     * @param model
-     * @param session
-     * @param id
-     * @return
-     */
-    @RequestMapping("/getUserA.json")
-    @ResponseBody
-    public Object getUserByIdA(Model model,HttpSession session,Integer id ){
-    	User user = userService.findUserById(id);
-    	return user;
-    }
     
-    /**
-     * 鑾峰彇绗琷son 鐨勭浜岀鏂瑰紡
-     * @param model
-     * @param response
-     * @param session
-     * @param id
-     */
-    @RequestMapping("/getUserB.json")
-    public void getUserByIdB(Model model,HttpServletResponse response,HttpSession session,Integer id ){
-    	User user = userService.findUserById(id);
-    	JsonUtil.printByJSON(response, user);
-    }
-    
-
     @RequestMapping("/register.json")
     public String insertUser(Model model,HttpServletResponse response,HttpSession session,String uname,String pw,String cp){
+    	User getUser = userService.findUserByName(uname);
+    	if(getUser != null) {
+    		//用户名重复
+    		return "/member/default/register";
+    	}else {
+    		User user = new User();
+        	user.setUname(uname);
+        	user.setPw(pw);
+        	
+    		userService.addUser(user);    	
+        	session.setAttribute("user",user);
+        	return "index";
+    	}
+    	
+    }
+    
+    @RequestMapping("/login.json")
+    public String getUser(Model model,HttpServletResponse response,HttpSession session,String uname,String pw,String cp){
     	User user = new User();
     	user.setUname(uname);
     	user.setPw(pw);
-    	System.out.println(user);
-    	System.out.println("cp: "+cp);
-    	userService.addUser(user);
+    	User getUser = userService.findUserByName(uname);
+    	if(getUser != null && getUser.getPw() == pw) {
+    		session.setAttribute("user",getUser);
+        	return "index";
+    	}else {
+    		//输入密码错误
+    		return "/member/default/login";
+    	}
     	
-    	return "index";
     }
-    
     
     
 }

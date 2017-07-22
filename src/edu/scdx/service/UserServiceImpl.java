@@ -25,4 +25,10 @@ public class UserServiceImpl implements UserService {
 	public void addUser(User user) {
 		userMapper.insertUser(user);
 	}
+
+	@Override
+	public User findUserByName(String uname) {
+		// TODO Auto-generated method stub
+		return userMapper.getUserByName(uname);
+	}
 }
