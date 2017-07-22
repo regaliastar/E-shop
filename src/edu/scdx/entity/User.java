@@ -9,8 +9,7 @@ public class User {
 	private String address ;//text,   -- 默认地址
 	private String zip  ;//varchar(6),   -- 邮编
 	private String email  ;//varchar(50),  -- 邮箱
-	private String avatar ;// varchar(255) -- 头像路径
-	
+ 	private String avatar ;// varchar(255) -- 头像路径
 	public int getUid() {
 		return Uid;
 	}

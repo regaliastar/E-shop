@@ -60,18 +60,18 @@ public class UserController {
     	JsonUtil.printByJSON(response, user);
     }
     
-    @RequestMapping("/addUser.do")
-    public String insertUser(Model model,HttpSession session,String Uname,String pw){
-    	Uname = "233";
-    	pw = "123456";
+
+    @RequestMapping("/register.json")
+    public String insertUser(Model model,HttpServletResponse response,HttpSession session,String uname,String pw,String cp){
     	User user = new User();
-    	user.setUname(Uname);
+    	user.setUname(uname);
     	user.setPw(pw);
+    	System.out.println(user);
+    	System.out.println("cp: "+cp);
     	userService.addUser(user);
-    	return "insertOK";
+    	
+    	return "index";
     }
-    
-    
     
     
     

@@ -59,8 +59,8 @@
 				<div class="col-md-6 col-sm-6 additional-nav">
 					<ul class="list-unstyled list-inline pull-right">
 						<li><a href="javascript:;" onclick="sign();">签到</a></li>
-						<li><a href="/E-shop/member/default/login.jsp">登录</a></li>
-						<li><a href="/E-shop/member/default/register.jsp">注册</a></li>
+						<li><a href="${pageContext.request.contextPath }/login.do">登录</a></li>
+						<li><a href="${pageContext.request.contextPath }/register.do">注册</a></li>
 					</ul>
 				</div>
 				<!-- END TOP BAR MENU -->
@@ -76,7 +76,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a href="/E-shop/index.jsp" class="navbar-brand"> <img
+				<a href="${pageContext.request.contextPath }/index.do" class="navbar-brand"> <img
 					src="/E-shop/static/img/logo.png"
 					style="width: 129px; height: 29px;" alt="Metronic Shop UI">
 				</a>
@@ -102,7 +102,7 @@
 			</div>
 			<div class="collapse navbar-collapse mega-menu">
 				<ul class="nav navbar-nav">
-					<li><a href="/E-shop/index.jsp"> 首页 </a></li>
+					<li><a href="${pageContext.request.contextPath }/index.do"> 首页 </a></li>
 					<li><a href="/sales/point/index.html"> 积分商城 </a></li>
 					<li><a href="/backend" target="_blank"> 后台展示 </a></li>
 

@@ -13,13 +13,13 @@ public class Product {
 		return Pid;
 	}
 	public void setPid(int pid) {
-		this.Pid = pid;
+		Pid = pid;
 	}
 	public String getPname() {
 		return Pname;
 	}
 	public void setPname(String pname) {
-		this.Pname = pname;
+		Pname = pname;
 	}
 	public int getStock() {
 		return stock;

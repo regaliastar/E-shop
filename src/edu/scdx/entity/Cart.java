@@ -2,10 +2,10 @@ package edu.scdx.entity;
 
 public class Cart {
 	
-			int Cid;// INT auto_increment primary key,  -- 购物车id
-			int Uid;// INT,  -- 用户id
-		 	int Pid;// INT,  -- 商品id
-			int num;// int,   -- 购买数量
+			private int Cid;// INT auto_increment primary key,  -- 购物车id
+			private int Uid;// INT,  -- 用户id
+		 	private int Pid;// INT,  -- 商品id
+			private int num;// int,   -- 购买数量
 			public int getCid() {
 				return Cid;
 			}

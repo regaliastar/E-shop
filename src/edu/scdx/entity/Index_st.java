@@ -1,9 +1,8 @@
 package edu.scdx.entity;
 
-
 public class Index_st {
-	int I_stid;// INT primary key, -- 一级索引ID
- 	String I_stname;// VARCHAR(50)
+	private int I_stid;// INT primary key, -- 一级索引ID
+ 	private String I_stname;// VARCHAR(50)
 	public int getI_stid() {
 		return I_stid;
 	}

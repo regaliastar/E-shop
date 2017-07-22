@@ -59,8 +59,8 @@
             <div class="col-md-6 col-sm-6 additional-nav">
                 <ul class="list-unstyled list-inline pull-right">
                                         <li><a href="javascript:;" onclick="sign();">签到</a></li>
-                    <li><a href="/E-shop/member/default/login.jsp">登录</a></li>
-                    <li><a href="/E-shop/member/default/register.jsp">注册</a></li>
+                    <li><a href="${pageContext.request.contextPath }/login.do">登录</a></li>
+                    <li><a href="${pageContext.request.contextPath }/register.do">注册</a></li>
                                     </ul>
             </div>
             <!-- END TOP BAR MENU -->
@@ -75,7 +75,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="/E-shop/index.jsp" class="navbar-brand">
+            <a href="${pageContext.request.contextPath }/index.do" class="navbar-brand">
                 <img src="/E-shop/static/img/logo.png" style="width:129px; height: 29px;" alt="Metronic Shop UI">
             </a>
         </div>
@@ -101,7 +101,7 @@
         u">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="/E-shop/index.jsp">
+                    <a href="${pageContext.request.contextPath }/index.do">
                         首页
                     </a>
                 </li>
@@ -168,42 +168,59 @@
 
         <!-- BEGIN CONTENT -->
         <div class="col-md-9 col-sm-9">
-            <h1>登录</h1>
+            <h1>新用户注册</h1>
             <div class="content-form-page">
                 <div class="row">
                     <div class="col-md-7 col-sm-7">
-                        <form class="form-horizontal form-without-legend form-login" method="post">
-                            <div class="form-group">
-                                <label for="email" class="col-lg-4 control-label">用户名 <span class="require">*</span></label>
-                                <div class="col-lg-8">
-                                    <input type="text" class="form-control" id="username" name="username">
+                        <form class="form-horizontal form-register" method="post" action="${pageContext.request.contextPath }/user/register.json">
+                            <fieldset>
+                                <legend>个人信息</legend>
+                                <div class="form-group">
+                                    <label for="email" class="col-lg-4 control-label">用户名 <span class="require">*</span></label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" value="" id="uname" name="uname">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="password" class="col-lg-4 control-label">密码 <span class="require">*</span></label>
-                                <div class="col-lg-8">
-                                    <input type="password" class="form-control" id="password" name="password">
+
+                                <div class="form-group">
+                                    <label for="password" class="col-lg-4 control-label">密码 <span class="require">*</span></label>
+                                    <div class="col-lg-8">
+                                        <input type="password" class="form-control" value="" id="pw" name="pw">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-8 col-md-offset-4 padding-left-0">
-                                    <a href="/member/default/register.html">免费注册</a>
-                                    <a href="/account/findpw.html">忘记密码?</a>
+                                <div class="form-group">
+                                    <label for="confirm-password" class="col-lg-4 control-label">确认密码 <span class="require">*</span></label>
+                                    <div class="col-lg-8">
+                                        <input type="password" class="form-control" value="" id="cp" name="cp">
+                                    </div>
                                 </div>
-                            </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend>用户协议</legend>
+                                <div class="checkbox form-group">
+                                    <label>
+                                        <div class="col-lg-4 col-sm-4"></div>
+                                        <div class="col-lg-8 col-sm-8">
+                                            <a>用户协议</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="checkbox" id="licence" value="1">我已看过并接受
+                                        </div>
+                                    </label>
+                                </div>
+                            </fieldset>
                             <div class="row">
                                 <div class="col-lg-8 col-md-offset-4 padding-left-0 padding-top-20">
-                                    <input type="hidden" class="request-csrf" name="_csrf" value="S1IyTXZranI9NAEaTgYSSgcGRydbHgMTfwN4PyQeEz8ialwaTlsPHg==" />
-                                    <button type="submit" class="btn btn-primary member-login">登录</button>
+                                    <input type="hidden" class="request-csrf" name="_csrf" value="ZW1kZWJhR3k2Dwg0FCIKQFY6UCMWMXA.PBVcLBYFMw80IQwQBwxyCQ==" />
+                                    <button id="register" type="submit" class="btn btn-primary member-reg">立即注册</button>
+                                    <button type="button" class="btn btn-default">重置</button>
                                 </div>
                             </div>
                         </form>
                     </div>
-
                     <div class="col-md-4 col-sm-4 pull-right">
                         <div class="form-info">
-                            <h2><em>信息</em> 提示</h2>
-                            <p>还不是商城会员？30秒轻松注册，就可方便购物，赶紧点击下方</p>
+                            <h2><em>提示</em> 信息</h2>
+                            <p>本网站禁止制作、复制、发布、传播等具有反动、色情、暴力、淫秽等内容的信息，一经发现，立即删除。若您因此触犯法律，我们对此不承担任何法律责任。 </p>
+
                             <button type="button" class="btn btn-default">更多详情</button>
                         </div>
                     </div>
@@ -312,9 +329,6 @@
 </div>    <script>
         var web_url = 'http://www.yiishop.com.cn';
     </script>
-
-
-
 <script src="/E-shop/static/js/plugins/jquery-1.10.2.min.js"></script>
 <script src="/E-shop/static/js/plugins/jquery-migrate-1.2.1.min.js"></script>
 <script src="/E-shop/static/js/plugins/bootstrap.min.js"></script>
@@ -334,6 +348,7 @@
 <script src="/E-shop/static/js/init.js"></script>
 <script src="/E-shop/static/js/public.js"></script>
 
+<script src="/E-shop/static/js/register.js"></script>
 </body>
 <script>
     var _hmt = _hmt || [];

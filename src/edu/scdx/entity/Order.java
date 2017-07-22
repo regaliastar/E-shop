@@ -1,18 +1,18 @@
 package edu.scdx.entity;
 
-
 public class Order {
 
-	 int Oid ;//auto_increment primary key,  -- 订单id
-	 int Uid ; //,  -- 用户id
- 	 int Pid ; //  -- 商品id
- 	 String sendName; //varchar(20),  -- 收货人姓名
-	 String sendAddress ;// text,  -- 收获地址
-	 String sendTel;// varchar(11),   -- 收获人电话
-	 String payment;//  varchar(10),   -- 付款方式（货到付款/支付宝/微信）
- 	 String memo;//  varchar(50),  -- 备注
- 	 String time;// date, -- 订单生成时间
- 	 int tag;//  int, -- 订单处理标记 0/1
+	private int Oid ;//auto_increment primary key,  -- 订单id
+	private int Uid ; //,  -- 用户id
+ 	private int Pid ; //  -- 商品id
+ 	private String sendName; //varchar(20),  -- 收货人姓名
+	private String sendAddress ;// text,  -- 收获地址
+	private String sendTel;// varchar(11),   -- 收获人电话
+	private String payment;//  varchar(10),   -- 付款方式（货到付款/支付宝/微信）
+ 	private String memo;//  varchar(50),  -- 备注
+ 	private String time;// date, -- 订单生成时间
+ 	private int tag;//  int, -- 订单处理标记 0/1
+ 	
 	public int getOid() {
 		return Oid;
 	}
