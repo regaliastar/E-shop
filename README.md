@@ -1,19 +1,23 @@
 # E-shop
 --------------------------
-## 简单上手教程
+## 3分钟简单上手教程
 * ``目标：根据用户名，从数据库中取出用户，在前端打印密码``
 * ``步骤如下：``
 
-1. 假设我们要取用户名为kiana的用户，在CommonController.java如下：
+``1. Controller的编写``
 
-<img src="book/commonC.png" width="80%">
+```
+假设我们要取用户名为kiana的用户，在CommonController.java如下：
+```
+
+<img src="book/commonC.png" >
 
  ```
  注意此时的路由为/index.do
  接下来转到 index.jsp 文件
  ```
 
-<img src="book/indexjsp2.png" width="80%">
+<img src="book/indexjsp2.png" >
 
 ```
 在jsp文件中引入User实体类包
@@ -32,7 +36,7 @@
 可以看到，用户 kiana 的密码在前端被正确的打印了出来
 ```
 
-2. 服务类的编写
+``2. 服务类的编写``
 
 ```
 这里有个问题，在CommonController.java文件中的userService.findUserByName()怎么来的?
@@ -54,7 +58,7 @@
 
 <img src="book/service.png" width="80%" >
 
-3. DAO的编写
+``3. DAO的编写``
 
 ```
 继续追根溯源，找到了UserMapper.java，发现这是一个接口文件！
