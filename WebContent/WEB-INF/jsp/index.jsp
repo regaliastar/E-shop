@@ -149,6 +149,8 @@
 	<a href="${pageContext.request.contextPath }/user/addUser.do">添加用户</a>
 	<a href="${pageContext.request.contextPath }/user/getUserA.json?id=1">获取某个用户JSON格式1</a>
 	
+	${user1.getPw()}
+	
 					<h2>最新上架</h2>
 					<div class="bxslider-wrapper">
 						<ul class="bxslider" data-slides-phone="1" data-slides-tablet="2"
