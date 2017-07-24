@@ -167,9 +167,9 @@
 											style="width: 190px; height: 190px;">
 										<div>
 											<a
-												href="/E-shop/${p1.getImage()}"
+												href="${pageContext.request.contextPath }/${p1.getImage()}"
 												class="btn btn-default fancybox-button">放大</a> <a
-												href="/product-1-69.html"
+												href="${pageContext.request.contextPath }/product.json?id=${p1.getPid() }"
 												class="btn btn-default fancybox-fast-view">查看详请</a>
 										</div>
 									</div>

@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//WebContent/WEB-INF/jsp/member/default/register.jsp=UTF-8
+encoding//WebContent/WEB-INF/jsp/product/main.jsp=UTF-8
 encoding//src/edu/scdx/controller/CommonController.java=UTF-8
 encoding//src/edu/scdx/controller/UserController.java=UTF-8
 encoding//src/edu/scdx/entity/Index_nd.java=UTF-8

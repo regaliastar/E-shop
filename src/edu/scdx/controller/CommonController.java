@@ -27,7 +27,7 @@ public class CommonController {
     	model.addAttribute("user1", getUser);
     	
     	Product p1 = productService.findProductById(1);
-    	System.out.println(p1);
+    	//System.out.println(p1);
     	model.addAttribute("p1", p1);
         return "index";
     }
@@ -46,5 +46,14 @@ public class CommonController {
     public String getLogout (HttpSession session){
     	session.invalidate();
         return "index";
+    }
+    
+    //进入商品详情页
+    @RequestMapping("/product.json")
+    public String getProduct (Model model,HttpSession session,Integer id){
+    	System.out.println("enter /product.do    "+id);
+    	Product product = productService.findProductById(id);
+    	model.addAttribute("product", product);
+        return "/product/main";
     }
 }

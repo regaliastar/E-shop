@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Product
  */
 insert into Product(Pname,stock,image,price,salePrice,description,addedDate)
