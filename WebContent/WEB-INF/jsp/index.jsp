@@ -2,10 +2,10 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE>
 
-<%@ page import="edu.scdx.entity.User"%>
-<%@ page import="edu.scdx.entity.Product"%>
+<%@ page import="edu.scdx.entity.User" %>
+<%@ page import="edu.scdx.entity.Product" %>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <!-- Head BEGIN -->
 <head>
@@ -60,27 +60,26 @@
 				</div>
 				<!-- END TOP BAR LEFT PART -->
 				<!-- BEGIN TOP BAR MENU -->
-
+				
 				<c:choose>
-					<c:when test="${user != null}">
+				<c:when test="${user != null}">
+				<ul class="list-unstyled list-inline pull-right">
+						<li><a href="javascript:;" onclick="sign();">签到</a></li>
+						<li><a href="#">"${user.uname }"</a></li>
+						<li><a href="${pageContext.request.contextPath }/logout.do">注销</a></li>
+					</ul>
+				
+				</c:when>
+				<c:otherwise>
+					<div class="col-md-6 col-sm-6 additional-nav">
 						<ul class="list-unstyled list-inline pull-right">
-							<li><a href="javascript:;" onclick="sign();">签到</a></li>
-							<li><a href="#">"${user.uname }"</a></li>
-							<li><a href="${pageContext.request.contextPath }/logout.do">注销</a></li>
+							<li><a href="${pageContext.request.contextPath }/login.do">登录</a></li>
+							<li><a href="${pageContext.request.contextPath }/register.do">注册</a></li>
 						</ul>
-
-					</c:when>
-					<c:otherwise>
-						<div class="col-md-6 col-sm-6 additional-nav">
-							<ul class="list-unstyled list-inline pull-right">
-								<li><a href="${pageContext.request.contextPath }/login.do">登录</a></li>
-								<li><a
-									href="${pageContext.request.contextPath }/register.do">注册</a></li>
-							</ul>
-						</div>
-					</c:otherwise>
+					</div>
+				</c:otherwise>
 				</c:choose>
-
+				
 				<!-- END TOP BAR MENU -->
 			</div>
 		</div>
@@ -94,8 +93,8 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a href="${pageContext.request.contextPath }/index.do"
-					class="navbar-brand"> <img src="/E-shop/static/img/logo.png"
+				<a href="${pageContext.request.contextPath }/index.do" class="navbar-brand"> <img
+					src="/E-shop/static/img/logo.png"
 					style="width: 129px; height: 29px;" alt="Metronic Shop UI">
 				</a>
 			</div>
@@ -120,8 +119,7 @@
 			</div>
 			<div class="collapse navbar-collapse mega-menu">
 				<ul class="nav navbar-nav">
-					<li><a href="${pageContext.request.contextPath }/index.do">
-							首页 </a></li>
+					<li><a href="${pageContext.request.contextPath }/index.do"> 首页 </a></li>
 					<li><a href="/sales/point/index.html"> 积分商城 </a></li>
 					<li><a href="/backend" target="_blank"> 后台展示 </a></li>
 
@@ -132,7 +130,7 @@
 		</div>
 	</div>
 
-
+	
 	<div class="main">
 		<div class="page-slider">
 			<!--LayerSlider begin-->
@@ -150,19 +148,26 @@
 			<!-- 新品推荐 start -->
 			<div class="row margin-bottom-40 margin-top-10">
 				<div class="col-md-12 sale-product">
-
-					<h2>最新上架</h2>
+					
+	<a href="${pageContext.request.contextPath }/user/addUser.do">添加用户</a>
+	<a href="${pageContext.request.contextPath }/user/getUserA.json?id=1">获取某个用户JSON格式1</a>
+	
+	${user1.getPw()}
+	
+					<h2>HOT</h2>
 					<div class="bxslider-wrapper">
 						<ul class="bxslider" data-slides-phone="1" data-slides-tablet="2"
 							data-slides-desktop="5" data-slide-margin="15">
 							<li>
 								<div class="product-item">
 									<div class="pi-img-wrapper">
-										<img src="/E-shop/${p1.getImage()}" class="img-responsive"
+										<img
+											src="/E-shop/${p1.getImage()}"
+											class="img-responsive" 
 											style="width: 190px; height: 190px;">
 										<div>
 											<a
-												href="${pageContext.request.contextPath }/${p1.getImage()}"
+												href="/E-shop/${p1.getImage()}"
 												class="btn btn-default fancybox-button">放大</a> <a
 												href="${pageContext.request.contextPath }/product.json?id=${p1.getPid() }"
 												class="btn btn-default fancybox-fast-view">查看详请</a>
@@ -181,24 +186,23 @@
 								<div class="product-item">
 									<div class="pi-img-wrapper">
 										<img
-											src="http://www.yiishop.com.cn/images/goods/20160518/14635493671777_m.jpg"
-											class="img-responsive" alt="北京稻香村糕点礼盒 北京特产 饼干蛋糕 休闲零食 (十八种口味)"
+											src="/E-shop/${p2.getImage()}"
+											class="img-responsive" 
 											style="width: 190px; height: 190px;">
 										<div>
 											<a
-												href="http://www.yiishop.com.cn/images/goods/20160518/14635493671777.jpg"
+												href="/E-shop/${p2.getImage()}"
 												class="btn btn-default fancybox-button">放大</a> <a
-												href="/product-2-73.html"
+												href="${pageContext.request.contextPath }/product.json?id=${p2.getPid() }"
 												class="btn btn-default fancybox-fast-view">查看详请</a>
 										</div>
 									</div>
 									<h3>
-										<a href="/product-2-73.html">北京稻香村糕点礼盒 北京特产 饼干蛋糕 休闲零食
-											(十八种口味)</a>
+										<a href="${pageContext.request.contextPath }/product.json?id=${p2.getPid() }">${p2.getDescription() }</a>
 									</h3>
-									<div class="pi-price">￥148.00</div>
+									<div class="pi-price">￥ ${p2.getPrice() }</div>
 									<a href="javascript:;" class="btn btn-default add2cart"
-										onclick="cart(2,73,1);">加入购物车</a>
+										onclick="cart(1,69,1);">加入购物车</a>
 									<div class="sticker sticker-sale"></div>
 								</div>
 							</li>
@@ -206,23 +210,23 @@
 								<div class="product-item">
 									<div class="pi-img-wrapper">
 										<img
-											src="http://www.yiishop.com.cn/images/goods/20160523/14639879014736_m.jpg"
-											class="img-responsive" alt="陕西洛川红富士优质苹果 果径75mm 12枚 2.25kg"
+											src="/E-shop/${p3.getImage()}"
+											class="img-responsive" 
 											style="width: 190px; height: 190px;">
 										<div>
 											<a
-												href="http://www.yiishop.com.cn/images/goods/20160523/14639879014736.jpg"
+												href="/E-shop/${p3.getImage()}"
 												class="btn btn-default fancybox-button">放大</a> <a
-												href="/product-3-77.html"
+												href="${pageContext.request.contextPath }/product.json?id=${p3.getPid() }"
 												class="btn btn-default fancybox-fast-view">查看详请</a>
 										</div>
 									</div>
 									<h3>
-										<a href="/product-3-77.html">陕西洛川红富士优质苹果 果径75mm 12枚 2.25kg</a>
+										<a href="${pageContext.request.contextPath }/product.json?id=${p3.getPid() }">${p3.getDescription() }</a>
 									</h3>
-									<div class="pi-price">￥35.00</div>
+									<div class="pi-price">￥ ${p3.getPrice() }</div>
 									<a href="javascript:;" class="btn btn-default add2cart"
-										onclick="cart(3,77,1);">加入购物车</a>
+										onclick="cart(1,69,1);">加入购物车</a>
 									<div class="sticker sticker-sale"></div>
 								</div>
 							</li>
@@ -230,25 +234,23 @@
 								<div class="product-item">
 									<div class="pi-img-wrapper">
 										<img
-											src="http://www.yiishop.com.cn/images/goods/20160530/14645834935373_m.jpg"
-											class="img-responsive"
-											alt="洋河【两件5折】蓝色经典 绵柔型白酒 整箱 42度邃之蓝500ml*6/箱 白酒"
+											src="/E-shop/${p4.getImage()}"
+											class="img-responsive" 
 											style="width: 190px; height: 190px;">
 										<div>
 											<a
-												href="http://www.yiishop.com.cn/images/goods/20160530/14645834935373.jpg"
+												href="/E-shop/${p4.getImage()}"
 												class="btn btn-default fancybox-button">放大</a> <a
-												href="/product-4-85.html"
+												href="${pageContext.request.contextPath }/product.json?id=${p4.getPid() }"
 												class="btn btn-default fancybox-fast-view">查看详请</a>
 										</div>
 									</div>
 									<h3>
-										<a href="/product-4-85.html">洋河【两件5折】蓝色经典 绵柔型白酒 整箱
-											42度邃之蓝500ml*6/箱 白酒</a>
+										<a href="${pageContext.request.contextPath }/product.json?id=${p4.getPid() }">${p4.getDescription() }</a>
 									</h3>
-									<div class="pi-price">￥1,008.00</div>
+									<div class="pi-price">￥ ${p4.getPrice() }</div>
 									<a href="javascript:;" class="btn btn-default add2cart"
-										onclick="cart(4,85,1);">加入购物车</a>
+										onclick="cart(1,69,1);">加入购物车</a>
 									<div class="sticker sticker-sale"></div>
 								</div>
 							</li>
@@ -256,25 +258,23 @@
 								<div class="product-item">
 									<div class="pi-img-wrapper">
 										<img
-											src="http://www.yiishop.com.cn/images/goods/20160530/14645960158890_m.jpg"
-											class="img-responsive"
-											alt="新鲜糖水黄桃罐头 425克×6罐 鲜嫩多汁 清凉可口 出口韩文水果对开罐头 休闲零食 "
+											src="/E-shop/${p5.getImage()}"
+											class="img-responsive" 
 											style="width: 190px; height: 190px;">
 										<div>
 											<a
-												href="http://www.yiishop.com.cn/images/goods/20160530/14645960158890.jpg"
+												href="/E-shop/${p5.getImage()}"
 												class="btn btn-default fancybox-button">放大</a> <a
-												href="/product-5-79.html"
+												href="${pageContext.request.contextPath }/product.json?id=${p5.getPid() }"
 												class="btn btn-default fancybox-fast-view">查看详请</a>
 										</div>
 									</div>
 									<h3>
-										<a href="/product-5-79.html">新鲜糖水黄桃罐头 425克×6罐 鲜嫩多汁 清凉可口
-											出口韩文水果对开罐头 休闲零食 </a>
+										<a href="${pageContext.request.contextPath }/product.json?id=${p5.getPid() }">${p5.getDescription() }</a>
 									</h3>
-									<div class="pi-price">￥35.00</div>
+									<div class="pi-price">￥ ${p5.getPrice() }</div>
 									<a href="javascript:;" class="btn btn-default add2cart"
-										onclick="cart(5,79,1);">加入购物车</a>
+										onclick="cart(1,69,1);">加入购物车</a>
 									<div class="sticker sticker-sale"></div>
 								</div>
 							</li>
@@ -282,25 +282,23 @@
 								<div class="product-item">
 									<div class="pi-img-wrapper">
 										<img
-											src="http://www.yiishop.com.cn/images/goods/20160530/14645963086748_m.jpg"
-											class="img-responsive"
-											alt="牧场乳酪 奶条400g 内蒙古奶酪奶片奶干 牛奶条长虹酸奶条 休闲零食大礼包 自营馆零食 原味"
+											src="/E-shop/${p6.getImage()}"
+											class="img-responsive" 
 											style="width: 190px; height: 190px;">
 										<div>
 											<a
-												href="http://www.yiishop.com.cn/images/goods/20160530/14645963086748.jpg"
+												href="/E-shop/${p6.getImage()}"
 												class="btn btn-default fancybox-button">放大</a> <a
-												href="/product-6-80.html"
+												href="${pageContext.request.contextPath }/product.json?id=${p6.getPid() }"
 												class="btn btn-default fancybox-fast-view">查看详请</a>
 										</div>
 									</div>
 									<h3>
-										<a href="/product-6-80.html">牧场乳酪 奶条400g 内蒙古奶酪奶片奶干
-											牛奶条长虹酸奶条 休闲零食大礼包 自营馆零食 原味</a>
+										<a href="${pageContext.request.contextPath }/product.json?id=?${p6.getPid() }">${p6.getDescription() }</a>
 									</h3>
-									<div class="pi-price">￥30.00</div>
+									<div class="pi-price">￥ ${p6.getPrice() }</div>
 									<a href="javascript:;" class="btn btn-default add2cart"
-										onclick="cart(6,80,1);">加入购物车</a>
+										onclick="cart(1,69,1);">加入购物车</a>
 									<div class="sticker sticker-sale"></div>
 								</div>
 							</li>
@@ -308,24 +306,23 @@
 								<div class="product-item">
 									<div class="pi-img-wrapper">
 										<img
-											src="http://www.yiishop.com.cn/images/goods/20160530/14645968374562_m.jpg"
-											class="img-responsive" alt="金堂馆 休闲零食小吃麻花2斤装 约280小袋混合装 陈吉旺福"
+											src="/E-shop/${p7.getImage()}"
+											class="img-responsive" 
 											style="width: 190px; height: 190px;">
 										<div>
 											<a
-												href="http://www.yiishop.com.cn/images/goods/20160530/14645968374562.jpg"
+												href="/E-shop/${p7.getImage()}"
 												class="btn btn-default fancybox-button">放大</a> <a
-												href="/product-7-81.html"
+												href="${pageContext.request.contextPath }/product.json?id=${p7.getPid() }"
 												class="btn btn-default fancybox-fast-view">查看详请</a>
 										</div>
 									</div>
 									<h3>
-										<a href="/product-7-81.html">金堂馆 休闲零食小吃麻花2斤装 约280小袋混合装
-											陈吉旺福</a>
+										<a href="${pageContext.request.contextPath }/product.json?id=?${p7.getPid() }">${p7.getDescription() }</a>
 									</h3>
-									<div class="pi-price">￥20.00</div>
+									<div class="pi-price">￥ ${p7.getPrice() }</div>
 									<a href="javascript:;" class="btn btn-default add2cart"
-										onclick="cart(7,81,1);">加入购物车</a>
+										onclick="cart(1,69,1);">加入购物车</a>
 									<div class="sticker sticker-sale"></div>
 								</div>
 							</li>
@@ -333,25 +330,23 @@
 								<div class="product-item">
 									<div class="pi-img-wrapper">
 										<img
-											src="http://www.yiishop.com.cn/images/goods/20160530/14645971269008_m.jpg"
-											class="img-responsive"
-											alt="上海特产 冠生园大白兔奶糖 巨白兔糖形礼罐 六一礼物休闲糖果零食 200g 原味"
+											src="/E-shop/${p8.getImage()}"
+											class="img-responsive" 
 											style="width: 190px; height: 190px;">
 										<div>
 											<a
-												href="http://www.yiishop.com.cn/images/goods/20160530/14645971269008.jpg"
+												href="/E-shop/${p8.getImage()}"
 												class="btn btn-default fancybox-button">放大</a> <a
-												href="/product-8-82.html"
+												href="${pageContext.request.contextPath }/product.json?id=${p8.getPid() }"
 												class="btn btn-default fancybox-fast-view">查看详请</a>
 										</div>
 									</div>
 									<h3>
-										<a href="/product-8-82.html">上海特产 冠生园大白兔奶糖 巨白兔糖形礼罐
-											六一礼物休闲糖果零食 200g 原味</a>
+										<a href="${pageContext.request.contextPath }/product.json?id=${p8.getPid() }">${p8.getDescription() }</a>
 									</h3>
-									<div class="pi-price">￥9.00</div>
+									<div class="pi-price">￥ ${p8.getPrice() }</div>
 									<a href="javascript:;" class="btn btn-default add2cart"
-										onclick="cart(8,82,1);">加入购物车</a>
+										onclick="cart(1,69,1);">加入购物车</a>
 									<div class="sticker sticker-sale"></div>
 								</div>
 							</li>
@@ -359,24 +354,47 @@
 								<div class="product-item">
 									<div class="pi-img-wrapper">
 										<img
-											src="http://www.yiishop.com.cn/images/goods/20160530/14645972851038_m.jpg"
-											class="img-responsive" alt="上海特产 功德林真空素粽系列 单只装160g/只 真空香菇粽"
+											src="/E-shop/${p9.getImage()}"
+											class="img-responsive" 
 											style="width: 190px; height: 190px;">
 										<div>
 											<a
-												href="http://www.yiishop.com.cn/images/goods/20160530/14645972851038.jpg"
+												href="/E-shop/${p9.getImage()}"
 												class="btn btn-default fancybox-button">放大</a> <a
-												href="/product-9-83.html"
+												href="${pageContext.request.contextPath }/product.json?id=${p9.getPid() }"
 												class="btn btn-default fancybox-fast-view">查看详请</a>
 										</div>
 									</div>
 									<h3>
-										<a href="/product-9-83.html">上海特产 功德林真空素粽系列 单只装160g/只
-											真空香菇粽</a>
+										<a href="${pageContext.request.contextPath }/product.json?id=${p9.getPid() }">${p9.getDescription() }</a>
 									</h3>
-									<div class="pi-price">￥9.00</div>
+									<div class="pi-price">￥ ${p9.getPrice()}</div>
 									<a href="javascript:;" class="btn btn-default add2cart"
-										onclick="cart(9,83,1);">加入购物车</a>
+										onclick="cart(1,69,1);">加入购物车</a>
+									<div class="sticker sticker-sale"></div>
+								</div>
+							</li>
+							<li>
+								<div class="product-item">
+									<div class="pi-img-wrapper">
+										<img
+											src="/E-shop/${p10.getImage()}"
+											class="img-responsive" 
+											style="width: 190px; height: 190px;">
+										<div>
+											<a
+												href="/E-shop/${p10.getImage()}"
+												class="btn btn-default fancybox-button">放大</a> <a
+												href="${pageContext.request.contextPath }/product.json?id=${p10.getPid()}"
+												class="btn btn-default fancybox-fast-view">查看详请</a>
+										</div>
+									</div>
+									<h3>
+										<a href="${pageContext.request.contextPath }/product.json?id=${p10.getPid() }">${p10.getDescription() }</a>
+									</h3>
+									<div class="pi-price">￥ ${p10.getPrice() }</div>
+									<a href="javascript:;" class="btn btn-default add2cart"
+										onclick="cart(1,69,1);">加入购物车</a>
 									<div class="sticker sticker-sale"></div>
 								</div>
 							</li>
