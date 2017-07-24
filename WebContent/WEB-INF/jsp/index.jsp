@@ -2,10 +2,10 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE>
 
-<%@ page import="edu.scdx.entity.User" %>
-<%@ page import="edu.scdx.entity.Product" %>
+<%@ page import="edu.scdx.entity.User"%>
+<%@ page import="edu.scdx.entity.Product"%>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <!-- Head BEGIN -->
 <head>
@@ -60,26 +60,27 @@
 				</div>
 				<!-- END TOP BAR LEFT PART -->
 				<!-- BEGIN TOP BAR MENU -->
-				
+
 				<c:choose>
-				<c:when test="${user != null}">
-				<ul class="list-unstyled list-inline pull-right">
-						<li><a href="javascript:;" onclick="sign();">签到</a></li>
-						<li><a href="#">"${user.uname }"</a></li>
-						<li><a href="${pageContext.request.contextPath }/logout.do">注销</a></li>
-					</ul>
-				
-				</c:when>
-				<c:otherwise>
-					<div class="col-md-6 col-sm-6 additional-nav">
+					<c:when test="${user != null}">
 						<ul class="list-unstyled list-inline pull-right">
-							<li><a href="${pageContext.request.contextPath }/login.do">登录</a></li>
-							<li><a href="${pageContext.request.contextPath }/register.do">注册</a></li>
+							<li><a href="javascript:;" onclick="sign();">签到</a></li>
+							<li><a href="#">"${user.uname }"</a></li>
+							<li><a href="${pageContext.request.contextPath }/logout.do">注销</a></li>
 						</ul>
-					</div>
-				</c:otherwise>
+
+					</c:when>
+					<c:otherwise>
+						<div class="col-md-6 col-sm-6 additional-nav">
+							<ul class="list-unstyled list-inline pull-right">
+								<li><a href="${pageContext.request.contextPath }/login.do">登录</a></li>
+								<li><a
+									href="${pageContext.request.contextPath }/register.do">注册</a></li>
+							</ul>
+						</div>
+					</c:otherwise>
 				</c:choose>
-				
+
 				<!-- END TOP BAR MENU -->
 			</div>
 		</div>
@@ -93,25 +94,39 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a href="${pageContext.request.contextPath }/index.do" class="navbar-brand"> <img
-					src="/E-shop/static/img/logo.png"
+				<a href="${pageContext.request.contextPath }/index.do"
+					class="navbar-brand"> <img src="/E-shop/static/img/logo.png"
 					style="width: 129px; height: 29px;" alt="Metronic Shop UI">
 				</a>
 			</div>
 			<div class="cart-block">
 				<div class="cart-info">
-					<a href="javascript:void(0);" class="cart-info-count">0个商品</a> <a
-						href="javascript:void(0);" class="cart-info-value">￥0.00</a>
+					<a href="javascript:void(0);" class="cart-info-count">${cartProductNum}个商品</a> <a
+						href="javascript:void(0);" class="cart-info-value">￥${cartProductPrice}</a>
 				</div>
 				<i class="fa fa-shopping-cart"></i>
 				<!-- BEGIN CART CONTENT -->
 				<div class="cart-content-wrapper">
 					<div class="cart-content">
 						<ul class="scroller" style="height: 250px;">
+							<c:forEach items="${cartProductList}" var="cProduct">
+								<li><a
+									href="${pageContext.request.contextPath }/product.json?id=${cProduct.getPid() }">
+										<img src="/E-shop/${cProduct.getImage()}"
+										alt="cProduct.getDescription()" width="37" height="34">
+								</a> <span class="cart-content-count">x 1</span> <strong> <a
+										href="${pageContext.request.contextPath }/product.json?id=${cProduct.getPid() }">${cProduct.getDescription()}
+									</a>
+								</strong> <em>￥${cProduct.getSalePrice()}</em> 
+								<a class="del-goods" href="${pageContext.request.contextPath }/product/deleteCart.json?cid=${cProduct.getCid() }"> 
+									<i class="fa fa-times"></i>
+								</a>
+								</li>
+							</c:forEach>
 						</ul>
 						<div class="text-right">
-							<a href="/cart/default/index.html" class="btn btn-default">查看购物车</a>
-							<a href="/order/check/index.html" " class="btn btn-primary">结算</a>
+							<a href="#" class="btn btn-default">查看购物车</a>
+							<a href="${pageContext.request.contextPath }/product/purchaseFromCart.do"  class="btn btn-primary">结算</a>
 						</div>
 					</div>
 				</div>
@@ -119,7 +134,8 @@
 			</div>
 			<div class="collapse navbar-collapse mega-menu">
 				<ul class="nav navbar-nav">
-					<li><a href="${pageContext.request.contextPath }/index.do"> 首页 </a></li>
+					<li><a href="${pageContext.request.contextPath }/index.do">
+							首页 </a></li>
 					<li><a href="/sales/point/index.html"> 积分商城 </a></li>
 					<li><a href="/backend" target="_blank"> 后台展示 </a></li>
 
@@ -130,7 +146,7 @@
 		</div>
 	</div>
 
-	
+
 	<div class="main">
 		<div class="page-slider">
 			<!--LayerSlider begin-->
@@ -148,256 +164,39 @@
 			<!-- 新品推荐 start -->
 			<div class="row margin-bottom-40 margin-top-10">
 				<div class="col-md-12 sale-product">
-					
-	<a href="${pageContext.request.contextPath }/user/addUser.do">添加用户</a>
-	<a href="${pageContext.request.contextPath }/user/getUserA.json?id=1">获取某个用户JSON格式1</a>
-	
-	${user1.getPw()}
-	
+
+					${user1.getPw()}
+
 					<h2>HOT</h2>
 					<div class="bxslider-wrapper">
 						<ul class="bxslider" data-slides-phone="1" data-slides-tablet="2"
 							data-slides-desktop="5" data-slide-margin="15">
-							<li>
-								<div class="product-item">
-									<div class="pi-img-wrapper">
-										<img
-											src="/E-shop/${p1.getImage()}"
-											class="img-responsive" 
-											style="width: 190px; height: 190px;">
-										<div>
-											<a
-												href="/E-shop/${p1.getImage()}"
-												class="btn btn-default fancybox-button">放大</a> <a
-												href="${pageContext.request.contextPath }/product.json?id=${p1.getPid() }"
-												class="btn btn-default fancybox-fast-view">查看详请</a>
+							<c:forEach items="${productList}" var="p1">
+								<li>
+									<div class="product-item">
+										<div class="pi-img-wrapper">
+											<img src="/E-shop/${p1.getImage()}" class="img-responsive"
+												style="width: 190px; height: 190px;">
+											<div>
+												<a href="/E-shop/${p1.getImage()}"
+													class="btn btn-default fancybox-button">放大</a> <a
+													href="${pageContext.request.contextPath }/product.json?id=${p1.getPid() }"
+													class="btn btn-default fancybox-fast-view">查看详请</a>
+											</div>
 										</div>
-									</div>
-									<h3>
-										<a href="${pageContext.request.contextPath }/product.json?id=${p1.getPid() }">${p1.getDescription() }</a>
-									</h3>
-									<div class="pi-price">￥ ${p1.getPrice() }</div>
-									<a href="javascript:;" class="btn btn-default add2cart"
-										onclick="cart(1,69,1);">加入购物车</a>
-									<div class="sticker sticker-sale"></div>
-								</div>
-							</li>
-							<li>
-								<div class="product-item">
-									<div class="pi-img-wrapper">
-										<img
-											src="/E-shop/${p2.getImage()}"
-											class="img-responsive" 
-											style="width: 190px; height: 190px;">
-										<div>
+										<h3>
 											<a
-												href="/E-shop/${p2.getImage()}"
-												class="btn btn-default fancybox-button">放大</a> <a
-												href="${pageContext.request.contextPath }/product.json?id=${p2.getPid() }"
-												class="btn btn-default fancybox-fast-view">查看详请</a>
-										</div>
+												href="${pageContext.request.contextPath }/product.json?id=${p1.getPid() }">${p1.getDescription() }</a>
+										</h3>
+										<div class="pi-price">￥ ${p1.getPrice() }</div>
+										<a
+											href="${pageContext.request.contextPath }/product/add2cart.json?pid=${p1.getPid() }"
+											class="btn btn-default add2cart" id="${p1.getPid() }">加入购物车</a>
+										<div class="sticker sticker-sale"></div>
 									</div>
-									<h3>
-										<a href="${pageContext.request.contextPath }/product.json?id=${p2.getPid() }">${p2.getDescription() }</a>
-									</h3>
-									<div class="pi-price">￥ ${p2.getPrice() }</div>
-									<a href="javascript:;" class="btn btn-default add2cart"
-										onclick="cart(1,69,1);">加入购物车</a>
-									<div class="sticker sticker-sale"></div>
-								</div>
-							</li>
-							<li>
-								<div class="product-item">
-									<div class="pi-img-wrapper">
-										<img
-											src="/E-shop/${p3.getImage()}"
-											class="img-responsive" 
-											style="width: 190px; height: 190px;">
-										<div>
-											<a
-												href="/E-shop/${p3.getImage()}"
-												class="btn btn-default fancybox-button">放大</a> <a
-												href="${pageContext.request.contextPath }/product.json?id=${p3.getPid() }"
-												class="btn btn-default fancybox-fast-view">查看详请</a>
-										</div>
-									</div>
-									<h3>
-										<a href="${pageContext.request.contextPath }/product.json?id=${p3.getPid() }">${p3.getDescription() }</a>
-									</h3>
-									<div class="pi-price">￥ ${p3.getPrice() }</div>
-									<a href="javascript:;" class="btn btn-default add2cart"
-										onclick="cart(1,69,1);">加入购物车</a>
-									<div class="sticker sticker-sale"></div>
-								</div>
-							</li>
-							<li>
-								<div class="product-item">
-									<div class="pi-img-wrapper">
-										<img
-											src="/E-shop/${p4.getImage()}"
-											class="img-responsive" 
-											style="width: 190px; height: 190px;">
-										<div>
-											<a
-												href="/E-shop/${p4.getImage()}"
-												class="btn btn-default fancybox-button">放大</a> <a
-												href="${pageContext.request.contextPath }/product.json?id=${p4.getPid() }"
-												class="btn btn-default fancybox-fast-view">查看详请</a>
-										</div>
-									</div>
-									<h3>
-										<a href="${pageContext.request.contextPath }/product.json?id=${p4.getPid() }">${p4.getDescription() }</a>
-									</h3>
-									<div class="pi-price">￥ ${p4.getPrice() }</div>
-									<a href="javascript:;" class="btn btn-default add2cart"
-										onclick="cart(1,69,1);">加入购物车</a>
-									<div class="sticker sticker-sale"></div>
-								</div>
-							</li>
-							<li>
-								<div class="product-item">
-									<div class="pi-img-wrapper">
-										<img
-											src="/E-shop/${p5.getImage()}"
-											class="img-responsive" 
-											style="width: 190px; height: 190px;">
-										<div>
-											<a
-												href="/E-shop/${p5.getImage()}"
-												class="btn btn-default fancybox-button">放大</a> <a
-												href="${pageContext.request.contextPath }/product.json?id=${p5.getPid() }"
-												class="btn btn-default fancybox-fast-view">查看详请</a>
-										</div>
-									</div>
-									<h3>
-										<a href="${pageContext.request.contextPath }/product.json?id=${p5.getPid() }">${p5.getDescription() }</a>
-									</h3>
-									<div class="pi-price">￥ ${p5.getPrice() }</div>
-									<a href="javascript:;" class="btn btn-default add2cart"
-										onclick="cart(1,69,1);">加入购物车</a>
-									<div class="sticker sticker-sale"></div>
-								</div>
-							</li>
-							<li>
-								<div class="product-item">
-									<div class="pi-img-wrapper">
-										<img
-											src="/E-shop/${p6.getImage()}"
-											class="img-responsive" 
-											style="width: 190px; height: 190px;">
-										<div>
-											<a
-												href="/E-shop/${p6.getImage()}"
-												class="btn btn-default fancybox-button">放大</a> <a
-												href="${pageContext.request.contextPath }/product.json?id=${p6.getPid() }"
-												class="btn btn-default fancybox-fast-view">查看详请</a>
-										</div>
-									</div>
-									<h3>
-										<a href="${pageContext.request.contextPath }/product.json?id=?${p6.getPid() }">${p6.getDescription() }</a>
-									</h3>
-									<div class="pi-price">￥ ${p6.getPrice() }</div>
-									<a href="javascript:;" class="btn btn-default add2cart"
-										onclick="cart(1,69,1);">加入购物车</a>
-									<div class="sticker sticker-sale"></div>
-								</div>
-							</li>
-							<li>
-								<div class="product-item">
-									<div class="pi-img-wrapper">
-										<img
-											src="/E-shop/${p7.getImage()}"
-											class="img-responsive" 
-											style="width: 190px; height: 190px;">
-										<div>
-											<a
-												href="/E-shop/${p7.getImage()}"
-												class="btn btn-default fancybox-button">放大</a> <a
-												href="${pageContext.request.contextPath }/product.json?id=${p7.getPid() }"
-												class="btn btn-default fancybox-fast-view">查看详请</a>
-										</div>
-									</div>
-									<h3>
-										<a href="${pageContext.request.contextPath }/product.json?id=?${p7.getPid() }">${p7.getDescription() }</a>
-									</h3>
-									<div class="pi-price">￥ ${p7.getPrice() }</div>
-									<a href="javascript:;" class="btn btn-default add2cart"
-										onclick="cart(1,69,1);">加入购物车</a>
-									<div class="sticker sticker-sale"></div>
-								</div>
-							</li>
-							<li>
-								<div class="product-item">
-									<div class="pi-img-wrapper">
-										<img
-											src="/E-shop/${p8.getImage()}"
-											class="img-responsive" 
-											style="width: 190px; height: 190px;">
-										<div>
-											<a
-												href="/E-shop/${p8.getImage()}"
-												class="btn btn-default fancybox-button">放大</a> <a
-												href="${pageContext.request.contextPath }/product.json?id=${p8.getPid() }"
-												class="btn btn-default fancybox-fast-view">查看详请</a>
-										</div>
-									</div>
-									<h3>
-										<a href="${pageContext.request.contextPath }/product.json?id=${p8.getPid() }">${p8.getDescription() }</a>
-									</h3>
-									<div class="pi-price">￥ ${p8.getPrice() }</div>
-									<a href="javascript:;" class="btn btn-default add2cart"
-										onclick="cart(1,69,1);">加入购物车</a>
-									<div class="sticker sticker-sale"></div>
-								</div>
-							</li>
-							<li>
-								<div class="product-item">
-									<div class="pi-img-wrapper">
-										<img
-											src="/E-shop/${p9.getImage()}"
-											class="img-responsive" 
-											style="width: 190px; height: 190px;">
-										<div>
-											<a
-												href="/E-shop/${p9.getImage()}"
-												class="btn btn-default fancybox-button">放大</a> <a
-												href="${pageContext.request.contextPath }/product.json?id=${p9.getPid() }"
-												class="btn btn-default fancybox-fast-view">查看详请</a>
-										</div>
-									</div>
-									<h3>
-										<a href="${pageContext.request.contextPath }/product.json?id=${p9.getPid() }">${p9.getDescription() }</a>
-									</h3>
-									<div class="pi-price">￥ ${p9.getPrice()}</div>
-									<a href="javascript:;" class="btn btn-default add2cart"
-										onclick="cart(1,69,1);">加入购物车</a>
-									<div class="sticker sticker-sale"></div>
-								</div>
-							</li>
-							<li>
-								<div class="product-item">
-									<div class="pi-img-wrapper">
-										<img
-											src="/E-shop/${p10.getImage()}"
-											class="img-responsive" 
-											style="width: 190px; height: 190px;">
-										<div>
-											<a
-												href="/E-shop/${p10.getImage()}"
-												class="btn btn-default fancybox-button">放大</a> <a
-												href="${pageContext.request.contextPath }/product.json?id=${p10.getPid()}"
-												class="btn btn-default fancybox-fast-view">查看详请</a>
-										</div>
-									</div>
-									<h3>
-										<a href="${pageContext.request.contextPath }/product.json?id=${p10.getPid() }">${p10.getDescription() }</a>
-									</h3>
-									<div class="pi-price">￥ ${p10.getPrice() }</div>
-									<a href="javascript:;" class="btn btn-default add2cart"
-										onclick="cart(1,69,1);">加入购物车</a>
-									<div class="sticker sticker-sale"></div>
-								</div>
-							</li>
+								</li>
+							</c:forEach>
+
 						</ul>
 					</div>
 				</div>
@@ -1090,4 +889,6 @@
 <script src="/E-shop/static/js/index.js"></script>
 <script src="/E-shop/static/js/init.js"></script>
 <script src="/E-shop/static/js/public.js"></script>
+
+<script src="/E-shop/static/js/cart.js"></script>
 </html>

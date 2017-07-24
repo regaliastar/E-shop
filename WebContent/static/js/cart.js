@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+(function(){
+	/*$('.add2cart').on('click',function(evt){
+		var id = $(evt.target).attr('id');
+		$.ajax({
+			url:'/product/add2cart.action',
+			type:'post',
+			data:{
+				pid:id
+			},
+			success:function(s){
+				alert(s);
+			},
+			error:function(err){
+				console.log(err);
+			}
+		})
+	})*/
+})();

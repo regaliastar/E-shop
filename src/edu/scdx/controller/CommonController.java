@@ -1,5 +1,8 @@
 package edu.scdx.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +11,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.support.SessionStatus;
 
+import edu.scdx.entity.Cart;
+import edu.scdx.entity.CartItem;
 import edu.scdx.entity.Product;
 import edu.scdx.entity.User;
+import edu.scdx.service.CartService;
 import edu.scdx.service.ProductService;
 import edu.scdx.service.UserService;
 
@@ -19,55 +25,63 @@ public class CommonController {
     private UserService userService;
     @Autowired
     private ProductService productService;
+	@Autowired
+    private CartService cartService;
     
     @RequestMapping("/index.do")
     public String getIndex(Model model,HttpSession session){
-    	String uname = "kiana";
-    	User getUser = userService.findUserByName(uname);
-    	model.addAttribute("user1", getUser);
+    	//String uname = "kiana";
+    	//User getUser = userService.findUserByName(uname);
+    	//model.addAttribute("user1", getUser);
     	
-    	/*Product p1 = productService.findProductById(1);
-    	//System.out.println(p1);
-    	model.addAttribute("p1", p1);*/
+    	ArrayList productList = new ArrayList();
+    	
+    	
     	Product p1 = productService.findProductById(3);
-    	System.out.println(p1);
-    	model.addAttribute("p1", p1);
-    	
+    	productList.add(p1);   	
     	Product p2 = productService.findProductById(4);
-    	System.out.println(p2);
-    	model.addAttribute("p2", p2);
-    	
+    	productList.add(p2);   	
     	Product p3 = productService.findProductById(5);
-    	System.out.println(p3);
-    	model.addAttribute("p3", p3);
-    	
+    	productList.add(p3);
     	Product p4 = productService.findProductById(6);
-    	System.out.println(p4);
-    	model.addAttribute("p4", p4);
-    	
+    	productList.add(p4);    	
     	Product p5 = productService.findProductById(7);
-    	System.out.println(p5);
-    	model.addAttribute("p5", p5);
-    	
+    	productList.add(p5);
     	Product p6 = productService.findProductById(8);
-    	System.out.println(p6);
-    	model.addAttribute("p6", p6);
-    	
+    	productList.add(p6);
     	Product p7 = productService.findProductById(9);
-    	System.out.println(p7);
-    	model.addAttribute("p7", p7);
-    	
+    	productList.add(p7);
     	Product p8 = productService.findProductById(10);
-    	System.out.println(p8);
-    	model.addAttribute("p8", p8);
-    	
+    	productList.add(p8);    	
     	Product p9 = productService.findProductById(11);
-    	System.out.println(p9);
-    	model.addAttribute("p9", p9);
-    	
+    	productList.add(p9);
     	Product p10 = productService.findProductById(12);
-    	System.out.println(p10);
-    	model.addAttribute("p10", p10);
+    	productList.add(p10);
+    	model.addAttribute("productList",productList);
+    	/**
+    	 * 购物车
+    	 *  
+    	 * */
+    	User user = (User) session.getAttribute("user");
+    	if(user != null) {
+    		List<Cart> carts = cartService.getAll(user.getUid());
+        	
+        	ArrayList cartProductList = new ArrayList();
+        	float cartProductPrice = 0;
+        	int length = 0;
+        	for(Cart c:carts) {
+        		Product p = productService.findProductById(c.getPid());
+        		CartItem item = new CartItem(c.getCid(), p.getPid(), p.getImage(), 1, p.getDescription(), p.getSalePrice());
+        		cartProductList.add(item);
+        		cartProductPrice += p.getSalePrice();
+        		length += 1;
+        	}
+        	
+        	model.addAttribute("cartProductList", cartProductList);
+        	model.addAttribute("cartProductNum", length);       	
+        	model.addAttribute("cartProductPrice",cartProductPrice);
+    	}
+    
     	
         return "index";
     }

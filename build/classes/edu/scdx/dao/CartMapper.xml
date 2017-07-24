@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="edu.scdx.dao.CartMapper" >
+  <resultMap id="BaseResultMap" type="edu.scdx.entity.Cart" >
+    <!--  <id column="id" property="id" jdbcType="INTEGER" /> -->
+    <result column="Uid" property="Uid" jdbcType="INTEGER" />
+    <result column="Pid" property="Pid" jdbcType="INTEGER" />
+    <result column="num" property="num" jdbcType="INTEGER" />
+    
+  </resultMap>
+  <select id="getAll" parameterType="int" resultMap="BaseResultMap">
+  	select * from Cart where Uid = #{id}
+  </select>
+  
+  <select id="deleteCart" parameterType="int" resultMap="BaseResultMap">
+  	delete from Cart
+  	where cid = #{id}
+  </select>
+  
+  
+  <insert id="insertCart" parameterType="edu.scdx.entity.Product">
+  insert into Cart(Uid,Pid,num)
+	values(#{Uid},#{Pid},#{num})
+  </insert>
+</mapper>

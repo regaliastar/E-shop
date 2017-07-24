@@ -1,5 +1,6 @@
 package edu.scdx.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -12,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import edu.scdx.common.util.JsonUtil;
+import edu.scdx.entity.Product;
 import edu.scdx.entity.User;
+import edu.scdx.service.ProductService;
 import edu.scdx.service.UserService;
 
 @Controller
@@ -20,18 +23,9 @@ import edu.scdx.service.UserService;
 public class UserController {
     @Autowired
     private UserService userService;
-    /**
-     * 杩欎釜鏄繑鍥為〉闈�
-     * @param model
-     * @return
-     */
-    @RequestMapping("/list.do")
-    public String getUsers(Model model,HttpSession session){
-    	List<User> users = userService.getAll();
-        model.addAttribute("list",users);
-        return "list";
-    }
-    
+	@Autowired
+    private ProductService productService;
+	
     
     @RequestMapping("/register.json")
     public String insertUser(Model model,HttpServletResponse response,HttpSession session,String uname,String pw,String cp){
@@ -46,7 +40,8 @@ public class UserController {
         	
     		userService.addUser(user);    	
         	session.setAttribute("user",user);
-        	return "index";
+        	
+        	return "redirect:/index.do "; 
     	}
     	
     }
@@ -60,7 +55,8 @@ public class UserController {
     	System.out.println(getUser);
     	if(getUser != null && getUser.getPw().equals(pw) ) {
     		session.setAttribute("user",getUser);
-        	return "index";
+    		
+    		return "redirect:/index.do "; 
     	}else {
     		//输入密码错误
     		System.out.println("输入密码错误");
