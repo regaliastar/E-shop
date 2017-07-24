@@ -2,10 +2,10 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE>
 
-<%@ page import="edu.scdx.entity.User" %>
-<%@ page import="edu.scdx.entity.Product" %>
+<%@ page import="edu.scdx.entity.User"%>
+<%@ page import="edu.scdx.entity.Product"%>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <!-- Head BEGIN -->
 <head>
@@ -60,26 +60,27 @@
 				</div>
 				<!-- END TOP BAR LEFT PART -->
 				<!-- BEGIN TOP BAR MENU -->
-				
+
 				<c:choose>
-				<c:when test="${user != null}">
-				<ul class="list-unstyled list-inline pull-right">
-						<li><a href="javascript:;" onclick="sign();">签到</a></li>
-						<li><a href="#">"${user.uname }"</a></li>
-						<li><a href="${pageContext.request.contextPath }/logout.do">注销</a></li>
-					</ul>
-				
-				</c:when>
-				<c:otherwise>
-					<div class="col-md-6 col-sm-6 additional-nav">
+					<c:when test="${user != null}">
 						<ul class="list-unstyled list-inline pull-right">
-							<li><a href="${pageContext.request.contextPath }/login.do">登录</a></li>
-							<li><a href="${pageContext.request.contextPath }/register.do">注册</a></li>
+							<li><a href="javascript:;" onclick="sign();">签到</a></li>
+							<li><a href="#">"${user.uname }"</a></li>
+							<li><a href="${pageContext.request.contextPath }/logout.do">注销</a></li>
 						</ul>
-					</div>
-				</c:otherwise>
+
+					</c:when>
+					<c:otherwise>
+						<div class="col-md-6 col-sm-6 additional-nav">
+							<ul class="list-unstyled list-inline pull-right">
+								<li><a href="${pageContext.request.contextPath }/login.do">登录</a></li>
+								<li><a
+									href="${pageContext.request.contextPath }/register.do">注册</a></li>
+							</ul>
+						</div>
+					</c:otherwise>
 				</c:choose>
-				
+
 				<!-- END TOP BAR MENU -->
 			</div>
 		</div>
@@ -93,8 +94,8 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a href="${pageContext.request.contextPath }/index.do" class="navbar-brand"> <img
-					src="/E-shop/static/img/logo.png"
+				<a href="${pageContext.request.contextPath }/index.do"
+					class="navbar-brand"> <img src="/E-shop/static/img/logo.png"
 					style="width: 129px; height: 29px;" alt="Metronic Shop UI">
 				</a>
 			</div>
@@ -119,7 +120,8 @@
 			</div>
 			<div class="collapse navbar-collapse mega-menu">
 				<ul class="nav navbar-nav">
-					<li><a href="${pageContext.request.contextPath }/index.do"> 首页 </a></li>
+					<li><a href="${pageContext.request.contextPath }/index.do">
+							首页 </a></li>
 					<li><a href="/sales/point/index.html"> 积分商城 </a></li>
 					<li><a href="/backend" target="_blank"> 后台展示 </a></li>
 
@@ -130,7 +132,7 @@
 		</div>
 	</div>
 
-	
+
 	<div class="main">
 		<div class="page-slider">
 			<!--LayerSlider begin-->
@@ -148,12 +150,7 @@
 			<!-- 新品推荐 start -->
 			<div class="row margin-bottom-40 margin-top-10">
 				<div class="col-md-12 sale-product">
-					
-	<a href="${pageContext.request.contextPath }/user/addUser.do">添加用户</a>
-	<a href="${pageContext.request.contextPath }/user/getUserA.json?id=1">获取某个用户JSON格式1</a>
-	
-	${user1.getPw()}
-	
+
 					<h2>最新上架</h2>
 					<div class="bxslider-wrapper">
 						<ul class="bxslider" data-slides-phone="1" data-slides-tablet="2"
@@ -161,9 +158,7 @@
 							<li>
 								<div class="product-item">
 									<div class="pi-img-wrapper">
-										<img
-											src="/E-shop/${p1.getImage()}"
-											class="img-responsive" 
+										<img src="/E-shop/${p1.getImage()}" class="img-responsive"
 											style="width: 190px; height: 190px;">
 										<div>
 											<a
@@ -174,7 +169,7 @@
 										</div>
 									</div>
 									<h3>
-										<a href="/product-1-69.html">${p1.getDescription() }</a>
+										<a href="${pageContext.request.contextPath }/product.json?id=${p1.getPid() }">${p1.getDescription() }</a>
 									</h3>
 									<div class="pi-price">￥ ${p1.getPrice() }</div>
 									<a href="javascript:;" class="btn btn-default add2cart"

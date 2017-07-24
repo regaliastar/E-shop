@@ -51,7 +51,6 @@ public class CommonController {
     //进入商品详情页
     @RequestMapping("/product.json")
     public String getProduct (Model model,HttpSession session,Integer id){
-    	System.out.println("enter /product.do    "+id);
     	Product product = productService.findProductById(id);
     	model.addAttribute("product", product);
         return "/product/main";

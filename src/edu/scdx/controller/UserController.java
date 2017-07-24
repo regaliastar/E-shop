@@ -57,11 +57,13 @@ public class UserController {
     	user.setUname(uname);
     	user.setPw(pw);
     	User getUser = userService.findUserByName(uname);
-    	if(getUser != null && getUser.getPw() == pw) {
+    	System.out.println(getUser);
+    	if(getUser != null && getUser.getPw().equals(pw) ) {
     		session.setAttribute("user",getUser);
         	return "index";
     	}else {
     		//输入密码错误
+    		System.out.println("输入密码错误");
     		return "/member/default/login";
     	}
     	
