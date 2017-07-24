@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE>
+
 <%@ page import="edu.scdx.entity.User" %>
+<%@ page import="edu.scdx.entity.Product" %>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <!-- Head BEGIN -->
@@ -159,22 +162,21 @@
 								<div class="product-item">
 									<div class="pi-img-wrapper">
 										<img
-											src="http://www.yiishop.com.cn/images/goods/20160517/14634956908524_m.jpg"
-											class="img-responsive" alt="重庆武隆特产羊角豆干 香菇豆干散装称重 休闲零食 烧烤味500g"
+											src="/E-shop/${p1.getImage()}"
+											class="img-responsive" 
 											style="width: 190px; height: 190px;">
 										<div>
 											<a
-												href="http://www.yiishop.com.cn/images/goods/20160517/14634956908524.jpg"
+												href="/E-shop/${p1.getImage()}"
 												class="btn btn-default fancybox-button">放大</a> <a
 												href="/product-1-69.html"
 												class="btn btn-default fancybox-fast-view">查看详请</a>
 										</div>
 									</div>
 									<h3>
-										<a href="/product-1-69.html">重庆武隆特产羊角豆干 香菇豆干散装称重 休闲零食
-											烧烤味500g</a>
+										<a href="/product-1-69.html">${p1.getDescription() }</a>
 									</h3>
-									<div class="pi-price">￥0.01</div>
+									<div class="pi-price">￥ ${p1.getPrice() }</div>
 									<a href="javascript:;" class="btn btn-default add2cart"
 										onclick="cart(1,69,1);">加入购物车</a>
 									<div class="sticker sticker-sale"></div>

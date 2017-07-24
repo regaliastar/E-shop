@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="edu.scdx.dao.ProductMapper" >
+  <resultMap id="BaseResultMap" type="edu.scdx.entity.Product" >
+    <!--  <id column="id" property="id" jdbcType="INTEGER" /> -->
+    <result column="Pname" property="Pname" jdbcType="VARCHAR" />
+    <result column="stock" property="stock" jdbcType="INTEGER" />
+    <result column="image" property="image" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="FLOAT" />
+    <result column="salePrice" property="salePrice" jdbcType="FLOAT" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="addedDate" property="addedDate" jdbcType="DATE" />
+  </resultMap>
+  <select id="getAll" resultMap="BaseResultMap">
+  	select * from Product
+  </select>
+  
+  <select id="getProductById" parameterType="int" resultMap="BaseResultMap">
+  	select * from product where pid = #{id}
+  </select>
+  
+  
+  <insert id="insertProduct" parameterType="edu.scdx.entity.Product">
+  insert into Product(Pname,stock,image,price,salePrice,description,addedDate)
+	values(#{Pname},#{stock},#{image},#{price},#{salePrice},#{description},#{addedDate})
+  </insert>
+</mapper>

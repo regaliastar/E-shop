@@ -8,19 +8,27 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.support.SessionStatus;
 
+import edu.scdx.entity.Product;
 import edu.scdx.entity.User;
+import edu.scdx.service.ProductService;
 import edu.scdx.service.UserService;
 
 @Controller
 public class CommonController {
     @Autowired
     private UserService userService;
+    @Autowired
+    private ProductService productService;
     
     @RequestMapping("/index.do")
     public String getIndex(Model model,HttpSession session){
     	String uname = "kiana";
     	User getUser = userService.findUserByName(uname);
     	model.addAttribute("user1", getUser);
+    	
+    	Product p1 = productService.findProductById(1);
+    	System.out.println(p1);
+    	model.addAttribute("p1", p1);
         return "index";
     }
     

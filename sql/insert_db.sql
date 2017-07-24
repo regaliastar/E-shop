@@ -17,55 +17,87 @@ insert into User(Uname,pw)
  * Index_st
  */
 insert into Index_st(I_stid,I_stname)
-	values(1,'特产零食');
+	values(1,'男装');
 
 insert into Index_st(I_stid,I_stname)
-	values(2,'粮酒调味');
+	values(2,'女装');
 
 insert into Index_st(I_stid,I_stname)
-	values(3,'茗茶冲调');
+	values(3,'鞋');
 
 insert into Index_st(I_stid,I_stname)
-	values(4,'果蔬生菜');
+	values(4,'服装杂饰');
 
 insert into Index_st(I_stid,I_stname)
-	values(5,'酒水饮料');
+	values(5,'儿童');
 
 /**
  * Index_nd
  */
 insert into Index_nd(I_ndid,I_ndname,I_stid)
-	values(1,'休闲零食',1);
-
+	values(1,'T恤',1);
 insert into Index_nd(I_ndid,I_ndname,I_stid)
-	values(2,'饼干蛋糕',1);
-
+	values(2,'衬衫',1);
 insert into Index_nd(I_ndid,I_ndname,I_stid)
-	values(3,'食用油',2);
-
+	values(3,'裤子',1);
 insert into Index_nd(I_ndid,I_ndname,I_stid)
-	values(4,'调味品',2);
-
+	values(4,'毛衣',1);
 insert into Index_nd(I_ndid,I_ndname,I_stid)
-	values(5,'龙井',3);
-
+	values(5,'开衫',1);
 insert into Index_nd(I_ndid,I_ndname,I_stid)
-	values(6,'咖啡',3);
-
+	values(6,'外套',1);
 insert into Index_nd(I_ndid,I_ndname,I_stid)
-	values(7,'奶茶',3);
-
+	values(7,'背心',1);
 insert into Index_nd(I_ndid,I_ndname,I_stid)
-	values(9,'牛排',4);
-
+	values(8,'内衣',1);
 insert into Index_nd(I_ndid,I_ndname,I_stid)
-	values(10,'蔬菜',4);
-
+	values(1,'T恤',2);
 insert into Index_nd(I_ndid,I_ndname,I_stid)
-	values(11,'葡萄酒',5);
-
+	values(2,'衬衫',2);
 insert into Index_nd(I_ndid,I_ndname,I_stid)
-	values(12,'饮料/果汁',5);
+	values(3,'裤·裙',2);
+insert into Index_nd(I_ndid,I_ndname,I_stid)
+	values(4,'毛衣',2);
+insert into Index_nd(I_ndid,I_ndname,I_stid)
+	values(5,'开衫',2);
+insert into Index_nd(I_ndid,I_ndname,I_stid)
+	values(6,'外套',2);
+insert into Index_nd(I_ndid,I_ndname,I_stid)
+	values(7,'内衣',2);
+insert into Index_nd(I_ndid,I_ndname,I_stid)
+	values(1,'女士鞋',3);
+insert into Index_nd(I_ndid,I_ndname,I_stid)
+	values(2,'女士休闲鞋',3);
+insert into Index_nd(I_ndid,I_ndname,I_stid)
+	values(3,'女士轻便运动鞋',3);
+insert into Index_nd(I_ndid,I_ndname,I_stid)
+	values(4,'女士靴子',3);
+insert into Index_nd(I_ndid,I_ndname,I_stid)
+	values(5,'男士鞋',3);
+insert into Index_nd(I_ndid,I_ndname,I_stid)
+	values(6,'男士休闲鞋',3);
+insert into Index_nd(I_ndid,I_ndname,I_stid)
+	values(7,'男士轻便运动鞋',3);
+insert into Index_nd(I_ndid,I_ndname,I_stid)
+	values(1,'披肩·围巾',4);
+insert into Index_nd(I_ndid,I_ndname,I_stid)
+	values(2,'帽子',4);
+insert into Index_nd(I_ndid,I_ndname,I_stid)
+	values(3,'耳罩',4);
+insert into Index_nd(I_ndid,I_ndname,I_stid)
+	values(4,'钱包',4);
+insert into Index_nd(I_ndid,I_ndname,I_stid)
+	values(5,'手套',4);
+insert into Index_nd(I_ndid,I_ndname,I_stid)
+	values(6,'皮带',4);
+insert into Index_nd(I_ndid,I_ndname,I_stid)
+	values(7,'伞·雨伞',4);
+insert into Index_nd(I_ndid,I_ndname,I_stid)
+	values(8,'手帕',4);
+insert into Index_nd(I_ndid,I_ndname,I_stid)
+	values(1,'儿童上装',5);
+insert into Index_nd(I_ndid,I_ndname,I_stid)
+	values(2,'儿童杂货',5);
 
 /**
  * PType
