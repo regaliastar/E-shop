@@ -80,8 +80,9 @@ public class CommonController {
         	model.addAttribute("cartProductList", cartProductList);
         	model.addAttribute("cartProductNum", length);       	
         	model.addAttribute("cartProductPrice",cartProductPrice);
+    	}else {
+    		model.addAttribute("cartProductNum", 0);   
     	}
-    
     	
         return "index";
     }

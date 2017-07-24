@@ -33,7 +33,7 @@ public class ProductController {
         //return "/member/default/register";
     	User user = (User) session.getAttribute("user");
     	if(user == null){
-    		return "/member/default/login";
+    		return "redirect:/login.do";
     	}
     	//System.out.println(user);
     	Product product = productService.findProductById(pid);
@@ -71,7 +71,7 @@ public class ProductController {
     	}
     	
     
-    	return "/member/default/login";
+    	return "redirect:/login.do";
     }
     
     @RequestMapping("/add2cart.json")
@@ -80,7 +80,7 @@ public class ProductController {
     	System.out.println("pid  "+pid);
     	User user = (User) session.getAttribute("user");
     	if(user == null){
-    		return "/member/default/login";
+    		return "redirect:/login.do";
     	}
     	Cart cartItem = new Cart();
     	cartItem.setUid(user.getUid());
@@ -111,7 +111,7 @@ public class ProductController {
     	System.out.println("pid  "+pid);
     	User user = (User) session.getAttribute("user");
     	if(user == null){
-    		return "/member/default/login";
+    		return "redirect:/login.do";
     	}
     	
     	cartService.deleteCart(cid);    	

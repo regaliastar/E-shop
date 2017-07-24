@@ -35,11 +35,14 @@
 <link href="/E-shop/static/css/style-responsive.css" rel="stylesheet">
 <link href="/E-shop/static/css/custom.css" rel="stylesheet">
 <link href="/E-shop/static/css/public.css" rel="stylesheet">
+<link href="/E-shop/static/css/load.css" rel="stylesheet">
 </head>
 <!-- Head END -->
 
 <!-- Body BEGIN -->
+
 <body>
+	<div id="loading" ></div>
 	<div class="pre-header">
 		<div class="container">
 			<div class="row">
@@ -891,4 +894,9 @@
 <script src="/E-shop/static/js/public.js"></script>
 
 <script src="/E-shop/static/js/cart.js"></script>
+<script>
+	$(document).ready(function(){
+		document.getElementById('loading').style.display='none';
+	});
+</script>
 </html>
