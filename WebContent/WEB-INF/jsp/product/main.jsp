@@ -11,7 +11,7 @@
 <!-- Head BEGIN -->
 <head>
 <meta charset="utf-8">
-<title>Yiishop-基于PHP商城系统 |B2C商城|Yii商城|强大的yiishop shop b2c商城</title>
+<title>E-shop</title>
 <meta name="keywords"
 	content="php,php项目,php开源项目,php开源商城,yii,yii项目,yii开源项目,yii商城系统,yiishop,强大的yiishop shop b2c商城" />
 <meta name="description" content="yiishop专注于电子商务应用开发，为中小企业提供全面的电子商务解决方案" />
@@ -51,7 +51,7 @@
 						<li><i class="fa fa-phone"></i><span>137-9542-3417</span></li>
 						<!-- BEGIN LANGS -->
 						<li class="langs-block"><a href="javascript:void(0);"
-							class="current">关注Yiishop微信 <i class="fa fa-angle-down"></i></a>
+							class="current">关注微信 <i class="fa fa-angle-down"></i></a>
 							<div class="langs-block-others-wrapper">
 								<div class="langs-block-others">
 									<img src="http://www.yiishop.com.cn/web/themes/img/wx.jpg">
@@ -101,25 +101,44 @@
 					style="width: 129px; height: 29px;" alt="Metronic Shop UI">
 				</a>
 			</div>
+			<!-- BEGIN CART  -->
 			<div class="cart-block">
 				<div class="cart-info">
-					<a href="javascript:void(0);" class="cart-info-count">0个商品</a> <a
-						href="javascript:void(0);" class="cart-info-value">￥0.00</a>
+					<a href="javascript:void(0);" class="cart-info-count">${cartProductNum}个商品</a> <a
+						href="javascript:void(0);" class="cart-info-value">￥${cartProductPrice}</a>
 				</div>
 				<i class="fa fa-shopping-cart"></i>
+				
 				<!-- BEGIN CART CONTENT -->
 				<div class="cart-content-wrapper">
 					<div class="cart-content">
 						<ul class="scroller" style="height: 250px;">
+							<c:forEach items="${cartProductList}" var="cProduct">
+								<li><a
+									href="${pageContext.request.contextPath }/product.json?id=${cProduct.getPid() }">
+										<img src="/E-shop/${cProduct.getImage()}"
+										alt="cProduct.getDescription()" width="37" height="34">
+								</a> <span class="cart-content-count">x ${cProduct.getNum()}</span> <strong> <a
+										href="${pageContext.request.contextPath }/product.json?id=${cProduct.getPid() }">${cProduct.getDescription()}
+									</a>
+								</strong> <em>￥${cProduct.getSalePrice()}</em> 
+								<a class="del-goods" href="${pageContext.request.contextPath }/product/deleteCart.json?cid=${cProduct.getCid() }"> 
+									<i class="fa fa-times"></i>
+								</a>
+								</li>
+							</c:forEach>
 						</ul>
 						<div class="text-right">
-							<a href="/cart/default/index.html" class="btn btn-default">查看购物车</a>
-							<a href="/order/check/index.html" " class="btn btn-primary">结算</a>
+							<a href="#" class="btn btn-default">查看购物车</a>
+							<a href="${pageContext.request.contextPath }/product/purchaseFromCart.do"  class="btn btn-primary">结算</a>
 						</div>
 					</div>
 				</div>
 				<!-- END CART CONTENT -->
+				
 			</div>
+			<!-- END CART -->
+			
 			<div class="collapse navbar-collapse mega-menu">
 				<ul class="nav navbar-nav">
 					<li><a href="${pageContext.request.contextPath }/index.do">
@@ -146,67 +165,20 @@
 
 					<div class="sidebar-products clearfix">
 						<h2>畅销</h2>
-
+						
+						<c:forEach items="${commendList}" var="p1">
 						<div class="item">
-							<a href="/product-7-81.html" target="_blank"> <img
-								src="http://www.yiishop.com.cn/images/goods/20160530/14645968374562_m.jpg"
+							<a href="${pageContext.request.contextPath }/product.json?id=${p1.getPid() }" target="_blank"> <img
+								src="/E-shop/${p1.getImage()}"
 								class="img-responsive" alt="好吃的商品">
 							</a>
 							<h3>
-								<a href="/product-7-81.html" target="_blank">好吃的商品</a>
+								<a href="${pageContext.request.contextPath }/product.json?id=${p1.getPid() }" target="_blank">${p1.getPname()}</a>
 							</h3>
-							<div class="price">￥20.00</div>
+							<div class="price">￥${p1.getSalePrice()}</div>
 						</div>
-						<div class="item">
-							<a href="/product-4-78.html" target="_blank"> <img
-								src="http://www.yiishop.com.cn/images/goods/20160530/14645834935373_m.jpg"
-								class="img-responsive" alt="雪之恋和风大福">
-							</a>
-							<h3>
-								<a href="/product-4-78.html" target="_blank">雪之恋和风大福</a>
-							</h3>
-							<div class="price">￥1,008.00</div>
-						</div>
-						<div class="item">
-							<a href="/product-9-83.html" target="_blank"> <img
-								src="http://www.yiishop.com.cn/images/goods/20160530/14645972851038_m.jpg"
-								class="img-responsive" alt="雪之恋和风大福">
-							</a>
-							<h3>
-								<a href="/product-9-83.html" target="_blank">雪之恋和风大福</a>
-							</h3>
-							<div class="price">￥9.00</div>
-						</div>
-						<div class="item">
-							<a href="/product-6-80.html" target="_blank"> <img
-								src="http://www.yiishop.com.cn/images/goods/20160530/14645963086748_m.jpg"
-								class="img-responsive" alt="雪之恋和风大福 ">
-							</a>
-							<h3>
-								<a href="/product-6-80.html" target="_blank">雪之恋和风大福 </a>
-							</h3>
-							<div class="price">￥30.00</div>
-						</div>
-						<div class="item">
-							<a href="/product-8-82.html" target="_blank"> <img
-								src="http://www.yiishop.com.cn/images/goods/20160530/14645971269008_m.jpg"
-								class="img-responsive" alt="雪之恋和风大福 ">
-							</a>
-							<h3>
-								<a href="/product-8-82.html" target="_blank">雪之恋和风大福 </a>
-							</h3>
-							<div class="price">￥9.00</div>
-						</div>
-						<div class="item">
-							<a href="/product-5-79.html" target="_blank"> <img
-								src="http://www.yiishop.com.cn/images/goods/20160530/14645960158890_m.jpg"
-								class="img-responsive" alt="雪之恋和风大福 ">
-							</a>
-							<h3>
-								<a href="/product-5-79.html" target="_blank">雪之恋和风大福 </a>
-							</h3>
-							<div class="price">￥35.00</div>
-						</div>
+						</c:forEach>
+						
 					</div>
 				</div>
 
@@ -217,10 +189,10 @@
 								<input type="hidden" id="product_id" value="69">
 								<div class="product-main-image">
 
-									<img
-										src="http://www.yiishop.com.cn/images/goods/20160517/14634956908524_m.jpg"
-										alt="重庆武隆特产羊角豆干 香菇豆干散装称重 休闲零食 烧烤味500g" class="img-responsive"
-										data-BigImgSrc="http://www.yiishop.com.cn/images/goods/20160517/14634956908524_l.jpg">
+									<img style="height:300px"
+										src="${product.getImage() }"
+										alt="" class="img-responsive"
+										data-BigImgSrc="${product.getImage() }"></img>
 									<!--  
                                  <img src="${product.getImage() }"
                                  alt="${product.getDescription() }" class="img-responsive"
@@ -229,11 +201,11 @@
 								</div>
 								<div class="product-other-images">
 									<a href="#" class="album active"> <img
-										alt="${product.getDescription() }"
-										src="${product.getDescription() }">
+										alt=""
+										src="${product.getImage() }">
 									</a> <a href="#" class="album "> <img
-										alt="${product.getDescription() }"
-										src="${product.getDescription() }">
+										alt=""
+										src="${product.getImage() }">
 									</a>
 								</div>
 							</div>
@@ -256,12 +228,17 @@
 										<input id="product-quantity" type="text" value="1" readonly
 											class="form-control input-sm">
 									</div>
+									<!--  
 									<button class="btn btn-primary" id="add-cart" type="button"
 										onclick="cart(1,69,$('#product-quantity').val());">加入购物车</button>
-								</div>
-								<a href="${pageContext.request.contextPath }/product/purchase.json?pid=${product.getPid() }" >
+									-->
+									<a href="${pageContext.request.contextPath }/product/add2cart.json?pid=${product.getPid() }"
+											class="btn btn-default add2cart" id="${product.getPid() }">加入购物车</a>
+									<a class="purchase" href="${pageContext.request.contextPath }/product/purchase.json?pid=${product.getPid() }" >
 									<button class="btn btn-primary" id="purchase" type="button">购买</button>
 								</a>
+								</div>
+								
 							</div>
 
 							<div class="product-page-content">
@@ -542,5 +519,19 @@
 	$(document).ready(function(){
 		document.getElementById('loading').style.display='none';
 	});
+</script>
+<script>
+	(function(){
+		$(".product-quantity").on('click',function(){
+			var v = $('#product-quantity').val();
+			var h = $(".add2cart").attr('href');
+			var arr = h.split('?');
+			h = arr[1];
+			var ah = h.split('&');
+			ah[1] = v;
+			$(".add2cart").attr("href","/E-shop/product/add2cart.json?"+ah[0]+'&num='+ah[1]); 
+			$(".purchase").attr("href","/E-shop/product/purchase.json?"+ah[0]+'&num='+ah[1]); 
+		})
+	})();
 </script>
 </html>

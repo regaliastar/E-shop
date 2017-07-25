@@ -9,8 +9,7 @@
 <head>
     <meta charset="utf-8">
     <title>E-shop</title>
-    <meta name="keywords" content="php,php项目,php开源项目,php开源商城,yii,yii项目,yii开源项目,yii商城系统,yiishop,强大的yiishop shop b2c商城" />
-    <meta name="description" content="yiishop专注于电子商务应用开发，为中小企业提供全面的电子商务解决方案" />
+
     <meta name="baidu-site-verification" content="JYxbG17mX1" />
     
 <link href="/E-shop/static/css/font_1.css" rel="stylesheet">
@@ -48,7 +47,7 @@
 						<li><i class="fa fa-phone"></i><span>137-9542-3417</span></li>
 						<!-- BEGIN LANGS -->
 						<li class="langs-block"><a href="javascript:void(0);"
-							class="current">关注Yiishop微信 <i class="fa fa-angle-down"></i></a>
+							class="current">关注微信 <i class="fa fa-angle-down"></i></a>
 							<div class="langs-block-others-wrapper">
 								<div class="langs-block-others">
 									<img src="http://www.yiishop.com.cn/web/themes/img/wx.jpg">

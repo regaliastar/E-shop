@@ -38,7 +38,58 @@ insert into Product(Pname,stock,image,price,salePrice,description,addedDate)
 insert into Product(Pname,stock,image,price,salePrice,description,addedDate) 
     values ('Hipanda 男款 Logo设计拖鞋 ',1000,'static/img/product/hipanda.png',172.0,238,'HI PANDA专注国际时尚潮流动向、融入中国本土青年的街头游击文化以及hip pop音乐元素，从而建立起个性鲜明的中国街头潮流品牌。HI PANDA面向80后新生一代的中国街头青年，努力刻画和构建着他们精神，自我、装酷…反映了当今中国新一代青年的热情、渴望和他们内在的新身份识别。','2017-7-20');
   
+insert into Product(Pname,stock,image,price,salePrice,description,addedDate) 
+    values ('oasso 印花束口袋抽绳袋 白色  ',1000,'static/img/product/oasso.png',10.0,39,'OASSO（瓯粟) ，是一个追求简约，时尚，实用的创意家居品牌。 她是姹紫嫣红中的那一抹绿意，她是灯火阑珊处的那一缕温馨，她是繁琐家事外的那一份情趣。 我们希望能在家居生活的举手抬足之间， 挥洒创意带给人们无尽的欢乐与享受。 我们拥有一支温馨，团结，有责任感，有内涵的合作团队， 我们的宗旨是：“把责任放大，把利益看淡。” 这个责任包含对家的责任，对团队的责任，对客户的责任，对社会的责任。 我们拥有一支实力强大的开发设计团队， 将引领大家OASSO（瓯粟)品牌的持续关注，对创意家居的高度热情。','2017-7-20');
+  
+insert into Product(Pname,stock,image,price,salePrice,description,addedDate) 
+    values ('oasso 青春复古太阳镜 黑框蓝片  ',1000,'static/img/product/oasso_1.png',61.0,78,'oasso 青春复古太阳镜， 黑框蓝片，精选优质PC材质，不同于普通潮流镜，质量好，强度硬，佩戴有型。硅胶鼻托材质，舒适柔软合理解压，长时间佩戴预防过敏。精工镜轴设计，采用一代强化桩头，经得住10万次弯折闭合测试，大小胖瘦脸型均适合。','2017-7-20');
+  
+insert into Product(Pname,stock,image,price,salePrice,description,addedDate) 
+    values ('INTOUCH 时尚印花中腰透气男士内裤 ',1000,'static/img/product/INTOUCH	.png',10,35,'此款黑色男士平角内裤，咆哮的北极熊印花，接边工艺，不卷边，不变形，无束缚，精湛的四针六线工艺，精细收身，舒适腰带，弹力不紧绷，高端面料，透气舒适。','2017-7-20');
+  
 /**
+ * Product_img
+ */
+    insert into Product_img(Pid,img_1,img_2,img_3,img_4,img_5)
+	values('3','/static/img/product/wade/1.jpg','/static/img/product/wade/2.jpg','/static/img/product/wade/3.jpg','/static/img/product/wade/4.jpg','/static/img/product/wade/5.jpg');
+    
+    insert into Product_img(Pid,img_1,img_2,img_3,img_4,img_5)
+	values('4','/static/img/product/stussy/1.jpg','/static/img/product/stussy/2.jpg','/static/img/product/stussy/3.jpg','/static/img/product/stussy/4.jpg','/static/img/product/stussy/5.jpg');
+    
+    insert into Product_img(Pid,img_1,img_2,img_3,img_4,img_5)
+	values('5','/static/img/product/madness/1.jpg','/static/img/product/madness/2.jpg','/static/img/product/madness/3.jpg','/static/img/product/madness/4.jpg','/static/img/product/madness/5.jpg');
+    
+	insert into Product_img(Pid,img_1,img_2,img_3,img_4,img_5)
+	values('6','/static/img/product/NEFF DAILY WILD/1.jpg','/static/img/product/NEFF DAILY WILD/2.jpg','/static/img/product/NEFF DAILY WILD/3.jpg','/static/img/product/NEFF DAILY WILD/4.jpg','/static/img/product/NEFF DAILY WILD/5.jpg');
+    
+	insert into Product_img(Pid,img_1,img_2,img_3,img_4,img_5)
+	values('7','/static/img/product/Lightning Bear kids/1.jpg','/static/img/product/Lightning Bear kids/2.jpg','/static/img/product/Lightning Bear kids/3.jpg','/static/img/product/Lightning Bear kids/4.jpg','/static/img/product/Lightning Bear kids/5.jpg');
+    
+	insert into Product_img(Pid,img_1,img_2,img_3,img_4,img_5)
+	values('8','/static/img/product/5cm/1.jpg','/static/img/product/5cm/2.jpg','/static/img/product/5cm/3.jpg','/static/img/product/5cm/4.jpg','/static/img/product/5cm/5.jpg');
+    
+	insert into Product_img(Pid,img_1,img_2,img_3,img_4,img_5)
+	values('9','/static/img/product/5cm_1/1.jpg','/static/img/product/5cm_1/2.jpg','/static/img/product/5cm_1/3.jpg','/static/img/product/5cm_1/4.jpg','/static/img/product/5cm_1/5.jpg');
+    
+	insert into Product_img(Pid,img_1,img_2,img_3,img_4,img_5)
+	values('10','/static/img/product/BLACKJACK/1.jpg','/static/img/product/BLACKJACK/2.jpg','/static/img/product/BLACKJACK/3.jpg','/static/img/product/BLACKJACK/4.jpg','/static/img/product/BLACKJACK/5.jpg');
+    
+	insert into Product_img(Pid,img_1,img_2,img_3,img_4,img_5)
+	values('11','/static/img/product/Alpinestars/1.jpg','/static/img/product/Alpinestars/2.jpg','/static/img/product/Alpinestars/3.jpg','/static/img/product/Alpinestars/4.jpg','/static/img/product/Alpinestars/5.jpg');
+    
+	insert into Product_img(Pid,img_1,img_2,img_3,img_4,img_5)
+	values('12','/static/img/product/hipanda/1.jpg','/static/img/product/hipanda/2.jpg','/static/img/product/hipanda/3.jpg','/static/img/product/hipanda/4.jpg','/static/img/product/hipanda/5.jpg');
+    
+	insert into Product_img(Pid,img_1,img_2,img_3,img_4,img_5)
+	values('13','/static/img/product/oasso/1.jpg','/static/img/product/oasso/2.jpg','/static/img/product/oasso/3.jpg','/static/img/product/oasso/4.jpg','/static/img/product/oasso/5.jpg');
+    
+	insert into Product_img(Pid,img_1,img_2,img_3,img_4,img_5)
+	values('14','/static/img/product/oasso_1/1.jpg','/static/img/product/oasso_1/2.jpg','/static/img/product/oasso_1/3.jpg','/static/img/product/oasso_1/4.jpg','/static/img/product/oasso_1/5.jpg');
+    
+	insert into Product_img(Pid,img_1,img_2,img_3,img_4,img_5)
+	values('15','/static/img/product/INTOUCH/1.jpg','/static/img/product/INTOUCH/2.jpg','/static/img/product/INTOUCH/3.jpg','/static/img/product/INTOUCH/4.jpg','/static/img/product/INTOUCH/5.jpg');
+    
+ /**
  * User
  */
 insert into User(Uname,pw)

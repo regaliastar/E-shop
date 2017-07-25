@@ -10,10 +10,8 @@
 <!-- Head BEGIN -->
 <head>
 <meta charset="utf-8">
-<title>Yiishop-基于PHP商城系统 |B2C商城|Yii商城|强大的yiishop shop b2c商城</title>
-<meta name="keywords"
-	content="php,php项目,php开源项目,php开源商城,yii,yii项目,yii开源项目,yii商城系统,yiishop,强大的yiishop shop b2c商城" />
-<meta name="description" content="yiishop专注于电子商务应用开发，为中小企业提供全面的电子商务解决方案" />
+<title>E-shop</title>
+
 <meta name="baidu-site-verification" content="JYxbG17mX1" />
 
 <link href="/E-shop/static/css/font_1.css" rel="stylesheet">
@@ -48,10 +46,10 @@
 				<!-- BEGIN TOP BAR LEFT PART -->
 				<div class="col-md-6 col-sm-6 additional-shop-info">
 					<ul class="list-unstyled list-inline">
-						<li><i class="fa fa-phone"></i><span>137-9542-3417</span></li>
+						<li><i class="fa fa-phone"></i><span>555-5555-5555</span></li>
 						<!-- BEGIN LANGS -->
 						<li class="langs-block"><a href="javascript:void(0);"
-							class="current">关注Yiishop微信 <i class="fa fa-angle-down"></i></a>
+							class="current">关注微信 <i class="fa fa-angle-down"></i></a>
 							<div class="langs-block-others-wrapper">
 								<div class="langs-block-others">
 									<img src="http://www.yiishop.com.cn/web/themes/img/wx.jpg">
@@ -103,18 +101,33 @@
 			</div>
 			<div class="cart-block">
 				<div class="cart-info">
-					<a href="javascript:void(0);" class="cart-info-count">0个商品</a> <a
-						href="javascript:void(0);" class="cart-info-value">￥0.00</a>
+					<a href="javascript:void(0);" class="cart-info-count">${cartProductNum}个商品</a> <a
+						href="javascript:void(0);" class="cart-info-value">￥${cartProductPrice}</a>
 				</div>
 				<i class="fa fa-shopping-cart"></i>
+			
 				<!-- BEGIN CART CONTENT -->
 				<div class="cart-content-wrapper">
 					<div class="cart-content">
 						<ul class="scroller" style="height: 250px;">
+							<c:forEach items="${cartProductList}" var="cProduct">
+								<li><a
+									href="${pageContext.request.contextPath }/product.json?id=${cProduct.getPid() }">
+										<img src="/E-shop/${cProduct.getImage()}"
+										alt="cProduct.getDescription()" width="37" height="34">
+								</a> <span class="cart-content-count">x ${cProduct.getNum()}</span> <strong> <a
+										href="${pageContext.request.contextPath }/product.json?id=${cProduct.getPid() }">${cProduct.getDescription()}
+									</a>
+								</strong> <em>￥${cProduct.getSalePrice()}</em> 
+								<a class="del-goods" href="${pageContext.request.contextPath }/product/deleteCart.json?cid=${cProduct.getCid() }"> 
+									<i class="fa fa-times"></i>
+								</a>
+								</li>
+							</c:forEach>
 						</ul>
 						<div class="text-right">
-							<a href="/cart/default/index.html" class="btn btn-default">查看购物车</a>
-							<a href="/order/check/index.html" " class="btn btn-primary">结算</a>
+							<a href="#" class="btn btn-default">查看购物车</a>
+							<a href="${pageContext.request.contextPath }/product/purchaseFromCart.do"  class="btn btn-primary">结算</a>
 						</div>
 					</div>
 				</div>
@@ -138,8 +151,8 @@
 	<div class="main">
 		<div class="container">
 			<ul class="breadcrumb">
-				<li><a href="/">首页</a></li>
-				<li><a href="">购物流程</a></li>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">购物流程</a></li>
 				<li class="active">购物确认</li>
 			</ul>
 			<div class="row margin-bottom-40">
@@ -301,36 +314,14 @@
 															<p></p>
 														</td>
 														<td class="checkout-model"></td>
-														<td class="checkout-quantity">1</td>
+														<td class="checkout-quantity">${product.getNum()}</td>
 														<td class="checkout-price"><strong><span>￥</span>${product.getSalePrice()}</strong>
 														</td>
-														<td class="checkout-total"><strong><span>￥</span>0</strong>
+														<td class="checkout-total"><strong><span>￥</span>${product.getTotlePrice()}</strong>
 														</td>
 													</tr>
 													</c:forEach>
-													<!--  
-													<tr>
-														<td class="shopping-image"><a href="" target="_blank">
-																<img
-																src="http://www.yiishop.com.cn/images/goods/20160530/14645968374562_s.jpg"
-																alt="金堂馆 休闲零食小吃麻花2斤装 约280小袋混合装 陈吉旺福" width="37"
-																height="34">
-														</a></td>
-														<td class="checkout-description">
-															<h3>
-																<a href="" target="_blank">金堂馆 休闲零食小吃麻花2斤装 约280小袋混合装
-																	陈吉旺福</a>
-															</h3>
-															<p></p>
-														</td>
-														<td class="checkout-model"></td>
-														<td class="checkout-quantity">1</td>
-														<td class="checkout-price"><strong><span>￥</span>20.00</strong>
-														</td>
-														<td class="checkout-total"><strong><span>￥</span>20</strong>
-														</td>
-													</tr>
-													-->
+													
 												</tbody>
 											</table>
 										</div>

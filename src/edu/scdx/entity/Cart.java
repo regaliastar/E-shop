@@ -2,10 +2,10 @@ package edu.scdx.entity;
 
 public class Cart {
 	
-			private int Cid;// INT auto_increment primary key,  -- ¹ºÎï³µid
-			private int Uid;// INT,  -- ÓÃ»§id
-		 	private int Pid;// INT,  -- ÉÌÆ·id
-			private int num;// int,   -- ¹ºÂòÊýÁ¿
+			private int Cid;// INT auto_increment primary key,  -- ï¿½ï¿½ï¿½ï³µid
+			private int Uid;// INT,  -- ï¿½Ã»ï¿½id
+		 	private int Pid;// INT,  -- ï¿½ï¿½Æ·id
+			private int num = 1;// int,   -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			public int getCid() {
 				return Cid;
 			}

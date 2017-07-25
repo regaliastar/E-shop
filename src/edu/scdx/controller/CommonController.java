@@ -71,9 +71,9 @@ public class CommonController {
         	int length = 0;
         	for(Cart c:carts) {
         		Product p = productService.findProductById(c.getPid());
-        		CartItem item = new CartItem(c.getCid(), p.getPid(), p.getImage(), 1, p.getDescription(), p.getSalePrice());
+        		CartItem item = new CartItem(c.getCid(), p.getPid(), p.getImage(), c.getNum(), p.getDescription(), p.getSalePrice()*c.getNum());
         		cartProductList.add(item);
-        		cartProductPrice += p.getSalePrice();
+        		cartProductPrice += p.getSalePrice()*c.getNum();
         		length += 1;
         	}
         	
@@ -108,6 +108,41 @@ public class CommonController {
     public String getProduct (Model model,HttpSession session,Integer id){
     	Product product = productService.findProductById(id);
     	model.addAttribute("product", product);
+    	
+    	ArrayList commendList = new ArrayList();
+    	for(int i=3;i<=8;i++) {
+    		Product p = productService.findProductById(i);
+    		commendList.add(p);  
+    	}
+    	
+    	/**
+    	 * 购物车
+    	 *  
+    	 * */
+    	User user = (User) session.getAttribute("user");
+    	if(user != null) {
+    		List<Cart> carts = cartService.getAll(user.getUid());
+        	
+        	ArrayList cartProductList = new ArrayList();
+        	float cartProductPrice = 0;
+        	int length = 0;
+        	for(Cart c:carts) {
+        		Product p = productService.findProductById(c.getPid());
+        		CartItem item = new CartItem(c.getCid(), p.getPid(), p.getImage(), c.getNum(), p.getDescription(), p.getSalePrice()*c.getNum());
+        		cartProductList.add(item);
+        		cartProductPrice += p.getSalePrice()*c.getNum();
+        		length += 1;
+        	}
+        	
+        	model.addAttribute("cartProductList", cartProductList);
+        	model.addAttribute("cartProductNum", length);       	
+        	model.addAttribute("cartProductPrice",cartProductPrice);
+    	}else {
+    		model.addAttribute("cartProductNum", 0);   
+    	}
+    	
+    	//6个
+    	model.addAttribute("commendList", commendList);
         return "/product/main";
     }
 }

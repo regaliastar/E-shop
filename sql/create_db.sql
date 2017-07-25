@@ -1,4 +1,4 @@
-﻿drop database if exists mmldb;
+drop database if exists mmldb;
 create database mmldb;
 use mmldb;
 
@@ -92,4 +92,13 @@ create table `Admin` (
  	Aid INT auto_increment primary key, -- 
  	Aname VARCHAR(50),-- 一
  	pw VARCHAR(20)
+) ;
+
+create table `Product_img` (
+   Pid int primary key,
+   img_1 VARCHAR(255),
+   img_2 VARCHAR(255),
+   img_3 VARCHAR(255),
+   img_4 VARCHAR(255),
+   img_5 VARCHAR(255),
 ) ;

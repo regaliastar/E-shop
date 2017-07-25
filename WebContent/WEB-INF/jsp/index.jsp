@@ -11,9 +11,7 @@
 <head>
 <meta charset="utf-8">
 <title>E-shop</title>
-<meta name="keywords"
-	content="php,php项目,php开源项目,php开源商城,yii,yii项目,yii开源项目,yii商城系统,yiishop,强大的yiishop shop b2c商城" />
-<meta name="description" content="yiishop专注于电子商务应用开发，为中小企业提供全面的电子商务解决方案" />
+
 <meta name="baidu-site-verification" content="JYxbG17mX1" />
 
 <link href="/E-shop/static/css/font_1.css" rel="stylesheet">
@@ -49,10 +47,10 @@
 				<!-- BEGIN TOP BAR LEFT PART -->
 				<div class="col-md-6 col-sm-6 additional-shop-info">
 					<ul class="list-unstyled list-inline">
-						<li><i class="fa fa-phone"></i><span>137-9542-3417</span></li>
+						<li><i class="fa fa-phone"></i><span>555-5555-5555</span></li>
 						<!-- BEGIN LANGS -->
 						<li class="langs-block"><a href="javascript:void(0);"
-							class="current">关注Yiishop微信 <i class="fa fa-angle-down"></i></a>
+							class="current">关注微信 <i class="fa fa-angle-down"></i></a>
 							<div class="langs-block-others-wrapper">
 								<div class="langs-block-others">
 									<img src="http://www.yiishop.com.cn/web/themes/img/wx.jpg">
@@ -108,6 +106,7 @@
 						href="javascript:void(0);" class="cart-info-value">￥${cartProductPrice}</a>
 				</div>
 				<i class="fa fa-shopping-cart"></i>
+				
 				<!-- BEGIN CART CONTENT -->
 				<div class="cart-content-wrapper">
 					<div class="cart-content">
@@ -117,7 +116,7 @@
 									href="${pageContext.request.contextPath }/product.json?id=${cProduct.getPid() }">
 										<img src="/E-shop/${cProduct.getImage()}"
 										alt="cProduct.getDescription()" width="37" height="34">
-								</a> <span class="cart-content-count">x 1</span> <strong> <a
+								</a> <span class="cart-content-count">x ${cProduct.getNum()}</span> <strong> <a
 										href="${pageContext.request.contextPath }/product.json?id=${cProduct.getPid() }">${cProduct.getDescription()}
 									</a>
 								</strong> <em>￥${cProduct.getSalePrice()}</em> 
@@ -134,6 +133,7 @@
 					</div>
 				</div>
 				<!-- END CART CONTENT -->
+				
 			</div>
 			<div class="collapse navbar-collapse mega-menu">
 				<ul class="nav navbar-nav">
@@ -168,9 +168,7 @@
 			<div class="row margin-bottom-40 margin-top-10">
 				<div class="col-md-12 sale-product">
 
-					${user1.getPw()}
-
-					<h2>HOT</h2>
+					<h2>热卖商品</h2>
 					<div class="bxslider-wrapper">
 						<ul class="bxslider" data-slides-phone="1" data-slides-tablet="2"
 							data-slides-desktop="5" data-slide-margin="15">
@@ -213,357 +211,268 @@
 					<ul class="list-group margin-bottom-25 sidebar-menu">
 						<li class="list-group-item clearfix dropdown
             ">
-							<a href="/home/list/cat.html?id=1" class=""> <i
-								class="fa fa-angle-right"></i> 特产零食 <i class="fa fa-angle-down"></i>
+							<a href="javascript:void(0);" class=""> <i
+								class="fa fa-angle-right"></i> 男装 <i class="fa fa-angle-down"></i>
 						</a>
 							<ul class="dropdown-menu">
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=9" class="collapsed"> <i
-										class="fa fa-circle"></i> 螺蛳粉 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> T恤 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=8" class="collapsed"> <i
-										class="fa fa-circle"></i> 无糖食品 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 衬衫 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=7" class="collapsed"> <i
-										class="fa fa-circle"></i> 蜜饯果干 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 裤子 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=6" class="collapsed"> <i
-										class="fa fa-circle"></i> 肉干肉脯 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 毛衣 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=5" class="collapsed"> <i
-										class="fa fa-circle"></i> 糖果/甜点 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 开衫 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=4" class="collapsed"> <i
-										class="fa fa-circle"></i> 饼干蛋糕 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 外套 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=3" class="collapsed"> <i
-										class="fa fa-circle"></i> 休闲零食 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 背心 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=2" class="collapsed"> <i
-										class="fa fa-circle"></i> 坚果炒货 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 内衣 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 							</ul>
 						</li>
 						<li class="list-group-item clearfix dropdown
             ">
-							<a href="/home/list/cat.html?id=35" class=""> <i
-								class="fa fa-angle-right"></i> 粮油调味 <i class="fa fa-angle-down"></i>
+							<a href="javascript:void(0);" class=""> <i
+								class="fa fa-angle-right"></i> 女装 <i class="fa fa-angle-down"></i>
 						</a>
 							<ul class="dropdown-menu">
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=37" class="collapsed"> <i
-										class="fa fa-circle"></i> 食用油 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> T恤<i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=36" class="collapsed"> <i
-										class="fa fa-circle"></i> 米面杂粮 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 衬衫 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=38" class="collapsed"> <i
-										class="fa fa-circle"></i> 调味品 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 裙·裤 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=39" class="collapsed"> <i
-										class="fa fa-circle"></i> 方便食品 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 毛衣 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=42" class="collapsed"> <i
-										class="fa fa-circle"></i> 火麻油 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 开衫 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=41" class="collapsed"> <i
-										class="fa fa-circle"></i> 有机食品 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 外套 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=40" class="collapsed"> <i
-										class="fa fa-circle"></i> 南北干货 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 内衣<i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 							</ul>
 						</li>
 						<li class="list-group-item clearfix dropdown
             ">
-							<a href="/home/list/cat.html?id=10" class=""> <i
-								class="fa fa-angle-right"></i> 茗茶冲调 <i class="fa fa-angle-down"></i>
+							<a href="javascript:void(0);" class=""> <i
+								class="fa fa-angle-right"></i> 鞋 <i class="fa fa-angle-down"></i>
 						</a>
 							<ul class="dropdown-menu">
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=20" class="collapsed"> <i
-										class="fa fa-circle"></i> 龙井 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 女士鞋 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=12" class="collapsed"> <i
-										class="fa fa-circle"></i> 咖啡 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 女士休闲鞋<i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=11" class="collapsed"> <i
-										class="fa fa-circle"></i> 奶茶 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 女士轻便运动鞋 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=13" class="collapsed"> <i
-										class="fa fa-circle"></i> 铁观音 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 女士靴子 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=14" class="collapsed"> <i
-										class="fa fa-circle"></i> 普洱 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 男士鞋 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=15" class="collapsed"> <i
-										class="fa fa-circle"></i> 红茶 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 男士休闲鞋 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=25" class="collapsed"> <i
-										class="fa fa-circle"></i> 花草茶 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 男子轻便运动鞋 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
-								<li
-									class="list-group-item dropdown clearfix
-                            ">
-									<a href="/home/list/cat.html?id=24" class="collapsed"> <i
-										class="fa fa-circle"></i> 养生茶 <i class="fa fa-angle-down"></i>
-								</a>
-								</li>
-								<li
-									class="list-group-item dropdown clearfix
-                            ">
-									<a href="/home/list/cat.html?id=23" class="collapsed"> <i
-										class="fa fa-circle"></i> 乌龙茶 <i class="fa fa-angle-down"></i>
-								</a>
-								</li>
-								<li
-									class="list-group-item dropdown clearfix
-                            ">
-									<a href="/home/list/cat.html?id=22" class="collapsed"> <i
-										class="fa fa-circle"></i> 黑茶 <i class="fa fa-angle-down"></i>
-								</a>
-								</li>
-								<li
-									class="list-group-item dropdown clearfix
-                            ">
-									<a href="/home/list/cat.html?id=21" class="collapsed"> <i
-										class="fa fa-circle"></i> 白茶 <i class="fa fa-angle-down"></i>
-								</a>
-								</li>
-								<li
-									class="list-group-item dropdown clearfix
-                            ">
-									<a href="/home/list/cat.html?id=19" class="collapsed"> <i
-										class="fa fa-circle"></i> 蜂蜜/柚子茶 <i class="fa fa-angle-down"></i>
-								</a>
-								</li>
-								<li
-									class="list-group-item dropdown clearfix
-                            ">
-									<a href="/home/list/cat.html?id=18" class="collapsed"> <i
-										class="fa fa-circle"></i> 冲饮谷物 <i class="fa fa-angle-down"></i>
-								</a>
-								</li>
-								<li
-									class="list-group-item dropdown clearfix
-                            ">
-									<a href="/home/list/cat.html?id=17" class="collapsed"> <i
-										class="fa fa-circle"></i> 成人奶粉 <i class="fa fa-angle-down"></i>
-								</a>
-								</li>
-								<li
-									class="list-group-item dropdown clearfix
-                            ">
-									<a href="/home/list/cat.html?id=16" class="collapsed"> <i
-										class="fa fa-circle"></i> 绿茶 <i class="fa fa-angle-down"></i>
-								</a>
-								</li>
+								
+								
 							</ul>
 						</li>
 						<li class="list-group-item clearfix dropdown
             ">
-							<a href="/home/list/cat.html?id=43" class=""> <i
-								class="fa fa-angle-right"></i> 果蔬生菜 <i class="fa fa-angle-down"></i>
+							<a href="javascript:void(0);" class=""> <i
+								class="fa fa-angle-right"></i> 服装杂饰 <i class="fa fa-angle-down"></i>
 						</a>
 							<ul class="dropdown-menu">
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=50" class="collapsed"> <i
-										class="fa fa-circle"></i> 牛羊肉 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 披肩·围巾 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=49" class="collapsed"> <i
-										class="fa fa-circle"></i> 牛排 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 帽子 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=48" class="collapsed"> <i
-										class="fa fa-circle"></i> 腊肠/腊肉 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 耳罩 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=47" class="collapsed"> <i
-										class="fa fa-circle"></i> 熟食 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 钱包 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=46" class="collapsed"> <i
-										class="fa fa-circle"></i> 蔬菜 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 手套 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=45" class="collapsed"> <i
-										class="fa fa-circle"></i> 海鲜水产 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 皮带 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=44" class="collapsed"> <i
-										class="fa fa-circle"></i> 水果 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 伞·雨伞 <i class="fa fa-angle-down"></i>
+								</a>
+								</li>
+								<li
+									class="list-group-item dropdown clearfix
+                            ">
+									<a href="/home/list/cat.html?id=44" class="collapsed"> <i
+										class="fa fa-circle"></i> 手帕 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 							</ul>
 						</li>
 						<li class="list-group-item clearfix dropdown
             ">
-							<a href="/home/list/cat.html?id=26" class=""> <i
-								class="fa fa-angle-right"></i> 酒水饮料 <i class="fa fa-angle-down"></i>
+							<a href="javascript:void(0);" class=""> <i
+								class="fa fa-angle-right"></i> 幼儿 <i class="fa fa-angle-down"></i>
 						</a>
 							<ul class="dropdown-menu">
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=34" class="collapsed"> <i
-										class="fa fa-circle"></i> 饮用水 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 儿童上装 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
 									<a href="/home/list/cat.html?id=33" class="collapsed"> <i
-										class="fa fa-circle"></i> 收藏酒/陈年老酒 <i class="fa fa-angle-down"></i>
+										class="fa fa-circle"></i> 儿童杂货 <i class="fa fa-angle-down"></i>
 								</a>
-								</li>
-								<li
-									class="list-group-item dropdown clearfix
-                            ">
-									<a href="/home/list/cat.html?id=32" class="collapsed"> <i
-										class="fa fa-circle"></i> 饮料/果汁 <i class="fa fa-angle-down"></i>
-								</a>
-								</li>
-								<li
-									class="list-group-item dropdown clearfix
-                            ">
-									<a href="/home/list/cat.html?id=31" class="collapsed"> <i
-										class="fa fa-circle"></i> 黄酒/养生酒 <i class="fa fa-angle-down"></i>
-								</a>
-								</li>
-								<li
-									class="list-group-item dropdown clearfix
-                            ">
-									<a href="/home/list/cat.html?id=30" class="collapsed"> <i
-										class="fa fa-circle"></i> 啤酒 <i class="fa fa-angle-down"></i>
-								</a>
-								</li>
-								<li
-									class="list-group-item dropdown clearfix
-                            ">
-									<a href="/home/list/cat.html?id=29" class="collapsed"> <i
-										class="fa fa-circle"></i> 牛奶乳品 <i class="fa fa-angle-down"></i>
-								</a>
-								</li>
-								<li
-									class="list-group-item dropdown clearfix
-                            ">
-									<a href="/home/list/cat.html?id=28" class="collapsed"> <i
-										class="fa fa-circle"></i> 葡萄酒 <i class="fa fa-angle-down"></i>
-								</a>
-								</li>
-								<li
-									class="list-group-item dropdown clearfix
-                            ">
-									<a href="/home/list/cat.html?id=27" class="collapsed"> <i
-										class="fa fa-circle"></i> 白酒 <i class="fa fa-angle-down"></i>
-								</a>
-								</li>
+								</li>							
 							</ul>
 						</li>
 					</ul>
