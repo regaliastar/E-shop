@@ -76,6 +76,10 @@ create table `Address` (
  	Aid INT auto_increment primary key, -- 
  	Uid INT,-- 一
  	addr text,
+ 	zip  varchar(6),   -- 邮编
+ 	sendName varchar(20),  -- 收货人姓名
+	sendTel varchar(11),   -- 收获人电话
+	main INT,
  	foreign key (Uid) references User(Uid)
 ) ;
 

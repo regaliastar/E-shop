@@ -40,8 +40,11 @@ public class ProductController {
     	Product p = productService.findProductById(pid);
     	//System.out.println(product);
     	ArrayList<SaleItem> SaleItems = new ArrayList<SaleItem>();
+    	int n=1;
+    	if(num != null)
+    		n = num;
 	
-    	SaleItem item = new SaleItem(p.getImage(), p.getDescription(), num, p.getSalePrice(), p.getSalePrice()*num);
+    	SaleItem item = new SaleItem(p.getImage(), p.getDescription(), n, p.getSalePrice(), p.getSalePrice()*n);
     	
     	SaleItems.add(item);
     	float totalPrice = 0;
@@ -184,5 +187,12 @@ public class ProductController {
 		//return null;
     	//return "forward:/index.do";
     	return "redirect:/index.do "; 
+    }
+    
+    @RequestMapping("/checkout.do")
+    public String checkout(Model model,HttpSession session,float price) {
+    	
+    	model.addAttribute("price",price);
+    	return "/product/checkout";
     }
 }

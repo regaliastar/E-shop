@@ -122,18 +122,18 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/sales/point/index.html">
+                    <a href="#">
                         积分商城
                     </a>
                 </li>
                 <li>
-                    <a href="/backend" target="_blank">
+                    <a href="#" >
                         后台展示
                     </a>
                 </li>
 
                 <li>
-                    <a href="/cms/default/index.html" target="_blank">
+                    <a href="#" >
                         项目说明
                     </a>
                 </li>
@@ -145,8 +145,8 @@
     <div class="main">
     <div class="container">
     <ul class="breadcrumb">
-        <li><a href="/">首页</a></li>
-        <li><a href="/account/index.html">会员中心</a></li>
+        <li><a href="${pageContext.request.contextPath }/index.do">首页</a></li>
+        <li><a href="#">会员中心</a></li>
         <li class="active">注册</li>
     </ul>
     <!-- BEGIN SIDEBAR & CONTENT -->
@@ -200,7 +200,9 @@
                                 <div class="col-lg-8">
                                     <input type="password" class="form-control" id="pw" name="pw">
                                 </div>
+                                
                             </div>
+                            <p class="col-lg-8 col-md-offset-4 padding-left-0 padding-top-20" style="color:red">${wrongMsg }</p>
                             <div class="row">
                                 <div class="col-lg-8 col-md-offset-4 padding-left-0">
                                     <a href="/member/default/register.html">免费注册</a>
@@ -212,6 +214,7 @@
                                     <input type="hidden" class="request-csrf" name="_csrf" value="S1IyTXZranI9NAEaTgYSSgcGRydbHgMTfwN4PyQeEz8ialwaTlsPHg==" />
                                     <button type="submit" class="btn btn-primary member-login">登录</button>
                                 </div>
+                                
                             </div>
                         </form>
                     </div>
@@ -259,62 +262,63 @@
             </div>
         </div>
     </div>
-</div>    <!-- BEGIN PRE-FOOTER -->
-<div class="pre-footer">
-    <div class="container">
-        <div class="row">
-            <!-- BEGIN BOTTOM ABOUT BLOCK -->
-            <div class="col-md-3 col-sm-6 pre-footer-col">
-                <h2>关于我们</h2>
-                <p>今年以来基于Yii2开发以Yiishop标准化电商软件为基础的电商解决方案，并致力于电商软件的技术创新和平台化运营。</p>
-                <p>作为一套正在发展的电商平台技术解决方案，Yiishop的每一次升级都专注于垂直电商平台研发。经过两年多的发展，Yiishop向着被广大用户和开发者广泛认同和采纳目标奋斗。</p>
-            </div>
-            <!-- END BOTTOM ABOUT BLOCK -->
-            <!-- BEGIN BOTTOM INFO BLOCK -->
-            <div class="col-md-3 col-sm-6 pre-footer-col">
-                <h2>友情链接</h2>
-                <ul class="list-unstyled">
-                    <li><i class="fa fa-angle-right"></i> <a href="http://www.yiishop.com.cn" target="_blank">YiiShop</a></li>
-                    <li><i class="fa fa-angle-right"></i> <a href="http://www.yii-china.com" target="_blank">Yii-china</a></li>
-                </ul>
-            </div>
-            <div class="col-md-3 col-sm-6 pre-footer-col">
-                <h2>产品服务</h2>
-                <ul class="list-unstyled">
-                    <li><i class="fa fa-angle-right"></i> <a href="#">产品特点</a></li>
-                    <li><i class="fa fa-angle-right"></i> <a href="#">解决方案</a></li>
-                    <li><i class="fa fa-angle-right"></i> <a href="#">产品报价</a></li>
-                    <li><i class="fa fa-angle-right"></i> <a href="#">功能列表</a></li>
-                    <li><i class="fa fa-angle-right"></i> <a href="#">系统更新</a></li>
-                    <li><i class="fa fa-angle-right"></i> <a href="#">常见问题</a></li>
-                </ul>
-            </div>
-            <!-- END INFO BLOCK -->
-            <!-- BEGIN TWITTER BLOCK -->
-            <div class="col-md-3 col-sm-6 pre-footer-col">
-                <h2>增值服务</h2>
-                <ul class="list-unstyled">
-                    <li><i class="fa fa-angle-right"></i> <a href="#">免费升级</a></li>
-                    <li><i class="fa fa-angle-right"></i> <a href="#">ICP备案</a></li>
-                    <li><i class="fa fa-angle-right"></i> <a href="#">SEO优化</a></li>
-                    <li><i class="fa fa-angle-right"></i> <a href="#">短信营销</a></li>
-                </ul>
-            </div>
-            <!-- END TWITTER BLOCK -->
-            <!-- BEGIN BOTTOM CONTACTS -->
-            <div class="col-md-3 col-sm-6 pre-footer-col">
-                <h2>联系我们</h2>
-                <address class="margin-bottom-40">
-                    微信: chenfh08054<br>
-                    QQ: 843958575<br>
-                    Email: <a href="#">chenfh08054@163.com</a><br>
-                </address>
-            </div>
-            <!-- END BOTTOM CONTACTS -->
-        </div>
-    </div>
-</div>
-<!-- END PRE-FOOTER -->
+</div>  
+	<!-- BEGIN PRE-FOOTER -->
+	<div class="pre-footer">
+		<div class="container">
+			<div class="row">
+				<!-- BEGIN BOTTOM ABOUT BLOCK -->
+				<div class="col-md-3 col-sm-6 pre-footer-col">
+					<h2>关于我们</h2>
+					<p>今年以来基于javaweb开发以E-shop标准化电商软件为基础的电商解决方案，并致力于电商软件的技术创新和平台化运营。</p>
+					<p>作为一套正在发展的电商平台技术解决方案，E-shop的每一次升级都专注于垂直电商平台研发。经过两年多的发展，E-shop向着被广大用户和开发者广泛认同和采纳目标奋斗。</p>
+				</div>
+				<!-- END BOTTOM ABOUT BLOCK -->
+				<!-- BEGIN BOTTOM INFO BLOCK -->
+				<div class="col-md-3 col-sm-6 pre-footer-col">
+					<h2>友情链接</h2>
+					<ul class="list-unstyled">
+						<li><i class="fa fa-angle-right"></i> <a
+							href="http://www.baidu.com.cn" target="_blank">百度</a></li>
+						<li><i class="fa fa-angle-right"></i> <a
+							href="http://www.alipay.com" target="_blank">支付宝</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 col-sm-6 pre-footer-col">
+					<h2>产品服务</h2>
+					<ul class="list-unstyled">
+						<li><i class="fa fa-angle-right"></i> <a href="#">产品特点</a></li>
+						<li><i class="fa fa-angle-right"></i> <a href="#">解决方案</a></li>
+						<li><i class="fa fa-angle-right"></i> <a href="#">产品报价</a></li>
+						<li><i class="fa fa-angle-right"></i> <a href="#">功能列表</a></li>
+						<li><i class="fa fa-angle-right"></i> <a href="#">系统更新</a></li>
+						<li><i class="fa fa-angle-right"></i> <a href="#">常见问题</a></li>
+					</ul>
+				</div>
+				<!-- END INFO BLOCK -->
+				<!-- BEGIN TWITTER BLOCK -->
+				<div class="col-md-3 col-sm-6 pre-footer-col">
+					<h2>增值服务</h2>
+					<ul class="list-unstyled">
+						<li><i class="fa fa-angle-right"></i> <a href="#">免费升级</a></li>
+						<li><i class="fa fa-angle-right"></i> <a href="#">ICP备案</a></li>
+						<li><i class="fa fa-angle-right"></i> <a href="#">SEO优化</a></li>
+						<li><i class="fa fa-angle-right"></i> <a href="#">短信营销</a></li>
+					</ul>
+				</div>
+				<!-- END TWITTER BLOCK -->
+				<!-- BEGIN BOTTOM CONTACTS -->
+				<div class="col-md-3 col-sm-6 pre-footer-col">
+					<h2>联系我们</h2>
+					<address class="margin-bottom-40">
+						微信: Tungtive_<br> QQ: 1183080130<br> Email: <a href="#">1052070500@qq.com</a><br>
+					</address>
+				</div>
+				<!-- END BOTTOM CONTACTS -->
+			</div>
+		</div>
+	</div>
+	<!-- END PRE-FOOTER -->
     <div class="footer">
     <div class="container">
         <div class="row">

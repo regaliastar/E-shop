@@ -137,10 +137,10 @@
 				<ul class="nav navbar-nav">
 					<li><a href="${pageContext.request.contextPath }/index.do">
 							首页 </a></li>
-					<li><a href="/sales/point/index.html"> 积分商城 </a></li>
-					<li><a href="/backend" target="_blank"> 后台展示 </a></li>
+					<li><a href="#"> 积分商城 </a></li>
+					<li><a href="#" > 后台展示 </a></li>
 
-					<li><a href="/cms/default/index.html" target="_blank">
+					<li><a href="#" >
 							项目说明 </a></li>
 				</ul>
 			</div>
@@ -338,10 +338,10 @@
 										<div class="clearfix"></div>
 										<button id="button-confirm" type="submit"
 											class="btn btn-primary pull-right"
-											onclick="location.href='/order/check/create.html'">提交订单</button>
+											onclick="location.href='${pageContext.request.contextPath }/product/checkout.do?price=${totalPrice }'">提交订单</button>
 										<button class="btn btn-default pull-right margin-right-20"
 											type="button"
-											onclick="location.href='http://www.yiishop.com.cn'">继续购物</button>
+											onclick="location.href='${pageContext.request.contextPath }/index.do'" target="_blank">继续购物</button>
 									</div>
 								</div>
 							</div>

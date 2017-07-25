@@ -39,7 +39,7 @@ public class CommonController {
     	
     	Product p1 = productService.findProductById(3);
     	productList.add(p1);   	
-    	Product p2 = productService.findProductById(4);
+    	Product p2 = productService.findProductById(12);
     	productList.add(p2);   	
     	Product p3 = productService.findProductById(5);
     	productList.add(p3);
@@ -55,7 +55,7 @@ public class CommonController {
     	productList.add(p8);    	
     	Product p9 = productService.findProductById(11);
     	productList.add(p9);
-    	Product p10 = productService.findProductById(12);
+    	Product p10 = productService.findProductById(4);
     	productList.add(p10);
     	model.addAttribute("productList",productList);
     	/**
@@ -83,6 +83,19 @@ public class CommonController {
     	}else {
     		model.addAttribute("cartProductNum", 0);   
     	}
+    	
+    	/**
+    	 * 特惠商品
+    	 * */
+    	ArrayList thsp = new ArrayList();
+    	Product p13 = productService.findProductById(13);
+    	thsp.add(p13);
+    	Product p14 = productService.findProductById(14);
+    	thsp.add(p14);
+    	Product p15 = productService.findProductById(15);
+    	thsp.add(p15);
+    	
+    	model.addAttribute("thsp", thsp);   
     	
         return "index";
     }

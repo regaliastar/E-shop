@@ -11,7 +11,9 @@
 <head>
 <meta charset="utf-8">
 <title>E-shop</title>
-
+<meta name="keywords"
+	content="php,php项目,php开源项目,php开源商城,yii,yii项目,yii开源项目,yii商城系统,yiishop,强大的yiishop shop b2c商城" />
+<meta name="description" content="yiishop专注于电子商务应用开发，为中小企业提供全面的电子商务解决方案" />
 <meta name="baidu-site-verification" content="JYxbG17mX1" />
 
 <link href="/E-shop/static/css/font_1.css" rel="stylesheet">
@@ -47,10 +49,10 @@
 				<!-- BEGIN TOP BAR LEFT PART -->
 				<div class="col-md-6 col-sm-6 additional-shop-info">
 					<ul class="list-unstyled list-inline">
-						<li><i class="fa fa-phone"></i><span>555-5555-5555</span></li>
+						<li><i class="fa fa-phone"></i><span>17729846087</span></li>
 						<!-- BEGIN LANGS -->
 						<li class="langs-block"><a href="javascript:void(0);"
-							class="current">关注微信 <i class="fa fa-angle-down"></i></a>
+							class="current">关注E-shop微信 <i class="fa fa-angle-down"></i></a>
 							<div class="langs-block-others-wrapper">
 								<div class="langs-block-others">
 									<img src="http://www.yiishop.com.cn/web/themes/img/wx.jpg">
@@ -106,7 +108,6 @@
 						href="javascript:void(0);" class="cart-info-value">￥${cartProductPrice}</a>
 				</div>
 				<i class="fa fa-shopping-cart"></i>
-				
 				<!-- BEGIN CART CONTENT -->
 				<div class="cart-content-wrapper">
 					<div class="cart-content">
@@ -116,7 +117,7 @@
 									href="${pageContext.request.contextPath }/product.json?id=${cProduct.getPid() }">
 										<img src="/E-shop/${cProduct.getImage()}"
 										alt="cProduct.getDescription()" width="37" height="34">
-								</a> <span class="cart-content-count">x ${cProduct.getNum()}</span> <strong> <a
+								</a> <span class="cart-content-count">x 1</span> <strong> <a
 										href="${pageContext.request.contextPath }/product.json?id=${cProduct.getPid() }">${cProduct.getDescription()}
 									</a>
 								</strong> <em>￥${cProduct.getSalePrice()}</em> 
@@ -133,16 +134,15 @@
 					</div>
 				</div>
 				<!-- END CART CONTENT -->
-				
 			</div>
 			<div class="collapse navbar-collapse mega-menu">
 				<ul class="nav navbar-nav">
 					<li><a href="${pageContext.request.contextPath }/index.do">
 							首页 </a></li>
-					<li><a href="#"> 积分商城 </a></li>
-					<li><a href="#" > 后台展示 </a></li>
+					<li><a href="/sales/point/index.html"> 积分商城 </a></li>
+					<li><a href="/backend" target="_blank"> 后台展示 </a></li>
 
-					<li><a href="#" >
+					<li><a href="/cms/default/index.html" target="_blank">
 							项目说明 </a></li>
 				</ul>
 			</div>
@@ -168,7 +168,9 @@
 			<div class="row margin-bottom-40 margin-top-10">
 				<div class="col-md-12 sale-product">
 
-					<h2>热卖商品</h2>
+					${user1.getPw()}
+
+					<h2>HOT</h2>
 					<div class="bxslider-wrapper">
 						<ul class="bxslider" data-slides-phone="1" data-slides-tablet="2"
 							data-slides-desktop="5" data-slide-margin="15">
@@ -187,9 +189,9 @@
 										</div>
 										<h3>
 											<a
-												href="${pageContext.request.contextPath }/product.json?id=${p1.getPid() }">${p1.getShortDescription() }</a>
+												href="${pageContext.request.contextPath }/product.json?id=${p1.getPid() }">${p1.getDescription() }</a>
 										</h3>
-										<div class="pi-price">￥ ${p1.getSalePrice() }</div>
+										<div class="pi-price">￥ ${p1.getPrice() }</div>
 										<a
 											href="${pageContext.request.contextPath }/product/add2cart.json?pid=${p1.getPid() }"
 											class="btn btn-default add2cart" id="${p1.getPid() }">加入购物车</a>
@@ -218,56 +220,56 @@
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=9" class="collapsed"> <i
 										class="fa fa-circle"></i> T恤 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=8" class="collapsed"> <i
 										class="fa fa-circle"></i> 衬衫 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=7" class="collapsed"> <i
 										class="fa fa-circle"></i> 裤子 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=6" class="collapsed"> <i
 										class="fa fa-circle"></i> 毛衣 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=5" class="collapsed"> <i
 										class="fa fa-circle"></i> 开衫 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=4" class="collapsed"> <i
 										class="fa fa-circle"></i> 外套 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=3" class="collapsed"> <i
 										class="fa fa-circle"></i> 背心 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=2" class="collapsed"> <i
 										class="fa fa-circle"></i> 内衣 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
@@ -282,49 +284,49 @@
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=37" class="collapsed"> <i
 										class="fa fa-circle"></i> T恤<i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=36" class="collapsed"> <i
 										class="fa fa-circle"></i> 衬衫 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=38" class="collapsed"> <i
 										class="fa fa-circle"></i> 裙·裤 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=39" class="collapsed"> <i
 										class="fa fa-circle"></i> 毛衣 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=42" class="collapsed"> <i
 										class="fa fa-circle"></i> 开衫 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=41" class="collapsed"> <i
 										class="fa fa-circle"></i> 外套 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=40" class="collapsed"> <i
 										class="fa fa-circle"></i> 内衣<i class="fa fa-angle-down"></i>
 								</a>
 								</li>
@@ -339,49 +341,49 @@
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=20" class="collapsed"> <i
 										class="fa fa-circle"></i> 女士鞋 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=12" class="collapsed"> <i
 										class="fa fa-circle"></i> 女士休闲鞋<i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=11" class="collapsed"> <i
 										class="fa fa-circle"></i> 女士轻便运动鞋 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=13" class="collapsed"> <i
 										class="fa fa-circle"></i> 女士靴子 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=14" class="collapsed"> <i
 										class="fa fa-circle"></i> 男士鞋 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=15" class="collapsed"> <i
 										class="fa fa-circle"></i> 男士休闲鞋 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=25" class="collapsed"> <i
 										class="fa fa-circle"></i> 男子轻便运动鞋 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
@@ -398,56 +400,56 @@
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=50" class="collapsed"> <i
 										class="fa fa-circle"></i> 披肩·围巾 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=49" class="collapsed"> <i
 										class="fa fa-circle"></i> 帽子 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=48" class="collapsed"> <i
 										class="fa fa-circle"></i> 耳罩 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=47" class="collapsed"> <i
 										class="fa fa-circle"></i> 钱包 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=46" class="collapsed"> <i
 										class="fa fa-circle"></i> 手套 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=45" class="collapsed"> <i
 										class="fa fa-circle"></i> 皮带 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=44" class="collapsed"> <i
 										class="fa fa-circle"></i> 伞·雨伞 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=44" class="collapsed"> <i
 										class="fa fa-circle"></i> 手帕 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
@@ -462,14 +464,14 @@
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=34" class="collapsed"> <i
 										class="fa fa-circle"></i> 儿童上装 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
 								<li
 									class="list-group-item dropdown clearfix
                             ">
-									<a href="javascript:void(0);" class="collapsed"> <i
+									<a href="/home/list/cat.html?id=33" class="collapsed"> <i
 										class="fa fa-circle"></i> 儿童杂货 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>							
@@ -484,33 +486,138 @@
 					<div class="bxslider-wrapper">
 						<ul class="bxslider" data-slides-phone="1" data-slides-tablet="2"
 							data-slides-desktop="3" data-slide-margin="15">
-							<c:forEach items="${thsp}" var="p1">
-								<li>
-									<div class="product-item">
-										<div class="pi-img-wrapper">
-											<img src="/E-shop/${p1.getImage()}" class="img-responsive"
-												style="width: 190px; height: 190px;">
-											<div>
-												<a href="/E-shop/${p1.getImage()}"
-													class="btn btn-default fancybox-button">放大</a> <a
-													href="${pageContext.request.contextPath }/product.json?id=${p1.getPid() }"
-													class="btn btn-default fancybox-fast-view">查看详请</a>
-											</div>
-										</div>
-										<h3>
+							<li>
+								<div class="product-item">
+									<div class="pi-img-wrapper">
+										<img
+											src="http://www.yiishop.com.cn/images/goods/20160530/14645968374562_m.jpg"
+											class="img-responsive" alt="Berry Lace Dress">
+										<div>
 											<a
-												href="${pageContext.request.contextPath }/product.json?id=${p1.getPid() }">${p1.getShortDescription() }</a>
-										</h3>
-										<div class="pi-price">￥ ${p1.getSalePrice() }</div>
-										<a
-											href="${pageContext.request.contextPath }/product/add2cart.json?pid=${p1.getPid() }"
-											class="btn btn-default add2cart" id="${p1.getPid() }">加入购物车</a>
-										<div class="sticker sticker-sale"></div>
+												href="http://www.yiishop.com.cn/images/goods/20160530/14645968374562_l.jpg"
+												class="btn btn-default fancybox-button">大图</a> <a
+												href="/product-7-81.html"
+												class="btn btn-default fancybox-fast-view">查看</a>
+										</div>
 									</div>
-								</li>
-							</c:forEach>
-						
-						
+									<h3>
+										<a href="/product-7-81.html">好吃的商品</a>
+									</h3>
+									<div class="pi-price">￥20.000</div>
+									<a href="#" class="btn btn-default add2cart">加入购物车</a>
+									<div class="sticker sticker-new"></div>
+								</div>
+							</li>
+							<li>
+								<div class="product-item">
+									<div class="pi-img-wrapper">
+										<img
+											src="http://www.yiishop.com.cn/images/goods/20160530/14645834935373_m.jpg"
+											class="img-responsive" alt="Berry Lace Dress">
+										<div>
+											<a
+												href="http://www.yiishop.com.cn/images/goods/20160530/14645834935373_l.jpg"
+												class="btn btn-default fancybox-button">大图</a> <a
+												href="/product-4-78.html"
+												class="btn btn-default fancybox-fast-view">查看</a>
+										</div>
+									</div>
+									<h3>
+										<a href="/product-4-78.html">雪之恋和风大福</a>
+									</h3>
+									<div class="pi-price">￥1008.000</div>
+									<a href="#" class="btn btn-default add2cart">加入购物车</a>
+									<div class="sticker sticker-new"></div>
+								</div>
+							</li>
+							<li>
+								<div class="product-item">
+									<div class="pi-img-wrapper">
+										<img
+											src="http://www.yiishop.com.cn/images/goods/20160530/14645972851038_m.jpg"
+											class="img-responsive" alt="Berry Lace Dress">
+										<div>
+											<a
+												href="http://www.yiishop.com.cn/images/goods/20160530/14645972851038_l.jpg"
+												class="btn btn-default fancybox-button">大图</a> <a
+												href="/product-9-83.html"
+												class="btn btn-default fancybox-fast-view">查看</a>
+										</div>
+									</div>
+									<h3>
+										<a href="/product-9-83.html">雪之恋和风大福</a>
+									</h3>
+									<div class="pi-price">￥9.000</div>
+									<a href="#" class="btn btn-default add2cart">加入购物车</a>
+									<div class="sticker sticker-new"></div>
+								</div>
+							</li>
+							<li>
+								<div class="product-item">
+									<div class="pi-img-wrapper">
+										<img
+											src="http://www.yiishop.com.cn/images/goods/20160530/14645963086748_m.jpg"
+											class="img-responsive" alt="Berry Lace Dress">
+										<div>
+											<a
+												href="http://www.yiishop.com.cn/images/goods/20160530/14645963086748_l.jpg"
+												class="btn btn-default fancybox-button">大图</a> <a
+												href="/product-6-80.html"
+												class="btn btn-default fancybox-fast-view">查看</a>
+										</div>
+									</div>
+									<h3>
+										<a href="/product-6-80.html">雪之恋和风大福 </a>
+									</h3>
+									<div class="pi-price">￥30.000</div>
+									<a href="#" class="btn btn-default add2cart">加入购物车</a>
+									<div class="sticker sticker-new"></div>
+								</div>
+							</li>
+							<li>
+								<div class="product-item">
+									<div class="pi-img-wrapper">
+										<img
+											src="http://www.yiishop.com.cn/images/goods/20160530/14645971269008_m.jpg"
+											class="img-responsive" alt="Berry Lace Dress">
+										<div>
+											<a
+												href="http://www.yiishop.com.cn/images/goods/20160530/14645971269008_l.jpg"
+												class="btn btn-default fancybox-button">大图</a> <a
+												href="/product-8-82.html"
+												class="btn btn-default fancybox-fast-view">查看</a>
+										</div>
+									</div>
+									<h3>
+										<a href="/product-8-82.html">雪之恋和风大福 </a>
+									</h3>
+									<div class="pi-price">￥9.000</div>
+									<a href="#" class="btn btn-default add2cart">加入购物车</a>
+									<div class="sticker sticker-new"></div>
+								</div>
+							</li>
+							<li>
+								<div class="product-item">
+									<div class="pi-img-wrapper">
+										<img
+											src="http://www.yiishop.com.cn/images/goods/20160530/14645960158890_m.jpg"
+											class="img-responsive" alt="Berry Lace Dress">
+										<div>
+											<a
+												href="http://www.yiishop.com.cn/images/goods/20160530/14645960158890_l.jpg"
+												class="btn btn-default fancybox-button">大图</a> <a
+												href="/product-5-79.html"
+												class="btn btn-default fancybox-fast-view">查看</a>
+										</div>
+									</div>
+									<h3>
+										<a href="/product-5-79.html">雪之恋和风大福 </a>
+									</h3>
+									<div class="pi-price">￥35.000</div>
+									<a href="#" class="btn btn-default add2cart">加入购物车</a>
+									<div class="sticker sticker-new"></div>
+								</div>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -518,34 +625,34 @@
 			</div>
 			<!-- 分类 && 推荐商品 end -->
 		</div>
-	<!-- 品牌列表 start -->
+		<!-- 品牌列表 start -->
 		<div class="brands">
 			<div class="container">
 				<div class="row">
 					<div class="bxslider-wrapper">
 						<ul class="bxslider" data-slides-phone="1" data-slides-tablet="3"
 							data-slides-desktop="6" data-slide-margin="15">
-							<li><a href="#"> <img
+							<li><a href=""> <img
 									src="/E-shop/static/img/logo/ecco.png"
 									alt="ecco" title="ecco">
 							</a></li>
-							<li><a href="#"> <img
+							<li><a href=""> <img
 									src="/E-shop/static/img/logo/car.png"
 									alt="car" title="car">
 							</a></li>
-							<li><a href="#"> <img
+							<li><a href=""> <img
 									src="/E-shop/static/img/logo/supreme2.png"
 									alt="supreme2" title="supreme2">
 							</a></li>
-							<li><a href="#"> <img
+							<li><a href=""> <img
 									src="/E-shop/static/img/logo/adi.jpg"
 									alt="adidas" title="adidas">
 							</a></li>
-							<li><a href="#"> <img
+							<li><a href=""> <img
 									src="/E-shop/static/img/logo/monkey.jpg"
 									alt="monkey" title="monkey">
 							</a></li>
-							<li><a href="#"> <img
+							<li><a href=""> <img
 									src="/E-shop/static/img/logo/mmm.jpg"
 									alt="mmm" title="mmm">
 							</a></li>
@@ -558,6 +665,7 @@
 			</div>
 		</div>
 		<!-- 品牌列表 end -->
+		
 	</div>
 
 	<div class="steps3 steps3red">
@@ -589,7 +697,7 @@
 			</div>
 		</div>
 	</div>
-		<!-- BEGIN PRE-FOOTER -->
+	<!-- BEGIN PRE-FOOTER -->
 	<div class="pre-footer">
 		<div class="container">
 			<div class="row">
@@ -649,14 +757,14 @@
 		<div class="container">
 			<div class="row">
 				<!-- BEGIN COPYRIGHT -->
-				<div class="col-md-6 col-sm-6 padding-top-10">2015 © Yii2
+				<div class="col-md-6 col-sm-6 padding-top-10">2015 ? E
 					Shop. ALL Rights Reserved.</div>
 				<!-- END COPYRIGHT -->
 			</div>
 		</div>
 	</div>
 	<script>
-		var web_url = 'http://www.yiishop.com.cn';
+		var web_url = 'http://www.E-shop.com.cn';
 	</script>
 </body>
 <script>

@@ -32,6 +32,7 @@ public class UserController {
     	User getUser = userService.findUserByName(uname);
     	if(getUser != null) {
     		//用户名重复
+    		model.addAttribute("wrongMsg","用户名已存在");
     		return "/member/default/register";
     	}else {
     		User user = new User();
@@ -60,6 +61,7 @@ public class UserController {
     	}else {
     		//输入密码错误
     		System.out.println("输入密码错误");
+    		model.addAttribute("wrongMsg","输入密码错误");
     		return "/member/default/login";
     	}
     	

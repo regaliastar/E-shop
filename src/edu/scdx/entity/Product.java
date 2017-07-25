@@ -1,14 +1,14 @@
 package edu.scdx.entity;
 
 public class Product {
-	private int Pid ;    // INT auto_increment primary key,  -- ÉÌÆ·id
-	private String  Pname; // VARCHAR(50),  -- ÉÌÆ·Ãû³Æ
-	private int stock; // -- ¿â´æÊýÁ¿
-	private String image ; // -- Í¼Æ¬Â·¾¶
-	private float price;// -- ³É±¾¼Û¸ñ
-	private float salePrice; //  -- ÏúÊÛ¼Û¸ñ
-	private String description;  // VARCHAR(512); //  -- ÉÌÆ·ÃèÊö
-	private String addedDate; // date  //-- ÉÏ¼ÜÈÕÆÚ
+	private int Pid ;    // INT auto_increment primary key,  -- ï¿½ï¿½Æ·id
+	private String  Pname; // VARCHAR(50),  -- ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½
+	private int stock; // -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private String image ; // -- Í¼Æ¬Â·ï¿½ï¿½
+	private float price;// -- ï¿½É±ï¿½ï¿½Û¸ï¿½
+	private float salePrice; //  -- ï¿½ï¿½ï¿½Û¼Û¸ï¿½
+	private String description;  // VARCHAR(512); //  -- ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½
+	private String addedDate; // date  //-- ï¿½Ï¼ï¿½ï¿½ï¿½ï¿½ï¿½
 	public int getPid() {
 		return Pid;
 	}
@@ -46,6 +46,12 @@ public class Product {
 		this.salePrice = salePrice;
 	}
 	public String getDescription() {
+		return description;
+	}
+	public String getShortDescription() {
+		if(description.length() > 50) {
+			return description.substring(0, 50)+"...";
+		}
 		return description;
 	}
 	public void setDescription(String description) {
