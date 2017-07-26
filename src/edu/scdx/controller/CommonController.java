@@ -158,4 +158,9 @@ public class CommonController {
     	model.addAttribute("commendList", commendList);
         return "/product/main";
     }
-}
+    
+        @RequestMapping("/set_address.do")
+        public String getSet_address (Model model,HttpSession session){
+        return "/member/set_address";
+    }
+    }

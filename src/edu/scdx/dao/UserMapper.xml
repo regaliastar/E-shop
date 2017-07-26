@@ -6,6 +6,19 @@
     <result column="Uname" property="Uname" jdbcType="VARCHAR" />
     <result column="pw" property="pw" jdbcType="VARCHAR" />
   </resultMap>
+  
+  <resultMap id="BaseResultMap1" type="edu.scdx.entity.Address" >
+    <!--  <id column="id" property="id" jdbcType="INTEGER" /> -->
+    <result column="Uname" property="Uname" jdbcType="VARCHAR" />
+    <result column="pw" property="pw" jdbcType="VARCHAR" />
+    <result column="Addr" property="Addr" jdbcType="VARCHAR" />
+    <result column="Uid" property="Uid" jdbcType="INTEGER" />
+    <result column="Zip" property="Zip" jdbcType="INTEGER" />
+    <result column="sendName" property="sendName" jdbcType="VARCHAR" />
+    <result column="sendTel" property="sendTel" jdbcType="VARCHAR" />
+    <result column="Aid" property="Aid" jdbcType="INTEGER" />
+    <result column='Current' property="Current" jdbcType="INTEGER"/>
+  </resultMap>
   <select id="getAll" resultMap="BaseResultMap">
   	select id,name,age from user
   </select>
@@ -21,4 +34,33 @@
   <insert id="insertUser" parameterType="edu.scdx.entity.User">
   	insert into user(Uname,pw) values(#{Uname},#{pw})
   </insert>
+  
+    
+   <insert id="insertAddress" parameterType="edu.scdx.entity.Address">
+  	insert into Address(Uid,addr,zip,sendName,sendTel,Current) values(#{Uid},#{addr},#{zip},#{sendName},#{sendTel},#{Current})
+  </insert>
+  
+     <select id="getAddress" parameterType="int" resultMap="BaseResultMap1">
+  	select * from Address where Uid = #{id}
+  </select>
+  
+  <select id="findAddressNum" parameterType="int" resultType='int' >
+  	select COUNT(*) FROM Address where Uid =#{id,jdbcType=INTEGER}
+  </select>
+  
+  
+  <select id="findCurrentAddress" parameterType="int" resultMap="BaseResultMap1">
+  	select * from Address where  Current = 1 and Uid = #{id}
+  </select>
+
+  
+  
+  <select id="setCurrentAddress" parameterType="int" resultMap="BaseResultMap1">
+  	update  Address set Current=1 where  Address.Uid=#{Uid,jdbcType=INTEGER} and Address.Aid=#{Aid,jdbcType=INTEGER}
+  </select>
+  
+   <select id="setCurrentAddress_0" parameterType="int" resultMap="BaseResultMap1">
+  	update  Address set Current=0 where (Current=1) and (Uid=#{Uid})
+  </select>
+  
 </mapper>

@@ -181,26 +181,31 @@
 										</div>
 										<div class="form-group">
 											<div class="col-md-5 control-label">
-												<label class="">详细地址：${user.getAddress() }</label>
-											</div>
-											<div class="col-md-4 control-label">
-												<label class="">邮政编码：${user.getZip() }</label>
+												<label class="">收货人姓名：${user.getUname() }</label>
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-5 control-label">
-												<label class="">电话：${user.getTel() }</label>
+												<label class="">详细地址：${ca.getAddr()}</label>
 											</div>
 											<div class="col-md-4 control-label">
-												<label class="">手机：${user.getTel() }</label>
+												<label class="">邮政编码：${ca.getZip()}</label>
+											</div>                   
+										</div>
+										<div class="form-group">
+											<div class="col-md-5 control-label">
+												<label class="">电话：${ca.getSendTel()}</label>
+											</div>
+											<div class="col-md-4 control-label">
+												<label class="">手机：${ca.getSendTel()}</label>
 											</div>
 										</div>
 									</div>
 									<button class="btn btn-primary collapsed"
-										onclick="location.href='/member/address/update.html?addr_id=56&f=1'">
+										onclick="location.href='${pageContext.request.contextPath }/set_address.do'">
 										修改</button>
 									<button class="btn btn-primary collapsed"
-										onclick="location.href='/member/address/index.html?f=1'">
+										onclick="location.href='${pageContext.request.contextPath }/user/choose_address.json'">
 										选择其他</button>
 								</div>
 							</div>

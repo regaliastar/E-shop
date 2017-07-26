@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import edu.scdx.common.util.JsonUtil;
+import edu.scdx.entity.Address;
 import edu.scdx.entity.Product;
 import edu.scdx.entity.User;
 import edu.scdx.service.ProductService;
@@ -39,8 +40,9 @@ public class UserController {
         	user.setUname(uname);
         	user.setPw(pw);
         	
-    		userService.addUser(user);    	
-        	session.setAttribute("user",user);
+    		userService.addUser(user);    
+    		User getuser = userService.findUserByName(user.getUname());
+        	session.setAttribute("user",getuser);
         	
         	return "redirect:/index.do "; 
     	}
@@ -67,5 +69,50 @@ public class UserController {
     	
     }
     
+    
+    @RequestMapping("/setaddr.json")
+    public String getAddr(Model model,HttpServletResponse response,HttpSession session,String addr,String zip,String sendName,String sendTel){
+    	Address address = new Address();
+    	User u = (User) session.getAttribute("user");
+    	int i=userService.findAddressNum(u.getUid());
+    	//System.out.println(i);
+    	if (i==0) address.setCurrent(1);
+    	else  address.setCurrent(0);
+    	address.setAddr(addr);
+    	address.setZip(zip);
+    	address.setSendName(sendName);
+    	address.setSendTel(sendTel);
+    	address.setUid(u.getUid());
+    	//System.out.println(addr);
+    	//System.out.println(zip);
+    	//System.out.println(sendName);
+    	//System.out.println(sendTel);
+    	userService.addAddress(address);   
+        Address ca=new Address();
+        ca=userService.findCurrentAddress(u.getUid());
+        model.addAttribute("ca",ca);
+    	return "/member/purchase";
+    	}
+    
+    
+    @RequestMapping("/choose_address.json")
+    public String getChoose_address (Model model,HttpSession session){
+    	User user = (User) session.getAttribute("user");
+    	List<Address> addrs = userService.getAddress(user.getUid());
+    	model.addAttribute("addrs", addrs);
+    
+        return "/member/choose_address";
+    }
+
+    @RequestMapping("/set_CurrentAddress.do")
+    public String set_CurrentAddress(Model model,HttpSession session,Integer Aid){
+    	User u = (User) session.getAttribute("user");    
+        userService.setCurrentAddress_0(u.getUid());
+        userService.setCurrentAddress(Aid, u.getUid());
+        Address ca=new Address();
+       ca=userService.findCurrentAddress(u.getUid());
+       model.addAttribute("ca",ca);
+        return "/member/purchase";
+    }
     
 }

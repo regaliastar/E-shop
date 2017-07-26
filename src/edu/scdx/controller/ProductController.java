@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
+import edu.scdx.entity.Address;
 import edu.scdx.entity.Cart;
 import edu.scdx.entity.CartItem;
 import edu.scdx.entity.Product;
@@ -20,6 +21,7 @@ import edu.scdx.entity.SaleItem;
 import edu.scdx.entity.User;
 import edu.scdx.service.CartService;
 import edu.scdx.service.ProductService;
+import edu.scdx.service.UserService;
 
 @Controller
 @RequestMapping("/product")
@@ -28,6 +30,8 @@ public class ProductController {
     private ProductService productService;
 	@Autowired
     private CartService cartService;
+	@Autowired
+    private UserService userService;
 	
     @RequestMapping("/purchase.json")
     public String purchase(Model model,HttpSession session,Integer pid,Integer num){
@@ -80,6 +84,14 @@ public class ProductController {
     		model.addAttribute("cartProductNum", 0);   
     	}
     	
+    	/**
+    	 * 显示当前地址
+    	 * */
+    	 Address ca=new Address();
+         ca=userService.findCurrentAddress(user.getUid());
+         model.addAttribute("ca",ca);
+    	
+    	
     	return "/member/purchase";
     }
     
@@ -130,7 +142,13 @@ public class ProductController {
         		model.addAttribute("cartProductNum", 0);   
         	}
         	
-        	
+        	/**
+        	 * 显示当前地址
+        	 * */
+        	 Address ca=new Address();
+             ca=userService.findCurrentAddress(user.getUid());
+             model.addAttribute("ca",ca);
+             
         	return "/member/purchase";
     	}
     	
@@ -143,9 +161,11 @@ public class ProductController {
     	System.out.println("enter /add2cart.json");
     	System.out.println("pid  "+pid);
     	User user = (User) session.getAttribute("user");
+    	System.out.println(user);
     	if(user == null){
     		return "redirect:/login.do";
     	}
+    	
     	Cart cartItem = new Cart();
     	cartItem.setUid(user.getUid());
     	cartItem.setPid(pid);

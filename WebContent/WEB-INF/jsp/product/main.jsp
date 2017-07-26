@@ -83,7 +83,7 @@
 				<!-- BEGIN TOP BAR LEFT PART -->
 				<div class="col-md-6 col-sm-6 additional-shop-info">
 					<ul class="list-unstyled list-inline">
-						<li><i class="fa fa-phone"></i><span>137-9542-3417</span></li>
+						<li><i class="fa fa-phone"></i><span>555-5555-5555</span></li>
 						<!-- BEGIN LANGS -->
 						<li class="langs-block"><a href="javascript:void(0);"
 							class="current">关注微信 <i class="fa fa-angle-down"></i></a>
@@ -191,8 +191,8 @@
 	<div class="main">
 		<div class="container">
 			<ul class="breadcrumb">
-				<li><a href="/">首页</a></li>
-				<li><a href="/home/list/cat.html?id=1">服饰</a></li>
+				<li><a href="${pageContext.request.contextPath }/index.do">首页</a></li>
+				<li><a href="#">服饰</a></li>
 				<li class="active">男式</li>
 			</ul>
 			<div class="row margin-bottom-40">

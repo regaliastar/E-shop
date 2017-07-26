@@ -4,6 +4,35 @@ public class Address {
 	private int Aid;
 	private int Uid;
 	private String Addr;
+	private String Zip;
+	private String SendName;
+	private String SendTel;
+	
+	public String getZip() {
+		return Zip;
+	}
+	public void setZip(String zip) {
+		Zip = zip;
+	}
+	public String getSendName() {
+		return SendName;
+	}
+	public void setSendName(String sendName) {
+		SendName = sendName;
+	}
+	public String getSendTel() {
+		return SendTel;
+	}
+	public void setSendTel(String sendTel) {
+		SendTel = sendTel;
+	}
+	public int getCurrent() {
+		return Current;
+	}
+	public void setCurrent(int current) {
+		Current = current;
+	}
+	private int Current;
 	public int getAid() {
 		return Aid;
 	}
@@ -24,7 +53,8 @@ public class Address {
 	}
 	@Override
 	public String toString() {
-		return "Address [Aid=" + Aid + ", Uid=" + Uid + ", Addr=" + Addr + "]";
+		return "Address [Aid=" + Aid + ", Uid=" + Uid + ", Addr=" + Addr + ", Zip=" + Zip + ", SendName=" + SendName
+				+ ", SendTel=" + SendTel + ", Current=" + Current + "]";
 	}
 	
 
