@@ -40,13 +40,15 @@
 <!-- Body BEGIN -->
 
 <body>
-	<div id="loading" ></div>
+	<div id="loading"></div>
+
+
 	<div class="pre-header">
 		<div class="container">
 			<div class="row">
 				<!-- BEGIN TOP BAR LEFT PART -->
 				<div class="col-md-6 col-sm-6 additional-shop-info">
-					<ul class="list-unstyled list-inline">
+					<ul style="margin-top:5px" class="list-unstyled list-inline">
 						<li><i class="fa fa-phone"></i><span>555-5555-5555</span></li>
 						<!-- BEGIN LANGS -->
 						<li class="langs-block"><a href="javascript:void(0);"
@@ -62,9 +64,22 @@
 				<!-- END TOP BAR LEFT PART -->
 				<!-- BEGIN TOP BAR MENU -->
 
+
+
 				<c:choose>
 					<c:when test="${user != null}">
-						<ul class="list-unstyled list-inline pull-right">
+						<div style="width: 400px;height:30px;float:left;top:0px;bottom:0px">
+								<form class="bs-example bs-example-form" role="form" method="post" action="${pageContext.request.contextPath }/search.json">
+									<div class="input-group" style="height:30px">
+										<input name="keyword" id="keyword" style="height:29px" type="text" class="form-control" />
+										 <span0
+											class="input-group-btn" >
+											<button style="height:29px" class="btn btn-default" type="submit">搜索</button>
+										</span>
+									</div>
+								</form>
+						</div>
+						<ul style="margin-top:5px" class="list-unstyled list-inline pull-right">
 							<li><a href="javascript:;" onclick="sign();">签到</a></li>
 							<li><a href="#">"${user.uname }"</a></li>
 							<li><a href="${pageContext.request.contextPath }/logout.do">注销</a></li>
@@ -73,7 +88,20 @@
 					</c:when>
 					<c:otherwise>
 						<div class="col-md-6 col-sm-6 additional-nav">
-							<ul class="list-unstyled list-inline pull-right">
+							
+							<div style="width: 400px;height:30px;float:left;top:0px;bottom:0px">
+								<form class="bs-example bs-example-form" role="form" action="${pageContext.request.contextPath }/search.json">
+									<div class="input-group" style="height:30px">
+										<input name="keyword" id="keyword" style="height:29px" type="text" class="form-control" />
+										 <span0
+											class="input-group-btn" >
+											<button style="height:29px" class="btn btn-default" type="submit">搜索</button>
+										</span>
+									</div>
+								</form>
+							</div>
+						
+							<ul style="margin-top:5px" class="list-unstyled list-inline pull-right">
 								<li><a href="${pageContext.request.contextPath }/login.do">登录</a></li>
 								<li><a
 									href="${pageContext.request.contextPath }/register.do">注册</a></li>
@@ -86,6 +114,10 @@
 			</div>
 		</div>
 	</div>
+
+
+
+
 	<div role="navigation" class="navbar header no-margin">
 		<div class="container">
 			<div class="navbar-header">
@@ -102,11 +134,11 @@
 			</div>
 			<div class="cart-block">
 				<div class="cart-info">
-					<a href="javascript:void(0);" class="cart-info-count">${cartProductNum}个商品</a> <a
-						href="javascript:void(0);" class="cart-info-value">￥${cartProductPrice}</a>
+					<a href="javascript:void(0);" class="cart-info-count">${cartProductNum}个商品</a>
+					<a href="javascript:void(0);" class="cart-info-value">￥${cartProductPrice}</a>
 				</div>
 				<i class="fa fa-shopping-cart"></i>
-				
+
 				<!-- BEGIN CART CONTENT -->
 				<div class="cart-content-wrapper">
 					<div class="cart-content">
@@ -116,34 +148,35 @@
 									href="${pageContext.request.contextPath }/product.json?id=${cProduct.getPid() }">
 										<img src="/E-shop/${cProduct.getImage()}"
 										alt="cProduct.getDescription()" width="37" height="34">
-								</a> <span class="cart-content-count">x ${cProduct.getNum()}</span> <strong> <a
+								</a> <span class="cart-content-count">x ${cProduct.getNum()}</span>
+									<strong> <a
 										href="${pageContext.request.contextPath }/product.json?id=${cProduct.getPid() }">${cProduct.getDescription()}
 									</a>
-								</strong> <em>￥${cProduct.getSalePrice()}</em> 
-								<a class="del-goods" href="${pageContext.request.contextPath }/product/deleteCart.json?cid=${cProduct.getCid() }"> 
-									<i class="fa fa-times"></i>
-								</a>
-								</li>
+								</strong> <em>￥${cProduct.getSalePrice()}</em> <a class="del-goods"
+									href="${pageContext.request.contextPath }/product/deleteCart.json?cid=${cProduct.getCid() }">
+										<i class="fa fa-times"></i>
+								</a></li>
 							</c:forEach>
 						</ul>
 						<div class="text-right">
-							<a href="#" class="btn btn-default">查看购物车</a>
-							<a href="${pageContext.request.contextPath }/product/purchaseFromCart.do"  class="btn btn-primary">结算</a>
+							<a href="#" class="btn btn-default">查看购物车</a> <a
+								href="${pageContext.request.contextPath }/product/purchaseFromCart.do"
+								class="btn btn-primary">结算</a>
 						</div>
 					</div>
 				</div>
 				<!-- END CART CONTENT -->
-				
+
 			</div>
 			<div class="collapse navbar-collapse mega-menu">
 				<ul class="nav navbar-nav">
+
 					<li><a href="${pageContext.request.contextPath }/index.do">
 							首页 </a></li>
 					<li><a href="#"> 积分商城 </a></li>
-					<li><a href="#" > 后台展示 </a></li>
+					<li><a href="#"> 后台展示 </a></li>
 
-					<li><a href="#" >
-							项目说明 </a></li>
+					<li><a href="#"> 项目说明 </a></li>
 				</ul>
 			</div>
 		</div>
@@ -385,8 +418,8 @@
 										class="fa fa-circle"></i> 男子轻便运动鞋 <i class="fa fa-angle-down"></i>
 								</a>
 								</li>
-								
-								
+
+
 							</ul>
 						</li>
 						<li class="list-group-item clearfix dropdown
@@ -472,7 +505,7 @@
 									<a href="javascript:void(0);" class="collapsed"> <i
 										class="fa fa-circle"></i> 儿童杂货 <i class="fa fa-angle-down"></i>
 								</a>
-								</li>							
+								</li>
 							</ul>
 						</li>
 					</ul>
@@ -509,8 +542,8 @@
 									</div>
 								</li>
 							</c:forEach>
-						
-						
+
+
 						</ul>
 					</div>
 				</div>
@@ -518,7 +551,7 @@
 			</div>
 			<!-- 分类 && 推荐商品 end -->
 		</div>
-	<!-- 品牌列表 start -->
+		<!-- 品牌列表 start -->
 		<div class="brands">
 			<div class="container">
 				<div class="row">
@@ -526,32 +559,29 @@
 						<ul class="bxslider" data-slides-phone="1" data-slides-tablet="3"
 							data-slides-desktop="6" data-slide-margin="15">
 							<li><a href="#"> <img
-									src="/E-shop/static/img/logo/ecco.png"
-									alt="ecco" title="ecco">
+									src="/E-shop/static/img/logo/ecco.png" alt="ecco" title="ecco">
 							</a></li>
 							<li><a href="#"> <img
-									src="/E-shop/static/img/logo/car.png"
-									alt="car" title="car">
+									src="/E-shop/static/img/logo/car.png" alt="car" title="car">
 							</a></li>
 							<li><a href="#"> <img
-									src="/E-shop/static/img/logo/supreme2.png"
-									alt="supreme2" title="supreme2">
+									src="/E-shop/static/img/logo/supreme2.png" alt="supreme2"
+									title="supreme2">
 							</a></li>
 							<li><a href="#"> <img
-									src="/E-shop/static/img/logo/adi.jpg"
-									alt="adidas" title="adidas">
+									src="/E-shop/static/img/logo/adi.jpg" alt="adidas"
+									title="adidas">
 							</a></li>
 							<li><a href="#"> <img
-									src="/E-shop/static/img/logo/monkey.jpg"
-									alt="monkey" title="monkey">
+									src="/E-shop/static/img/logo/monkey.jpg" alt="monkey"
+									title="monkey">
 							</a></li>
 							<li><a href="#"> <img
-									src="/E-shop/static/img/logo/mmm.jpg"
-									alt="mmm" title="mmm">
+									src="/E-shop/static/img/logo/mmm.jpg" alt="mmm" title="mmm">
 							</a></li>
-					
-					
-							
+
+
+
 						</ul>
 					</div>
 				</div>
@@ -589,7 +619,7 @@
 			</div>
 		</div>
 	</div>
-		<!-- BEGIN PRE-FOOTER -->
+	<!-- BEGIN PRE-FOOTER -->
 	<div class="pre-footer">
 		<div class="container">
 			<div class="row">
@@ -690,8 +720,8 @@
 
 <script src="/E-shop/static/js/cart.js"></script>
 <script>
-	$(document).ready(function(){
-		document.getElementById('loading').style.display='none';
+	$(document).ready(function() {
+		document.getElementById('loading').style.display = 'none';
 	});
 </script>
 </html>

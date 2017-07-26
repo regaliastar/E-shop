@@ -6,10 +6,9 @@
 <%@ page import="edu.scdx.entity.Product"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-<html lang="en-US">
-<!-- Head BEGIN -->
+<html>
 <head>
+
 <meta charset="utf-8">
 <title>E-shop</title>
 
@@ -36,17 +35,15 @@
 <link href="/E-shop/static/css/public.css" rel="stylesheet">
 <link href="/E-shop/static/css/load.css" rel="stylesheet">
 </head>
-<!-- Head END -->
-
-<!-- Body BEGIN -->
 <body>
-	  <div class="pre-header">
+	<div id="loading"></div>
+	<div class="pre-header">
 		<div class="container">
 			<div class="row">
 				<!-- BEGIN TOP BAR LEFT PART -->
 				<div class="col-md-6 col-sm-6 additional-shop-info">
 					<ul class="list-unstyled list-inline">
-						<li><i class="fa fa-phone"></i><span>137-9542-3417</span></li>
+						<li><i class="fa fa-phone"></i><span>555-5555-5555</span></li>
 						<!-- BEGIN LANGS -->
 						<li class="langs-block"><a href="javascript:void(0);"
 							class="current">关注微信 <i class="fa fa-angle-down"></i></a>
@@ -60,7 +57,7 @@
 				</div>
 				<!-- END TOP BAR LEFT PART -->
 				<!-- BEGIN TOP BAR MENU -->
-				
+
 				<c:choose>
 					<c:when test="${user != null}">
 						<div style="width: 400px;height:30px;float:left;top:0px;bottom:0px">
@@ -104,11 +101,12 @@
 						</div>
 					</c:otherwise>
 				</c:choose>
-				
+
 				<!-- END TOP BAR MENU -->
 			</div>
 		</div>
 	</div>
+
 	<div role="navigation" class="navbar header no-margin">
 		<div class="container">
 			<div class="navbar-header">
@@ -118,9 +116,9 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a href="${pageContext.request.contextPath }/index.do" class="navbar-brand"> <img
-					src="/E-shop/static/img/logo.png" style="width: 129px; height: 29px;"
-					alt="Metronic Shop UI">
+				<a href="${pageContext.request.contextPath }/index.do"
+					class="navbar-brand"> <img src="/E-shop/static/img/logo.png"
+					style="width: 129px; height: 29px;" alt="Metronic Shop UI">
 				</a>
 			</div>
 			<div class="cart-block">
@@ -129,6 +127,7 @@
 					<a href="javascript:void(0);" class="cart-info-value">￥${cartProductPrice}</a>
 				</div>
 				<i class="fa fa-shopping-cart"></i>
+
 				<!-- BEGIN CART CONTENT -->
 				<div class="cart-content-wrapper">
 					<div class="cart-content">
@@ -156,151 +155,55 @@
 					</div>
 				</div>
 				<!-- END CART CONTENT -->
+
 			</div>
-			<div class="collapse navbar-collapse mega-men
-        u">
+			<div class="collapse navbar-collapse mega-menu">
 				<ul class="nav navbar-nav">
 					<li><a href="${pageContext.request.contextPath }/index.do">
 							首页 </a></li>
 					<li><a href="#"> 积分商城 </a></li>
-					<li><a href="#" > 后台展示 </a></li>
+					<li><a href="#"> 后台展示 </a></li>
 
-					<li><a href="#" >
-							项目说明 </a></li>
+					<li><a href="#"> 项目说明 </a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 
-	<div class="main">
-		<div class="container">
-			<ul class="breadcrumb">
-				<li><a href="${pageContext.request.contextPath }/index.do">首页</a></li>
-				<li><a href="#">会员中心</a></li>
-				<li><a href="#">收货地址列表</a></li>
-				<li class="active">新增收货地址</li>
-			</ul>
-			<!-- BEGIN SIDEBAR & CONTENT -->
-			<div class="row">
-				<!-- BEGIN SIDEBAR -->
-				<div class="sidebar col-md-2">
-					<ul class="list-group margin-bottom-25 sidebar-menu">
-						<li class="list-group-item clearfix
-         "><a
-							href="#"><i
-								class="fa fa-angle-right"></i>我的帐号</a></li>
-						<li class="list-group-item clearfix
-        active"><a
-							href="#"><i
-								class="fa fa-angle-right"></i> 收货地址</a></li>
-						<li class="list-group-item clearfix
-        "><a
-							href="#"> <i class="fa fa-angle-right"></i>
-								我的订单
-						</a></li>
-						<li class="list-group-item clearfix
-        "><a
-							href="#"> <i class="fa fa-angle-right"></i>
-								我的积分
-						</a></li>
-						<li class="list-group-item clearfix
-        "><a
-							href="#"> <i class="fa fa-angle-right"></i>
-								我的签到
-						</a></li>
-						<li class="list-group-item clearfix "><a
-							href="#"><i class="fa fa-angle-right"></i>
-								重置密码</a></li>
-					</ul>
-				</div>
-				<!-- END SIDEBAR -->
+	<div class="container">
+		<div style="min-height:1000px">
+			<h1 style="color:red;margin-left:auto;margin-right:auto">无搜索结果！！！！</h1>
+		</div>
 
-				<!-- BEGIN CONTENT -->
-				<div class="col-md-6">
-					<div class="panel panel-warning">
-						<div class="panel-heading">
-							<h3 class="panel-title">收货地址</h3>
-
-						</div>
-						<div class="panel-body">
-							<form class="form-horizontal form-addr" method="post"
-								action="${pageContext.request.contextPath }/user/setaddr.json">
-								<div class="form-body">
-
-								
-									<div class="form-group">
-										<label class="col-md-3 control-label">详细地址</label>
-										<div class="col-md-9">
-											<input type="text" placeholder="详细地址" id="addr" value=""
-												class="form-control input-sm" name="addr">
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-md-3 control-label">邮编</label>
-										<div class="col-md-3">
-											<input type="text" placeholder="邮编" id="zip" value=""
-												class="form-control input-sm" name="zip">
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-md-3 control-label">收货人姓名</label>
-										<div class="col-md-3">
-											<input type="text" placeholder="收货人姓名" id="sendName" value=""
-												class="form-control input-sm" name="sendName">
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-md-3 control-label">手机</label>
-										<div class="col-md-3">
-											<input type="text" placeholder="手机" id="sendTel" value=""
-												class="form-control input-sm" name="sendTel">
-										</div>
-									</div>
-								</div>
-								<div class="col-md-offset-4 col-md-8">
-									<button class="btn default" type="button">重置</button>
-									<button class="btn blue submit-addr" type="submit">提交</button>
-								</div>
-							</form>
+		<c:forEach items="${productList}" var="p1">
+			<li>
+				<div class="product-item">
+					<div class="pi-img-wrapper">
+						<img src="/E-shop/${p1.getImage()}" class="img-responsive"
+							style="width: 190px; height: 190px;">
+						<div>
+							<a href="/E-shop/${p1.getImage()}"
+								class="btn btn-default fancybox-button">放大</a> <a
+								href="${pageContext.request.contextPath }/product.json?id=${p1.getPid() }"
+								class="btn btn-default fancybox-fast-view">查看详请</a>
 						</div>
 					</div>
+					<h3>
+						<a
+							href="${pageContext.request.contextPath }/product.json?id=${p1.getPid() }">${p1.getShortDescription() }</a>
+					</h3>
+					<div class="pi-price">￥ ${p1.getSalePrice() }</div>
+					<a
+						href="${pageContext.request.contextPath }/product/add2cart.json?pid=${p1.getPid() }"
+						class="btn btn-default add2cart" id="${p1.getPid() }">加入购物车</a>
+					<div class="sticker sticker-sale"></div>
 				</div>
-				<!-- END CONTENT -->
-			</div>
-			<!-- END SIDEBAR & CONTENT -->
-		</div>
+			</li>
+		</c:forEach>
+
 	</div>
 
-	<div class="steps3 steps3red">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4 steps3-col">
-					<i class="fa fa-truck"></i>
-					<div>
-						<h2>免费物流</h2>
-						<em>所购商品由商家包邮</em>
-					</div>
-					<span>&nbsp;</span>
-				</div>
-				<div class="col-md-4 steps3-col">
-					<i class="fa fa-gift"></i>
-					<div>
-						<h2>幸运礼物</h2>
-						<em>每天有3个客户会收到赠品</em>
-					</div>
-					<span>&nbsp;</span>
-				</div>
-				<div class="col-md-4 steps3-col">
-					<i class="fa fa-phone"></i>
-					<div>
-						<h2>400 000 000</h2>
-						<em>7*24小时客户随时咨询</em>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-			<!-- BEGIN PRE-FOOTER -->
+	<!-- BEGIN PRE-FOOTER -->
 	<div class="pre-footer">
 		<div class="container">
 			<div class="row">
@@ -366,39 +269,32 @@
 			</div>
 		</div>
 	</div>
-	<script>
-        var web_url = 'http://www.yiishop.com.cn';
-    </script>
-	<script src="/E-shop/static/js/plugins/jquery-1.10.2.min.js"></script>
-	<script src="/E-shop/static/js/plugins/jquery-migrate-1.2.1.min.js"></script>
-	<script src="/E-shop/static/js/plugins/bootstrap.min.js"></script>
-	<script src="/E-shop/static/js/plugins/back-to-top.js"></script>
-	<script src="/E-shop/static/js/plugins/jquery.slimscroll.min.js"></script>
-	<script src="/E-shop/static/js/plugins/jquery.fancybox.pack.js"></script>
-	<script src="/E-shop/static/js/plugins/jquery.bxslider.min.js"></script>
-	<script src="/E-shop/static/js/plugins/jquery.zoom.min.js"></script>
-	<script src="/E-shop/static/js/plugins/bootstrap.touchspin.js"></script>
-	<script src="/E-shop/static/js/plugins/jquery-easing-1.3.js"></script>
-	<script src="/E-shop/static/js/plugins/addr.js"></script>
-	<script src="/E-shop/static/js/plugins/jquery-transit-modified.js"></script>
-	<script src="/E-shop/static/js/plugins/layerslider.transitions.js"></script>
-	<script
-		src="/E-shop/static/js/plugins/layerslider.kreaturamedia.jquery.js"></script>
-	<script src="/E-shop/static/js/plugins/layer.js"></script>
-	<script src="/E-shop/static/js/app.js"></script>
-	<script src="/E-shop/static/js/index.js"></script>
-	<script src="/E-shop/static/js/init.js"></script>
-	<script src="/E-shop/static/js/public.js"></script>
+
 </body>
+<script src="/E-shop/static/js/plugins/jquery-1.10.2.min.js"></script>
+<script src="/E-shop/static/js/plugins/jquery-migrate-1.2.1.min.js"></script>
+<script src="/E-shop/static/js/plugins/bootstrap.min.js"></script>
+<script src="/E-shop/static/js/plugins/back-to-top.js"></script>
+<script src="/E-shop/static/js/plugins/jquery.slimscroll.min.js"></script>
+<script src="/E-shop/static/js/plugins/jquery.fancybox.pack.js"></script>
+<script src="/E-shop/static/js/plugins/jquery.bxslider.min.js"></script>
+<script src="/E-shop/static/js/plugins/jquery.zoom.min.js"></script>
+<script src="/E-shop/static/js/plugins/bootstrap.touchspin.js"></script>
+<script src="/E-shop/static/js/plugins/jquery-easing-1.3.js"></script>
+<script src="/E-shop/static/js/plugins/jquery-transit-modified.js"></script>
+<script src="/E-shop/static/js/plugins/layerslider.transitions.js"></script>
+<script
+	src="/E-shop/static/js/plugins/layerslider.kreaturamedia.jquery.js"></script>
+<script src="/E-shop/static/js/plugins/layer.js"></script>
+<script src="/E-shop/static/js/app.js"></script>
+<script src="/E-shop/static/js/index.js"></script>
+<script src="/E-shop/static/js/init.js"></script>
+<script src="/E-shop/static/js/public.js"></script>
+
+<script src="/E-shop/static/js/cart.js"></script>
 <script>
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "//hm.baidu.com/hm.js?098d458bde2c1fa90f92a3b2fd046e74";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
+	$(document).ready(function(){
+		document.getElementById('loading').style.display='none';
+	});
 </script>
-<script  type="text/javascript">addressInit('cmbProvince', 'cmbCity', 'cmbArea'); </script>
- 
 </html>

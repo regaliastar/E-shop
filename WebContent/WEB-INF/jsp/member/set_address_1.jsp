@@ -49,10 +49,10 @@
 						<li><i class="fa fa-phone"></i><span>137-9542-3417</span></li>
 						<!-- BEGIN LANGS -->
 						<li class="langs-block"><a href="javascript:void(0);"
-							class="current">关注Yiishop微信 <i class="fa fa-angle-down"></i></a>
+							class="current">关注微信 <i class="fa fa-angle-down"></i></a>
 							<div class="langs-block-others-wrapper">
 								<div class="langs-block-others">
-									<img src="/web/themes/img/wx.jpg">
+									<img src="http://www.yiishop.com.cn/web/themes/img/wx.jpg">
 								</div>
 							</div></li>
 						<!-- END LANGS -->
@@ -60,19 +60,56 @@
 				</div>
 				<!-- END TOP BAR LEFT PART -->
 				<!-- BEGIN TOP BAR MENU -->
-				<div class="col-md-6 col-sm-6 additional-nav">
-					<ul class="list-unstyled list-inline pull-right">
-						<li>1234</li>
-						<li><a href="javascript:;" onclick="sign();">签到</a></li>
-						<li><a href="/member/order/index.html">我的订单</a></li>
-						<li><a href="/order/check/index.html"">结算</a></li>
-						<li><a href="/member/default/logout.html">退出</a></li>
-					</ul>
-				</div>
+				
+				<c:choose>
+					<c:when test="${user != null}">
+						<div style="width: 400px;height:30px;float:left;top:0px;bottom:0px">
+								<form class="bs-example bs-example-form" role="form" method="post" action="${pageContext.request.contextPath }/search.json">
+									<div class="input-group" style="height:30px">
+										<input name="keyword" id="keyword" style="height:29px" type="text" class="form-control" />
+										 <span0
+											class="input-group-btn" >
+											<button style="height:29px" class="btn btn-default" type="submit">搜索</button>
+										</span>
+									</div>
+								</form>
+						</div>
+						<ul style="margin-top:5px" class="list-unstyled list-inline pull-right">
+							<li><a href="javascript:;" onclick="sign();">签到</a></li>
+							<li><a href="#">"${user.uname }"</a></li>
+							<li><a href="${pageContext.request.contextPath }/logout.do">注销</a></li>
+						</ul>
+
+					</c:when>
+					<c:otherwise>
+						<div class="col-md-6 col-sm-6 additional-nav">
+							
+							<div style="width: 400px;height:30px;float:left;top:0px;bottom:0px">
+								<form class="bs-example bs-example-form" role="form" action="${pageContext.request.contextPath }/search.json">
+									<div class="input-group" style="height:30px">
+										<input name="keyword" id="keyword" style="height:29px" type="text" class="form-control" />
+										 <span0
+											class="input-group-btn" >
+											<button style="height:29px" class="btn btn-default" type="submit">搜索</button>
+										</span>
+									</div>
+								</form>
+							</div>
+						
+							<ul style="margin-top:5px" class="list-unstyled list-inline pull-right">
+								<li><a href="${pageContext.request.contextPath }/login.do">登录</a></li>
+								<li><a
+									href="${pageContext.request.contextPath }/register.do">注册</a></li>
+							</ul>
+						</div>
+					</c:otherwise>
+				</c:choose>
+				
 				<!-- END TOP BAR MENU -->
 			</div>
 		</div>
 	</div>
+	
 	<div role="navigation" class="navbar header no-margin">
 		<div class="container">
 			<div class="navbar-header">
@@ -151,29 +188,29 @@
 					<ul class="list-group margin-bottom-25 sidebar-menu">
 						<li class="list-group-item clearfix
          "><a
-							href="/member/default/index.html"><i
+							href="#"><i
 								class="fa fa-angle-right"></i>我的帐号</a></li>
 						<li class="list-group-item clearfix
         active"><a
-							href="/member/address/index.html"><i
+							href="#"><i
 								class="fa fa-angle-right"></i> 收货地址</a></li>
 						<li class="list-group-item clearfix
         "><a
-							href="/member/order/index.html"> <i class="fa fa-angle-right"></i>
+							href="#"> <i class="fa fa-angle-right"></i>
 								我的订单
 						</a></li>
 						<li class="list-group-item clearfix
         "><a
-							href="/member/point/index.html"> <i class="fa fa-angle-right"></i>
+							href="#"> <i class="fa fa-angle-right"></i>
 								我的积分
 						</a></li>
 						<li class="list-group-item clearfix
         "><a
-							href="/member/sign/index.html"> <i class="fa fa-angle-right"></i>
+							href="#"> <i class="fa fa-angle-right"></i>
 								我的签到
 						</a></li>
 						<li class="list-group-item clearfix "><a
-							href="/member/user/reset.html"><i class="fa fa-angle-right"></i>
+							href="#"><i class="fa fa-angle-right"></i>
 								重置密码</a></li>
 					</ul>
 				</div>

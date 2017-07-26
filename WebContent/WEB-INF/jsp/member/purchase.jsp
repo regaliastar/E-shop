@@ -63,7 +63,18 @@
 
 				<c:choose>
 					<c:when test="${user != null}">
-						<ul class="list-unstyled list-inline pull-right">
+						<div style="width: 400px;height:30px;float:left;top:0px;bottom:0px">
+								<form class="bs-example bs-example-form" role="form" method="post" action="${pageContext.request.contextPath }/search.json">
+									<div class="input-group" style="height:30px">
+										<input name="keyword" id="keyword" style="height:29px" type="text" class="form-control" />
+										 <span0
+											class="input-group-btn" >
+											<button style="height:29px" class="btn btn-default" type="submit">搜索</button>
+										</span>
+									</div>
+								</form>
+						</div>
+						<ul style="margin-top:5px" class="list-unstyled list-inline pull-right">
 							<li><a href="javascript:;" onclick="sign();">签到</a></li>
 							<li><a href="#">"${user.uname }"</a></li>
 							<li><a href="${pageContext.request.contextPath }/logout.do">注销</a></li>
@@ -72,7 +83,20 @@
 					</c:when>
 					<c:otherwise>
 						<div class="col-md-6 col-sm-6 additional-nav">
-							<ul class="list-unstyled list-inline pull-right">
+							
+							<div style="width: 400px;height:30px;float:left;top:0px;bottom:0px">
+								<form class="bs-example bs-example-form" role="form" action="${pageContext.request.contextPath }/search.json">
+									<div class="input-group" style="height:30px">
+										<input name="keyword" id="keyword" style="height:29px" type="text" class="form-control" />
+										 <span0
+											class="input-group-btn" >
+											<button style="height:29px" class="btn btn-default" type="submit">搜索</button>
+										</span>
+									</div>
+								</form>
+							</div>
+						
+							<ul style="margin-top:5px" class="list-unstyled list-inline pull-right">
 								<li><a href="${pageContext.request.contextPath }/login.do">登录</a></li>
 								<li><a
 									href="${pageContext.request.contextPath }/register.do">注册</a></li>
