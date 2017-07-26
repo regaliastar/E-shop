@@ -12,9 +12,7 @@
 <head>
 <meta charset="utf-8">
 <title>E-shop</title>
-<meta name="keywords"
-	content="php,php项目,php开源项目,php开源商城,yii,yii项目,yii开源项目,yii商城系统,yiishop,强大的yiishop shop b2c商城" />
-<meta name="description" content="yiishop专注于电子商务应用开发，为中小企业提供全面的电子商务解决方案" />
+
 <meta name="baidu-site-verification" content="JYxbG17mX1" />
 <link href="/E-shop/static/css/font_1.css" rel="stylesheet">
 <link href="/E-shop/static/css/font_2.css" rel="stylesheet">
@@ -294,17 +292,11 @@
 									<li class="active"><a href="#Description"
 										data-toggle="tab">产品介绍</a></li>
 									<li><a href="#Information" data-toggle="tab">详细信息</a></li>
-									<li><a href="#Reviews" data-toggle="tab">商品咨询</a></li>
+									<li><a href="#Reviews" data-toggle="tab">商品评论</a></li>
 								</ul>
 								<div id="myTabContent" class="tab-content">
 									<div class="tab-pane fade in active" id="Description">
-										<p>
-											<br /> <br /> <br /> <img
-												src="http://img30.360buyimg.com/popWaterMark/jfs/t2899/96/785540063/84873/7dd2ea83/5725a287Nee68350c.jpg"
-												alt="" id="355fe004b1ef4d58bf18bc53261fcf79
-" /><br />
-											<map name="Map" id="Map"></map>
-										</p>
+										
 										<p>
 											如果您发现商品信息不准确，<a
 												href="http://club.360buy.com/jdvote/skucheck.aspx?skuid=10050618790&cid1=1320&cid2=1583&cid3=1590"
@@ -313,71 +305,43 @@
 											&nbsp;
 										</p>
 										<p>
-											&nbsp;&nbsp; <br /> <img class=""
-												src="http://img30.360buyimg.com/popWareDetail/jfs/t2593/244/744599559/108877/987cef6/57242520N4947b919.jpg"
+											&nbsp;&nbsp; <br /> 
+											<div class="parent-img">
+												<img class="c-img img1"
+												src=""
 												style="" data-lazyload="done" alt=""
-												id="c1246e496c94473d825d443e91c60a46" /><br /> <img
-												class=""
-												src="http://img30.360buyimg.com/popWareDetail/jfs/t2809/338/759302820/486955/9c9cac8c/57242521Nadace616.jpg"
+												id="c1246e496c94473d825d443e91c60a46" /><br /> 
+												<img
+												class="c-img img2"
+												src=""
 												style="" data-lazyload="done" alt=""
-												id="4b5f461da6a64a02b927edd904590be4" /><br /> <img
-												class=""
-												src="http://img30.360buyimg.com/popWareDetail/jfs/t2824/135/746825649/173990/f1e425ea/57242521Nf1441e96.jpg"
+												id="4b5f461da6a64a02b927edd904590be4" /><br /> 
+												<img
+												class="c-img img3"
+												src=""
 												style="" data-lazyload="done" alt=""
-												id="889daa51cc88400d99efbe86a1d541a4" /><br /> <img
-												class=""
-												src="http://img30.360buyimg.com/popWareDetail/jfs/t2674/226/763170197/170991/e5f1ed7/57242523N6244bead.jpg"
+												id="889daa51cc88400d99efbe86a1d541a4" /><br /> 
+												<img
+												class="c-img img4"
+												src=""
 												style="" data-lazyload="done" alt=""
-												id="fc3803e7c6eb450dbf13dcb625d201c9" /><br /> <img
-												class=""
-												src="http://img30.360buyimg.com/popWareDetail/jfs/t2890/77/726614673/187817/854e933c/57242523N964d1647.jpg"
+												id="fc3803e7c6eb450dbf13dcb625d201c9" /><br /> 
+												<img
+												class="c-img img5"
+												src=""
 												style="" data-lazyload="done" alt=""
-												id="e349c86d4fea4d659ed8509d63216284" /><br /> <img
-												class=""
-												src="http://img30.360buyimg.com/popWareDetail/jfs/t2896/96/733849843/491004/c98c2f5a/57242525Nfd8439c5.jpg"
-												style="" data-lazyload="done" alt=""
-												id="7ce86879e7c246ab8acad9988a89f3fb" /><br /> <img
-												class=""
-												src="http://img30.360buyimg.com/popWareDetail/jfs/t2689/294/729011705/635012/7be039f7/57242528N0eae631f.jpg"
-												style="" data-lazyload="done" alt=""
-												id="e9c3390dc1a84a638848b60796e2f3e5" /><br /> <img
-												class=""
-												src="http://img30.360buyimg.com/popWareDetail/jfs/t2815/291/761342727/409534/6434d465/5724252aN646dae57.jpg"
-												style="" data-lazyload="done" alt=""
-												id="cf5c17c785124beaa4b9081c4233500b" /><br /> <img
-												class=""
-												src="http://img30.360buyimg.com/popWareDetail/jfs/t2872/77/740604146/266517/a989e28b/5724252cN165616ea.jpg"
-												style="" data-lazyload="done" alt=""
-												id="ac50323b3a1d47c2a431c075afd81297" /><br /> <img
-												class=""
-												src="http://img30.360buyimg.com/popWareDetail/jfs/t2689/319/745590552/141085/69225876/57242537N4ff703f2.jpg"
-												style="" data-lazyload="done" alt=""
-												id="de4fdfb98e2046d5a47bbd9b9e0fb4e8" /><br />
+												id="e349c86d4fea4d659ed8509d63216284" /><br /> 
+											</div>
+												
 										</p>
+									
 										<p>
-											<br />&nbsp; <br /> &nbsp;&nbsp; <br /> &nbsp;&nbsp; <br />
-											&nbsp;&nbsp; <br /> &nbsp;&nbsp; <br /> &nbsp;&nbsp; <br />
-											&nbsp;&nbsp; <br /> &nbsp;&nbsp; <br /> &nbsp;&nbsp; <br />
-											&nbsp;&nbsp; <br /> &nbsp;&nbsp; <br /> &nbsp;&nbsp; <br />&nbsp;
-											<br />&nbsp; <br />&nbsp; <br />&nbsp; <br />&nbsp; <br />&nbsp;
-											<br />&nbsp; <br />&nbsp; <br /> <br /> <br />&nbsp; <br />&nbsp;
-											<br />&nbsp; <br />&nbsp; <br />&nbsp; <br /> <br />
+											<br /> 
 										</p>
-										<p>
-											<br />
-										</p>
-										<p>
-											<br />
-										</p>
-										<p>
-											<br />
-										</p>
-										<p>
-											<br /> <img
-												src="http://img30.360buyimg.com/popWareDetail/jfs/t2827/23/720177116/94957/febeb0f6/5722f4beN0b0b71f0.jpg"
-												alt="" id="e937328b695946b9877b054dc7061d0b" height="1039"
-												width="750" />
-										</p>
+										<img
+												src="/E-shop/static/img/zysx.jpg"
+												alt="" id="e937328b695946b9877b054dc7061d0b" height="200px"
+												width="500px" />
 										<p>
 											<br />
 										</p>
@@ -397,19 +361,16 @@
 												<td>500.000</td>
 											</tr>
 										</table>
+										<img
+												src="/E-shop/static/img/zysx.jpg"
+												alt="" id="e937328b695946b9877b054dc7061d0b" height="200px"
+												width="500px" />
 									</div>
 									<div class="tab-pane fade " id="Reviews">
 										<!-- BEGIN FORM-->
 										<form class="reviews-form">
-											<h2>我要咨询</h2>
-											<div class="form-group">
-												<label for="name">姓名 <span class="require">*</span></label>
-												<input type="text" class="form-control" id="name">
-											</div>
-											<div class="form-group">
-												<label for="email">邮箱</label> <input type="text"
-													class="form-control" id="email">
-											</div>
+											<h2>我要评论</h2>
+											
 											<div class="form-group">
 												<label for="review">内容 <span class="require">*</span></label>
 												<textarea class="form-control" rows="8" id="review"></textarea>
@@ -540,14 +501,13 @@
 	<script src="/E-shop/static/js/plugins/jquery-easing-1.3.js"></script>
 	<script src="/E-shop/static/js/plugins/jquery-transit-modified.js"></script>
 	<script src="/E-shop/static/js/plugins/layerslider.transitions.js"></script>
-	<script
-		src="/E-shop/static/js/plugins/layerslider.kreaturamedia.jquery.js"></script>
+	<script src="/E-shop/static/js/plugins/layerslider.kreaturamedia.jquery.js"></script>
 	<script src="/E-shop/static/js/plugins/layer.js"></script>
 	<script src="/E-shop/static/js/app.js"></script>
 	<script src="/E-shop/static/js/index.js"></script>
 	<script src="/E-shop/static/js/init.js"></script>
 	<script src="/E-shop/static/js/public.js"></script>
-	<script src="/web/themes/web/js/product.js"></script>
+	<script src="/E-shop/static/js/main.js"></script>
 </body>
 <script>
 	var _hmt = _hmt || [];
