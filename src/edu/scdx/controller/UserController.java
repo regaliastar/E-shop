@@ -115,4 +115,38 @@ public class UserController {
         return "/member/purchase";
     }
     
+    @RequestMapping("/delete_address.do")
+    public String delete_address (Model model,HttpSession session,int Aid){
+    	userService.deleteAddress(Aid);
+        return "redirect:/user/choose_address.json";
+}
+    
+    @RequestMapping("/updateaddr.do")
+    public String updateAddr(Model model,HttpServletResponse response,HttpSession session,int aid,String addr,String zip,String sendName,String sendTel){
+    	Address address = new Address();
+    	Address address_1= new Address();
+    	address_1=userService.findAddressbyAid(aid);
+    	User u = (User) session.getAttribute("user");
+    	address.setCurrent(address_1.getCurrent());
+    	address.setUid(address_1.getUid());
+    	address.setAddr(addr);
+    	address.setZip(zip);
+    	address.setSendName(sendName);
+    	address.setSendTel(sendTel);
+    	address.setUid(u.getUid());
+    	address.setAid(aid);
+    	System.out.println(address);
+    	userService.updateAddress(address);
+    	return "redirect:/product/purchaseFromCart.do";
+    	}
+    
+    
+    @RequestMapping("/set_address_1.do")
+    public String Set_address_1 (Model model,HttpSession session,int Aid){
+    	Address ca=new Address();
+        ca=userService.findAddressbyAid(Aid);
+        model.addAttribute("ca",ca);
+        return "/member/set_address_1";
+}
+    
 }

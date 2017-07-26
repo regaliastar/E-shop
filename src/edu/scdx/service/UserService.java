@@ -17,4 +17,7 @@ public interface UserService {
 	public Address findCurrentAddress(Integer id);
 	public void setCurrentAddress(Integer Aid,Integer Uid);
 	public void setCurrentAddress_0(Integer Uid);
+	public void updateAddress(Address address);
+	public Address findAddressbyAid(Integer id);
+	public void deleteAddress(Integer id);
 }

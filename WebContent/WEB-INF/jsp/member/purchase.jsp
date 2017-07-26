@@ -174,11 +174,7 @@
 								id="payment-address-content" style="height: auto;">
 								<div class="panel-body row form-horizontal">
 									<div>
-										<div class="form-group">
-											<div class="col-md-5 control-label">
-												<label class="">收货人姓名：${user.getUname() }</label>
-											</div>
-										</div>
+										
 										<div class="form-group">
 											<div class="col-md-5 control-label">
 												<label class="">收货人姓名：${user.getUname() }</label>
@@ -194,10 +190,10 @@
 										</div>
 										<div class="form-group">
 											<div class="col-md-5 control-label">
-												<label class="">电话：${ca.getSendTel()}</label>
+												<label class="">收货人姓名：${ca.getSendName()}</label>
 											</div>
 											<div class="col-md-4 control-label">
-												<label class="">手机：${ca.getSendTel()}</label>
+												<label class="">收货人电话：${ca.getSendTel()}</label>
 											</div>
 										</div>
 									</div>

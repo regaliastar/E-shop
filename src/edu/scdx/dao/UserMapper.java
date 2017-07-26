@@ -21,4 +21,7 @@ public interface UserMapper {
 	public Address findCurrentAddress(@Param("id")Integer id);
 	public void setCurrentAddress(@Param("Aid")Integer Aid,@Param("Uid")Integer Uid);
 	public void setCurrentAddress_0(@Param("Uid")Integer Uid);
+	public void updateAddress(Address address);
+	public Address findAddressbyAid(@Param("id")Integer id);
+	public void deleteAddress(@Param("id")Integer id);
 }

@@ -4,7 +4,7 @@
 
 <%@ page import="edu.scdx.entity.User"%>
 <%@ page import="edu.scdx.entity.Product"%>
-<%@ page import="edu.scdx.entity.Address"%>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <html lang="en-US">
@@ -141,10 +141,12 @@
 			<ul class="breadcrumb">
 				<li><a href="${pageContext.request.contextPath }/index.do">首页</a></li>
 				<li><a href="#">会员中心</a></li>
-				<li class="active">收货地址</li>
+				<li><a href="#">收货地址列表</a></li>
+				<li class="active">新增收货地址</li>
 			</ul>
 			<!-- BEGIN SIDEBAR & CONTENT -->
 			<div class="row">
+				<!-- BEGIN SIDEBAR -->
 				<div class="sidebar col-md-2">
 					<ul class="list-group margin-bottom-25 sidebar-menu">
 						<li class="list-group-item clearfix
@@ -175,50 +177,52 @@
 								重置密码</a></li>
 					</ul>
 				</div>
-				<div class="col-md-9">
-					<div class="col-md-6">
-						<h3>收货地址</h3>
-					</div>
-					<div class="col-md-6" style="text-align: right;">
-						<a href="${pageContext.request.contextPath }/set_address.do"
-							class="btn default">添加收货地址</a>
-					</div>
+				<!-- END SIDEBAR -->
 
-				</div>
-				<div class="col-md-9">
-					<div class="portlet-body">
-						<div class="table-responsive">
-							<table
-								class="table table-striped table-bordered table-advance table-hover">
-								<thead>
-									<tr>
-										<th>地址</th>
-										<th>收货人</th>
-										<th>联系电话</th>
-										<th>操作</th>
-									</tr>
-								</thead>
-								<tbody>
-
-									<c:forEach items="${addrs}" var="caddr">
-										<tr>
-
-											<td>${caddr.getAddr()}</td>
-											<td>${caddr.getSendName()}</td>
-											<td>${caddr.getSendTel()}</td>
-
-											<td></a> <label><a
-													href="${pageContext.request.contextPath }/user/set_CurrentAddress.do?Aid=${caddr.getAid()}"
-													class="addr-default" data-id="58" data-return="1">设置默认</a></label>
-												<label><a
-													href="${pageContext.request.contextPath }/user/set_address_1.do?Aid=${caddr.getAid()}">编辑</a></label>
-												<label><a href="	${pageContext.request.contextPath }/user/delete_address.do?Aid=${caddr.getAid()}" class="addr-del"
-													data-id="59" data-return="1">删除</a></label></td>
-										</tr>
-									</c:forEach>
-
-								</tbody>
-							</table>
+				<!-- BEGIN CONTENT -->
+				<div class="col-md-6">
+					<div class="panel panel-warning">
+						<div class="panel-heading">
+							<h3 class="panel-title">收货地址</h3>
+						</div>
+						<div class="panel-body">                         
+							<form class="form-horizontal form-addr" method="post"
+								action="${pageContext.request.contextPath }/user/updateaddr.do?aid=${ca.getAid()}">
+								<div class="form-body">								
+									<div class="form-group">
+										<label class="col-md-3 control-label">详细地址</label>
+										<div class="col-md-9">
+											<input type="text" id="addr" value="${ca.getAddr() }"
+												class="form-control input-sm" name="addr">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-3 control-label">邮编</label>
+										<div class="col-md-3">
+											<input type="text"  id="zip" value="${ca.getZip() }"
+												class="form-control input-sm" name="zip">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-3 control-label">收货人姓名</label>
+										<div class="col-md-3">          
+											<input type="text"  id="sendName" value=" ${ca.getSendName() }"
+												class="form-control input-sm" name="sendName">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-3 control-label">手机</label>
+										<div class="col-md-3">
+											<input type="text" placeholder="" id="sendTel" value="${ca.getSendTel() }"
+												class="form-control input-sm" name="sendTel">
+										</div>
+									</div>
+								</div>
+								<div class="col-md-offset-4 col-md-8">
+									<button class="btn default" type="button">重置</button>
+									<button class="btn blue submit-addr" type="submit">提交</button>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -257,7 +261,7 @@
 			</div>
 		</div>
 	</div>
-		<!-- BEGIN PRE-FOOTER -->
+			<!-- BEGIN PRE-FOOTER -->
 	<div class="pre-footer">
 		<div class="container">
 			<div class="row">
@@ -356,5 +360,6 @@
         s.parentNode.insertBefore(hm, s);
     })();
 </script>
-
+<script  type="text/javascript">addressInit('cmbProvince', 'cmbCity', 'cmbArea'); </script>
+ 
 </html>

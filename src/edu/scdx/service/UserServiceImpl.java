@@ -68,4 +68,24 @@ public class UserServiceImpl implements UserService {
 		 userMapper.setCurrentAddress_0(Uid);
 	}
 	
+
+	@Override
+	public void updateAddress(Address address) {
+		// TODO Auto-generated method stub
+		userMapper.updateAddress(address);
+	}
+
+	@Override    
+	public Address findAddressbyAid(Integer id) {
+		// TODO Auto-generated method stub
+		return  userMapper.findAddressbyAid(id);
+	}
+
+	@Override
+	public void deleteAddress(Integer id) {
+	    userMapper.deleteAddress(id);
+		
+	}
+	
+	
 }

@@ -63,4 +63,16 @@
   	update  Address set Current=0 where (Current=1) and (Uid=#{Uid})
   </select>
   
+     <select id="updateAddress" parameterType="edu.scdx.entity.Address"  resultMap="BaseResultMap1" >
+  	update  Address set Addr=#{Addr},Zip=#{Zip},sendName=#{sendName},sendTel=#{sendTel} where Aid=#{Aid}
+  </select>
+  
+  <select id="findAddressbyAid" parameterType="int" resultMap="BaseResultMap1">
+  	select * from Address where  Aid = #{id}
+  </select>
+  
+   <select id="deleteAddress" parameterType="int" >
+  	delete  from Address where Aid = #{id}
+  </select>
+  
 </mapper>
