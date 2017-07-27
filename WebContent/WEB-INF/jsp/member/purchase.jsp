@@ -201,7 +201,7 @@
 										
 										<div class="form-group">
 											<div class="col-md-5 control-label">
-												<label class="">收货人姓名：${user.getUname() }</label>
+												<label class="">购买人：${user.getUname() }</label>
 											</div>
 										</div>
 										<div class="form-group">

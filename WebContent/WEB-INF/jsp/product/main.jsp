@@ -401,7 +401,7 @@
 											</div>
 											<div class="padding-top-20">
 												<button type="button" class="btn btn-primary"
-													id="reviews-send">发送</button>
+													id="reviews-send" onclick="alert('您未购买！')">发送</button>
 											</div>
 										</form>
 										<!-- END FORM-->
