@@ -34,21 +34,23 @@
 <link href="/E-shop/static/css/custom.css" rel="stylesheet">
 <link href="/E-shop/static/css/public.css" rel="stylesheet">
 <link href="/E-shop/static/css/load.css" rel="stylesheet">
+
 </head>
 <!-- Head END -->
 
 <!-- Body BEGIN -->
+<style>
 
+</style>
 <body>
 	<div id="loading"></div>
-
 
 	<div class="pre-header">
 		<div class="container">
 			<div class="row">
 				<!-- BEGIN TOP BAR LEFT PART -->
 				<div class="col-md-6 col-sm-6 additional-shop-info">
-					<ul style="margin-top:5px" class="list-unstyled list-inline">
+					<ul style="margin-top: 5px" class="list-unstyled list-inline">
 						<li><i class="fa fa-phone"></i><span>555-5555-5555</span></li>
 						<!-- BEGIN LANGS -->
 						<li class="langs-block"><a href="javascript:void(0);"
@@ -68,18 +70,23 @@
 
 				<c:choose>
 					<c:when test="${user != null}">
-						<div style="width: 400px;height:30px;float:left;top:0px;bottom:0px">
-								<form class="bs-example bs-example-form" role="form" method="post" action="${pageContext.request.contextPath }/search.json">
-									<div class="input-group" style="height:30px">
-										<input name="keyword" id="keyword" style="height:29px" type="text" class="form-control" />
-										 <span0
-											class="input-group-btn" >
-											<button style="height:29px" class="btn btn-default" type="submit">搜索</button>
-										</span>
-									</div>
-								</form>
+						<div
+							style="width: 400px; height: 30px; float: left; top: 0px; bottom: 0px">
+							<form class="bs-example bs-example-form" role="form"
+								method="post"
+								action="${pageContext.request.contextPath }/search.json">
+								<div class="input-group" style="height: 30px">
+									<input name="keyword" id="keyword" style="height: 29px"
+										type="text" class="form-control" /> <span
+										class="input-group-btn">
+										<button style="height: 29px" class="btn btn-default"
+											type="submit">搜索</button>
+									</span>
+								</div>
+							</form>
 						</div>
-						<ul style="margin-top:5px" class="list-unstyled list-inline pull-right">
+						<ul style="margin-top: 5px"
+							class="list-unstyled list-inline pull-right">
 							<li><a href="javascript:;" onclick="sign();">签到</a></li>
 							<li><a href="#">"${user.uname }"</a></li>
 							<li><a href="${pageContext.request.contextPath }/logout.do">注销</a></li>
@@ -88,20 +95,24 @@
 					</c:when>
 					<c:otherwise>
 						<div class="col-md-6 col-sm-6 additional-nav">
-							
-							<div style="width: 400px;height:30px;float:left;top:0px;bottom:0px">
-								<form class="bs-example bs-example-form" role="form" action="${pageContext.request.contextPath }/search.json">
-									<div class="input-group" style="height:30px">
-										<input name="keyword" id="keyword" style="height:29px" type="text" class="form-control" />
-										 <span0
-											class="input-group-btn" >
-											<button style="height:29px" class="btn btn-default" type="submit">搜索</button>
+
+							<div
+								style="width: 400px; height: 30px; float: left; top: 0px; bottom: 0px">
+								<form class="bs-example bs-example-form" role="form"
+									action="${pageContext.request.contextPath }/search.json">
+									<div class="input-group" style="height: 30px">
+										<input name="keyword" id="keyword" style="height: 29px"
+											type="text" class="form-control" />
+										<span0 class="input-group-btn">
+										<button style="height: 29px" class="btn btn-default"
+											type="submit">搜索</button>
 										</span>
 									</div>
 								</form>
 							</div>
-						
-							<ul style="margin-top:5px" class="list-unstyled list-inline pull-right">
+
+							<ul style="margin-top: 5px"
+								class="list-unstyled list-inline pull-right">
 								<li><a href="${pageContext.request.contextPath }/login.do">登录</a></li>
 								<li><a
 									href="${pageContext.request.contextPath }/register.do">注册</a></li>
@@ -184,18 +195,43 @@
 
 
 	<div class="main">
-		<div class="page-slider">
-			<!--LayerSlider begin-->
-			<div id="layerslider"
-				style="width: 100%; height: 494px; margin: 0 auto;">
-				<!--LayerSlider layer-->
-				<div class="ls-layer ls-layer1"
-					style="slidedirection: right; transition2d: 24, 25, 27, 28;">
-					<img src="/E-shop/static/img/banner.jpg" class="ls-bg" alt="特产分会场">
+
+		<div id="div1" style="height: 700px">
+			<div id="carousel-example-generic" class="carousel slide"
+				data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#carousel-example-generic" data-slide-to="0"
+						class="active"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<img src="/E-shop/static/img/banner1.jpg">
+					</div>
+					<div class="item">
+						<img src="/E-shop/static/img/banner2.jpg">
+					</div>
+					<div class="item">
+						<img src="/E-shop/static/img/banner3.jpg">
+					</div>
 				</div>
+				<!-- Controls -->
+				<a class="left carousel-control" href="#carousel-example-generic"
+					role="button" data-slide="prev"> <span
+					class="glyphicon glyphicon-chevron-left" id="aaron1"></span> <span
+					class="sr-only">Previous</span>
+				</a> <a class="right carousel-control" href="#carousel-example-generic"
+					role="button" data-slide="next"> <span
+					class="glyphicon glyphicon-chevron-right" id="aaron2"></span> <span
+					class="sr-only">Next</span>
+				</a>
 			</div>
-			<!--LayerSlider end-->
 		</div>
+
 		<div class="container">
 			<!-- 新品推荐 start -->
 			<div class="row margin-bottom-40 margin-top-10">
@@ -542,8 +578,6 @@
 									</div>
 								</li>
 							</c:forEach>
-
-
 						</ul>
 					</div>
 				</div>

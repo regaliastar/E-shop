@@ -95,6 +95,8 @@ public class CommonController {
     	Product p15 = productService.findProductById(15);
     	thsp.add(p15);
     	
+    	//System.out.println(thsp.size());
+    	
     	model.addAttribute("thsp", thsp);   
     	
         return "index";
@@ -161,6 +163,33 @@ public class CommonController {
     
         @RequestMapping("/set_address.do")
         public String getSet_address (Model model,HttpSession session){
-        return "/member/set_address";
+        	
+        	User user = (User) session.getAttribute("user");
+        	/**
+        	 * 购物车
+        	 *  
+        	 * */
+        	if(user != null) {
+        		List<Cart> carts = cartService.getAll(user.getUid());
+            	
+            	ArrayList cartProductList = new ArrayList();
+            	float cartProductPrice = 0;
+            	int length = 0;
+            	for(Cart c:carts) {
+            		Product p = productService.findProductById(c.getPid());
+            		CartItem item = new CartItem(c.getCid(), p.getPid(), p.getImage(), c.getNum(), p.getDescription(), p.getSalePrice()*c.getNum());
+            		cartProductList.add(item);
+            		cartProductPrice += p.getSalePrice()*c.getNum();
+            		length += 1;
+            	}
+            	
+            	model.addAttribute("cartProductList", cartProductList);
+            	model.addAttribute("cartProductNum", length);       	
+            	model.addAttribute("cartProductPrice",cartProductPrice);
+        	}else {
+        		model.addAttribute("cartProductNum", 0);   
+        	}
+        	
+        	return "/member/set_address";
     }
     }

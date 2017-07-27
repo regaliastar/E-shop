@@ -14,8 +14,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import edu.scdx.common.util.JsonUtil;
 import edu.scdx.entity.Address;
+import edu.scdx.entity.Cart;
+import edu.scdx.entity.CartItem;
 import edu.scdx.entity.Product;
 import edu.scdx.entity.User;
+import edu.scdx.service.CartService;
 import edu.scdx.service.ProductService;
 import edu.scdx.service.UserService;
 
@@ -26,7 +29,8 @@ public class UserController {
     private UserService userService;
 	@Autowired
     private ProductService productService;
-	
+	@Autowired
+    private CartService cartService;
     
     @RequestMapping("/register.json")
     public String insertUser(Model model,HttpServletResponse response,HttpSession session,String uname,String pw,String cp){
@@ -74,6 +78,8 @@ public class UserController {
     public String getAddr(Model model,HttpServletResponse response,HttpSession session,String addr,String zip,String sendName,String sendTel){
     	Address address = new Address();
     	User u = (User) session.getAttribute("user");
+    	if(u == null)
+    		return "/member/default/login";
     	int i=userService.findAddressNum(u.getUid());
     	//System.out.println(i);
     	if (i==0) address.setCurrent(1);
@@ -91,16 +97,70 @@ public class UserController {
         Address ca=new Address();
         ca=userService.findCurrentAddress(u.getUid());
         model.addAttribute("ca",ca);
-    	return "/member/purchase";
+        
+    	/**
+    	 * 购物车
+    	 *  
+    	 * */
+    	if(u != null) {
+    		List<Cart> carts = cartService.getAll(u.getUid());
+        	
+        	ArrayList cartProductList = new ArrayList();
+        	float cartProductPrice = 0;
+        	int length = 0;
+        	for(Cart c:carts) {
+        		Product p = productService.findProductById(c.getPid());
+        		CartItem item = new CartItem(c.getCid(), p.getPid(), p.getImage(), c.getNum(), p.getDescription(), p.getSalePrice()*c.getNum());
+        		cartProductList.add(item);
+        		cartProductPrice += p.getSalePrice()*c.getNum();
+        		length += 1;
+        	}
+        	
+        	model.addAttribute("cartProductList", cartProductList);
+        	model.addAttribute("cartProductNum", length);       	
+        	model.addAttribute("cartProductPrice",cartProductPrice);
+    	}else {
+    		model.addAttribute("cartProductNum", 0);   
+    	}
+    	
+    	return "redirect:/product/purchaseFromCart.do";
     	}
     
     
     @RequestMapping("/choose_address.json")
     public String getChoose_address (Model model,HttpSession session){
+    	
     	User user = (User) session.getAttribute("user");
+    	if(user == null)
+    		return "/member/default/login";
     	List<Address> addrs = userService.getAddress(user.getUid());
     	model.addAttribute("addrs", addrs);
-    
+    	
+    	/**
+    	 * 购物车
+    	 *  
+    	 * */
+    	if(user != null) {
+    		List<Cart> carts = cartService.getAll(user.getUid());
+        	
+        	ArrayList cartProductList = new ArrayList();
+        	float cartProductPrice = 0;
+        	int length = 0;
+        	for(Cart c:carts) {
+        		Product p = productService.findProductById(c.getPid());
+        		CartItem item = new CartItem(c.getCid(), p.getPid(), p.getImage(), c.getNum(), p.getDescription(), p.getSalePrice()*c.getNum());
+        		cartProductList.add(item);
+        		cartProductPrice += p.getSalePrice()*c.getNum();
+        		length += 1;
+        	}
+        	
+        	model.addAttribute("cartProductList", cartProductList);
+        	model.addAttribute("cartProductNum", length);       	
+        	model.addAttribute("cartProductPrice",cartProductPrice);
+    	}else {
+    		model.addAttribute("cartProductNum", 0);   
+    	}
+    	
         return "/member/choose_address";
     }
 
@@ -112,7 +172,8 @@ public class UserController {
         Address ca=new Address();
        ca=userService.findCurrentAddress(u.getUid());
        model.addAttribute("ca",ca);
-        return "/member/purchase";
+   	
+        return "redirect:/product/purchaseFromCart.do";
     }
     
     @RequestMapping("/delete_address.do")
@@ -127,6 +188,8 @@ public class UserController {
     	Address address_1= new Address();
     	address_1=userService.findAddressbyAid(aid);
     	User u = (User) session.getAttribute("user");
+    	if(u == null)
+    		return "/member/default/login";
     	address.setCurrent(address_1.getCurrent());
     	address.setUid(address_1.getUid());
     	address.setAddr(addr);
@@ -146,6 +209,32 @@ public class UserController {
     	Address ca=new Address();
         ca=userService.findAddressbyAid(Aid);
         model.addAttribute("ca",ca);
+        
+        User user = (User) session.getAttribute("user");
+        /**
+    	 * 购物车
+    	 *  
+    	 * */
+    	if(user != null) {
+    		List<Cart> carts = cartService.getAll(user.getUid());
+        	
+        	ArrayList cartProductList = new ArrayList();
+        	float cartProductPrice = 0;
+        	int length = 0;
+        	for(Cart c:carts) {
+        		Product p = productService.findProductById(c.getPid());
+        		CartItem item = new CartItem(c.getCid(), p.getPid(), p.getImage(), c.getNum(), p.getDescription(), p.getSalePrice()*c.getNum());
+        		cartProductList.add(item);
+        		cartProductPrice += p.getSalePrice()*c.getNum();
+        		length += 1;
+        	}
+        	
+        	model.addAttribute("cartProductList", cartProductList);
+        	model.addAttribute("cartProductNum", length);       	
+        	model.addAttribute("cartProductPrice",cartProductPrice);
+    	}else {
+    		model.addAttribute("cartProductNum", 0);   
+    	}
         return "/member/set_address_1";
 }
     
